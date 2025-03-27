@@ -1,5 +1,8 @@
 name: Fetch and Commit RSS File
 
+permissions:
+  contents: write
+
 on:
   schedule:
     - cron: "0 * * * *"  # every hour on the hour (UTC)
