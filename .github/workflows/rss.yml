@@ -1,0 +1,31 @@
+name: Fetch RSS Feed
+
+on:
+  schedule:
+    - cron: "0 * * * *" # every hour on the hour (UTC)
+  workflow_dispatch: # manual trigger
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: 3.11
+
+      - name: Install feedparser
+        run: pip install feedparser
+
+      - name: Run RSS fetcher
+        run: python fetch_rss.py
+
+      - name: Commit DB changes
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add rss_data.db
+          git commit -m "Update RSS DB" || echo "No changes"
+          git push
