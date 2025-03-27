@@ -1,0 +1,30 @@
+name: Fetch and Commit RSS File
+
+on:
+  schedule:
+    - cron: "0 * * * *"  # every hour on the hour (UTC)
+  workflow_dispatch:
+
+jobs:
+  fetch:
+    runs-on: ubuntu-latest
+    env:
+      RSS_FEED_URL: ${{ secrets.RSS_FEED_URL }}
+    steps:
+      - uses: actions/checkout@v3
+
+      - name: Download RSS file with unique filename
+        run: |
+          # Create a unique filename using the current date and time
+          FILENAME="rss-$(date +'%Y-%m-%d_%H-%M-%S').xml"
+          echo "Downloading RSS feed to $FILENAME"
+          curl -o "$FILENAME" "$RSS_FEED_URL"
+          head -n 10 "$FILENAME"
+
+      - name: Commit new RSS file
+        run: |
+          git config user.name "GitHub Actions"
+          git config user.email "actions@github.com"
+          git add *.xml
+          git commit -m "Add new RSS file" || echo "No changes to commit"
+          git push
