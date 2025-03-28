@@ -18,8 +18,10 @@ jobs:
 
       - name: Download RSS file with unique filename
         run: |
+          # Create the directory if it doesn't exist
+          mkdir -p xml_files
           # Create a unique filename using the current date and time
-          FILENAME="rss-$(date +'%Y-%m-%d_%H-%M-%S').xml"
+          FILENAME="xml_files/rss-$(date +'%Y-%m-%d_%H-%M-%S').xml"
           echo "Downloading RSS feed to $FILENAME"
           curl -o "$FILENAME" "$RSS_FEED_URL"
           head -n 10 "$FILENAME"
@@ -28,6 +30,6 @@ jobs:
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add *.xml
+          git add xml_files/*.xml
           git commit -m "Add new RSS file" || echo "No changes to commit"
           git push
