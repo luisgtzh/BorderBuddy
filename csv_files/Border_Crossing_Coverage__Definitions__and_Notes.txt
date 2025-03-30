@@ -1,0 +1,55 @@
+-----------------------------------------------------------------
+Border Crossing/Entry Data Definitions and Notes
+-----------------------------------------------------------------
+
+COVERAGE: Incoming vehicle, container, passenger, and pedestrian counts at U.S.-Mexico and U.S.-Canada land border ports.
+
+-------------------
+DEFINITIONS
+-------------------
+
+Bus Crossings: Number of arriving buses at a particular port, whether or not they are carrying passengers.
+
+Container: A Container is defined as any conveyance entering the U.S. used for commercial purposes, either full or empty. Includes containers moving in-bond for the port initiating the bonded movements.
+
+Types of Containers: The following are examples of a Container: Stakebed truck, truck with a car carrier, van, pickup truck/car, flatbed truck, piggyback truck with two linked trailers/containers = 2 containers, straight truck, bobtail truck, railcar, rail flatbed car stacked with four containers = 4 containers (on each rail car if there is multiple box containers count each container and the flatbed car.), and tri-level boxcar with multiple containers inside = 3 containers
+
+Passengers Crossing In Buses: Number of persons arriving by bus requiring U.S. Customs and Border Protection (CBP) processing.
+
+Passengers Crossing In Privately Owned Vehicles: Persons entering the United States at a particular port by private automobiles, pick-up trucks, motorcycles, recreational vehicles, taxis, ambulances, hearses, tractors, snowmobiles and other motorized private ground vehicles.
+
+Passengers Crossing In Trains: Number of passengers and crew arriving by train and requiring CBP processing.
+
+Pedestrian Crossings: The number of persons arriving on foot or by certain conveyance (such as bicycles, mopeds, or wheel chairs) requiring CBP processing.
+
+Privately Owned Vehicle Crossings: Number of privately owned vehicles (POVs) arriving at a particular port. Includes pick-up trucks, motorcycles, recreational vehicles, taxis, snowmobiles, ambulances, hearses, and other motorized private ground vehicles.
+
+Rail Container Crossings (loaded and empty): A container is any conveyance entering the U.S. used for commercial purposes, full or empty. In this case, it is the number of full or empty rail containers arriving at a port. This series includes containers moving as inbound shipments.
+
+Train Crossings: Number of arriving trains at a particular port.
+
+Truck Container Crossings (loaded and empty): A container is any conveyance entering the U.S. used for commercial purposes, full or empty. In this case, it is the number of full or empty truck containers arriving at a port. This series includes containers moving as inbound shipments.
+
+Truck Crossings: Number of arriving trucks; does not include privately owned pick-up trucks.
+
+NOTES
+-----------
+Canada
+-----------
+The ports of entry at Noyes, Minnesota and Whitetail, Montana closed in June 2006 and January 2013, respectively.
+Incoming Trucks, Incoming PVs, PV Passengers, Incoming Buses, Bus Passengers, and Incoming Pedestrians
+o Bar Harbor and Portland, Maine (ferry crossing) - Ferries arrived from May to September. The Bar Harbor, Maine to Yarmouth, Nova Scotia ferry is no longer in operation.
+o Anacortes and Friday Harbor - The international ferries that connect Anacortes and Friday Harbor, Washington with Sidney, British Columbia do not run in February. Truck Containers (Loaded) and Truck Containers (Unloaded)
+o Passenger vehicle and passengers in personal vehicles data for Cape Vincent, New York (ferry) are available beginning in 2007. The ferry between Wolfe Island (Canada) and Cape Vincent does not operate in the winter.
+Incoming Train Passengers
+o Includes both passengers and crew.
+o Starting with November 2017, Maine officials restrict international bridge traffic to passenger vehicles only.
+----------
+Mexico
+----------
+Data for the port of Calexico are reported as a combined total with Calexico East.
+Incoming Trucks:
+o Data represent the number of truck crossings, not the number of unique vehicles, and include both loaded and unloaded trucks.
+Incoming Train Passengers:
+o Includes train crew. BTS is not aware of any passenger service currently operating across the U.S.-Mexico Border.
+o CBP has indicated to BTS that since 2009 train crew are being exchanged at the Texas-Mexico border, and thus do not enter the United States.
