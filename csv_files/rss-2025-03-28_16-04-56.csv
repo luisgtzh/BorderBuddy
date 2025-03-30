@@ -1,0 +1,250 @@
+port_number,border,port_name,crossing_name,hours,date,port_status,lane_type,automation_type,max_lanes,update_time,lane_subtype,hora,zona_horaria
+070801,Canadian Border,Alexandria Bay,Thousand Islands Bridge,24 hrs/day,3/28/2025,Open,commercial,Manual,5,At 11:00 am EDT,standard,11:00 am,EDT
+300401,Canadian Border,Blaine,Pacific Highway,24 hrs/day,3/28/2025,Open,commercial,Manual,3,At 8:00 am PDT,standard,8:00 am,PDT
+300402,Canadian Border,Blaine,Peace Arch,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+300403,Canadian Border,Blaine,Point Roberts,24 hrs/day,3/28/2025,Open,commercial,Manual,1,,standard,,
+090104,Canadian Border,Buffalo/Niagara Falls,Lewiston Bridge,24 hrs/day,3/28/2025,Open,commercial,Bluetooth,4,At 11:58 am EDT,standard,11:58 am,EDT
+090101,Canadian Border,Buffalo/Niagara Falls,Peace Bridge,24 hrs/day,3/28/2025,Open,commercial,Bluetooth,8,At 11:58 am EDT,standard,11:58 am,EDT
+090102,Canadian Border,Buffalo/Niagara Falls,Rainbow Bridge,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+090103,Canadian Border,Buffalo/Niagara Falls,Whirlpool Bridge,7 am-11 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+011501,Canadian Border,Calais,Ferry Point,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+011503,Canadian Border,Calais,International Avenue,24 hrs/day,3/28/2025,Open,commercial,Manual,3,At 11:00 am EDT,standard,11:00 am,EDT
+011502,Canadian Border,Calais,Milltown,8 am-4 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+071201,Canadian Border,Champlain,,24 hrs/day,3/28/2025,Open,commercial,Manual,8,At Noon EDT,standard,,
+020901,Canadian Border,Derby Line,Derby Line I 91,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At Noon EDT,standard,,
+380001,Canadian Border,Detroit,Ambassador Bridge,24 hrs/day,3/28/2025,Open,commercial,Manual,13,At 11:00 am EDT,standard,11:00 am,EDT
+380002,Canadian Border,Detroit,Windsor Tunnel,24 hrs/day,3/28/2025,Open,commercial,Manual,1,At 11:00 am EDT,standard,11:00 am,EDT
+021201,Canadian Border,Highgate Springs,,24 hrs/day,3/28/2025,Open,commercial,Manual,1,,standard,,
+010601,Canadian Border,Houlton,,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At 11:00 am EDT,standard,11:00 am,EDT
+360401,Canadian Border,International Falls,,24 hrs/day,3/28/2025,Open,commercial,Manual,1,At 1:00 pm CDT,standard,1:00 pm,CDT
+010401,Canadian Border,Jackman,,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At Noon EDT,standard,,
+302301,Canadian Border,Lynden,,8 am-Midnight,3/28/2025,Open,commercial,Manual,1,At 8:00 am PDT,standard,8:00 am,PDT
+L01901,Canadian Border,Madawaska,,24 hrs/day,3/28/2025,Open,commercial,Manual,3,At 11:00 am EDT,standard,11:00 am,EDT
+070401,Canadian Border,Massena,,24 hrs/day,3/28/2025,Open,commercial,Manual,3,At 1:00 pm EDT,standard,1:00 pm,EDT
+021101,Canadian Border,Norton,,24 hrs/day,3/28/2025,Open,commercial,Manual,1,At Noon EDT,standard,,
+070101,Canadian Border,Ogdensburg,,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At 1:00 pm EDT,standard,1:00 pm,EDT
+340101,Canadian Border,Pembina,,24 hrs/day,3/28/2025,Open,commercial,Manual,4,At 10:00 am CDT,standard,10:00 am,CDT
+380201,Canadian Border,Port Huron,Bluewater Bridge,24 hrs/day,3/28/2025,Open,commercial,Manual,10,At 11:00 am EDT,standard,11:00 am,EDT
+380301,Canadian Border,Sault Ste. Marie,International Bridge   SSM,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At Noon EDT,standard,,
+300901,Canadian Border,Sumas,,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At 8:00 am PDT,standard,8:00 am,PDT
+331001,Canadian Border,Sweetgrass,,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At 9:00 am MDT,standard,9:00 am,MDT
+250201,Mexican Border,Andrade,,6 am-10 pm,3/28/2025,Open,commercial,Manual,1,,standard,,
+240216,Mexican Border,bota cargo,,24 hrs/day,3/28/2025,Open,commercial,Manual,6,,standard,,
+240214,Mexican Border,BOTA CARGO FACILITY,,6 am-2 pm,3/28/2025,Open,commercial,Manual,6,,standard,,
+240211,Mexican Border,BOTA CARGO FACILITY,,6 am-2 pm,3/28/2025,Open,commercial,Manual,6,,standard,,
+240215,Mexican Border,BOTA CARGO FACILITY,BRIDGE OF AMERICAS CARGO FACILITY ,6 am-2 pm,3/28/2025,Open,commercial,Manual,6,,standard,,
+240207,Mexican Border,Bridge of the Americas Port of Entry,,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+535501,Mexican Border,Brownsville,B&M,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+535504,Mexican Border,Brownsville,Gateway,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+535503,Mexican Border,Brownsville,Los Indios,6 am-10 pm,3/28/2025,Open,commercial,Manual,4,At 11:00 am CDT,standard,11:00 am,CDT
+535502,Mexican Border,Brownsville,Veterans International,6 am-Midnight,3/28/2025,Open,commercial,RFID,4,At 11:00 am CDT,standard,11:00 am,CDT
+250301,Mexican Border,Calexico,East,6 am-10 pm,3/28/2025,Open,commercial,Manual,3,At 7:00 am PDT,standard,7:00 am,PDT
+250302,Mexican Border,Calexico,West,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+240601,Mexican Border,Columbus,,24 hrs/day,3/28/2025,Open,commercial,Manual,1,At 10:00 am MDT,standard,10:00 am,MDT
+230201,Mexican Border,Del Rio,,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At 10:00 am CDT,standard,10:00 am,CDT
+260101,Mexican Border,Douglas (Raul Hector Castro),,24 hrs/day,3/28/2025,Open,commercial,Manual,2,,standard,,
+230301,Mexican Border,Eagle Pass,Bridge I,7 am-11 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230302,Mexican Border,Eagle Pass,Bridge II,24 hrs/day,3/28/2025,Open,commercial,RFID,1,At 11:00 am CDT,standard,11:00 am,CDT
+240201,Mexican Border,El Paso,Bridge of the Americas (BOTA),24 hrs/day,3/28/2025,Open,commercial,RFID,6,At 10:00 am MDT,standard,10:00 am,MDT
+240202,Mexican Border,El Paso,Paso Del Norte (PDN),24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+240204,Mexican Border,El Paso,Stanton DCL,6 am-Midnight,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+240203,Mexican Border,El Paso,Ysleta,24 hrs/day,3/28/2025,Open,commercial,RFID,8,At 9:00 am MDT,standard,9:00 am,MDT
+l24501,Mexican Border,Fort Hancock,Fort Hancock,6 am-6 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230103,Mexican Border,Gateway,,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230503,Mexican Border,Hidalgo/Pharr,Anzalduas International Bridge,6 am-10 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230501,Mexican Border,Hidalgo/Pharr,Hidalgo,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230502,Mexican Border,Hidalgo/Pharr,Pharr,6 am-Midnight,3/28/2025,Open,commercial,RFID,7,At 10:00 am CDT,standard,10:00 am,CDT
+230401,Mexican Border,Laredo,Bridge I,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230402,Mexican Border,Laredo,Bridge II,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230403,Mexican Border,Laredo,Colombia Solidarity,8 am-Midnight,3/28/2025,Open,commercial,RFID,8,At 10:00 am CDT,standard,10:00 am,CDT
+230404,Mexican Border,Laredo,World Trade Bridge,7 am-Midnight,3/28/2025,Open,commercial,RFID,19,At 10:00 am CDT,standard,10:00 am,CDT
+260201,Mexican Border,Lukeville,,6 am-8 pm,3/28/2025,Open,commercial,Manual,1,,standard,,
+240401,Mexican Border,Marcelino Serna,Tornillo,6 am-10 pm,3/28/2025,Open,commercial,Manual,2,At 10:00 am MDT,standard,10:00 am,MDT
+260301,Mexican Border,Naco,,6 am-10 pm,3/28/2025,Open,commercial,Manual,1,,standard,,
+260305,Mexican Border,Naco,,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+260401,Mexican Border,Nogales,Deconcini,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+260402,Mexican Border,Nogales,Mariposa,6 am-10 pm,3/28/2025,Open,commercial,RFID,8,At 8:00 am MST,standard,8:00 am,MST
+260403,Mexican Border,Nogales,Morley Gate,10 am-6 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+250602,Mexican Border,Otay Mesa,Commercial,6 am-10 pm,3/28/2025,Open,commercial,RFID,10,At 8:00 am PDT,standard,8:00 am,PDT
+250601,Mexican Border,Otay Mesa,Passenger,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+202401,Mexican Border,Paso Del Norte,,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+240301,Mexican Border,Presidio,,24 hrs/day,3/28/2025,Open,commercial,Manual,2,At 9:00 am CDT,standard,9:00 am,CDT
+230902,Mexican Border,Progreso,Donna International Bridge,6 am-10 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+230901,Mexican Border,Progreso,Progreso International Bridge,24 hrs/day,3/28/2025,Open,commercial,Manual,1,,standard,,
+230905,Mexican Border,Progreso - Progreso International Bridge,,24 hrs/day,3/28/2025,Open,commercial,Manual,1,,standard,,
+230701,Mexican Border,Rio Grande City,,7 am-Midnight,3/28/2025,Open,commercial,Manual,2,,standard,,
+231001,Mexican Border,Roma,,24 hrs/day,3/28/2025,Open,commercial,Manual,1,At 10:00 am CDT,standard,10:00 am,CDT
+231002,Mexican Border,ROMA TEXAS,ROMA TEXAS ,24 hrs/day,3/28/2025,Open,commercial,Manual,1,,standard,,
+260801,Mexican Border,San Luis,San Luis I,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+260802,Mexican Border,San Luis,San Luis II,9 am-8 pm,3/28/2025,Open,commercial,Manual,2,,standard,,
+250401,Mexican Border,San Ysidro,,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+250409,Mexican Border,San Ysidro,Cross Border Express,24 hrs/day,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+250407,Mexican Border,San Ysidro,PedWest,6 am-2 pm,3/28/2025,Open,commercial,Manual,N/A,,standard,,
+240801,Mexican Border,Santa Teresa,Santa Teresa Port of Entry,6 am-10 pm,3/28/2025,Open,commercial,RFID,3,At 9:00 am MDT,standard,9:00 am,MDT
+250501,Mexican Border,Tecate,,6 am-10 pm,3/28/2025,Open,commercial,Manual,2,,standard,,
+070801,Canadian Border,Alexandria Bay,Thousand Islands Bridge,24 hrs/day,3/28/2025,Open,passenger,Manual,8,At 11:00 am EDT,standard,11:00 am,EDT
+300401,Canadian Border,Blaine,Pacific Highway,24 hrs/day,3/28/2025,Open,passenger,Manual,7,At 8:00 am PDT,standard,8:00 am,PDT
+300402,Canadian Border,Blaine,Peace Arch,24 hrs/day,3/28/2025,Open,passenger,Manual,10,At 8:00 am PDT,standard,8:00 am,PDT
+300403,Canadian Border,Blaine,Point Roberts,24 hrs/day,3/28/2025,Open,passenger,Manual,3,,standard,,
+090104,Canadian Border,Buffalo/Niagara Falls,Lewiston Bridge,24 hrs/day,3/28/2025,Open,passenger,Bluetooth,8,At 11:58 am EDT,standard,11:58 am,EDT
+090101,Canadian Border,Buffalo/Niagara Falls,Peace Bridge,24 hrs/day,3/28/2025,Open,passenger,Bluetooth,17,At 11:58 am EDT,standard,11:58 am,EDT
+090102,Canadian Border,Buffalo/Niagara Falls,Rainbow Bridge,24 hrs/day,3/28/2025,Open,passenger,Bluetooth,16,At 11:58 am EDT,standard,11:58 am,EDT
+090103,Canadian Border,Buffalo/Niagara Falls,Whirlpool Bridge,7 am-11 pm,3/28/2025,Open,passenger,Manual,2,,standard,,
+011501,Canadian Border,Calais,Ferry Point,24 hrs/day,3/28/2025,Open,passenger,Manual,2,At 11:00 am EDT,standard,11:00 am,EDT
+011503,Canadian Border,Calais,International Avenue,24 hrs/day,3/28/2025,Open,passenger,Manual,6,At 11:00 am EDT,standard,11:00 am,EDT
+011502,Canadian Border,Calais,Milltown,8 am-4 pm,3/28/2025,Open,passenger,Manual,1,At 11:00 am EDT,standard,11:00 am,EDT
+071201,Canadian Border,Champlain,,24 hrs/day,3/28/2025,Open,passenger,Manual,10,At Noon EDT,standard,,
+020901,Canadian Border,Derby Line,Derby Line I 91,24 hrs/day,3/28/2025,Open,passenger,Manual,4,At Noon EDT,standard,,
+380001,Canadian Border,Detroit,Ambassador Bridge,24 hrs/day,3/28/2025,Open,passenger,Manual,19,At 11:00 am EDT,standard,11:00 am,EDT
+380002,Canadian Border,Detroit,Windsor Tunnel,24 hrs/day,3/28/2025,Open,passenger,Manual,10,At 11:00 am EDT,standard,11:00 am,EDT
+021201,Canadian Border,Highgate Springs,,24 hrs/day,3/28/2025,Open,passenger,Manual,5,At 11:00 am EDT,standard,11:00 am,EDT
+010601,Canadian Border,Houlton,,24 hrs/day,3/28/2025,Open,passenger,Manual,5,At 11:00 am EDT,standard,11:00 am,EDT
+360401,Canadian Border,International Falls,,24 hrs/day,3/28/2025,Open,passenger,Manual,3,At 1:00 pm CDT,standard,1:00 pm,CDT
+010401,Canadian Border,Jackman,,24 hrs/day,3/28/2025,Open,passenger,Manual,3,At Noon EDT,standard,,
+302301,Canadian Border,Lynden,,8 am-Midnight,3/28/2025,Open,passenger,Manual,4,At 8:00 am PDT,standard,8:00 am,PDT
+L01901,Canadian Border,Madawaska,,24 hrs/day,3/28/2025,Open,passenger,Manual,3,At 11:00 am EDT,standard,11:00 am,EDT
+070401,Canadian Border,Massena,,24 hrs/day,3/28/2025,Open,passenger,Manual,6,At 1:00 pm EDT,standard,1:00 pm,EDT
+021101,Canadian Border,Norton,,24 hrs/day,3/28/2025,Open,passenger,Manual,2,At Noon EDT,standard,,
+070101,Canadian Border,Ogdensburg,,24 hrs/day,3/28/2025,Open,passenger,Manual,5,At 1:00 pm EDT,standard,1:00 pm,EDT
+340101,Canadian Border,Pembina,,24 hrs/day,3/28/2025,Open,passenger,Manual,4,At 10:00 am CDT,standard,10:00 am,CDT
+380201,Canadian Border,Port Huron,Bluewater Bridge,24 hrs/day,3/28/2025,Open,passenger,Manual,10,At 11:00 am EDT,standard,11:00 am,EDT
+380301,Canadian Border,Sault Ste. Marie,International Bridge   SSM,24 hrs/day,3/28/2025,Open,passenger,Manual,4,At Noon EDT,standard,,
+300901,Canadian Border,Sumas,,24 hrs/day,3/28/2025,Open,passenger,Manual,5,At 8:00 am PDT,standard,8:00 am,PDT
+331001,Canadian Border,Sweetgrass,,24 hrs/day,3/28/2025,Open,passenger,Manual,4,At 9:00 am MDT,standard,9:00 am,MDT
+250201,Mexican Border,Andrade,,6 am-10 pm,3/28/2025,Open,passenger,Manual,3,,standard,,
+240216,Mexican Border,bota cargo,,24 hrs/day,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+240214,Mexican Border,BOTA CARGO FACILITY,,6 am-2 pm,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+240211,Mexican Border,BOTA CARGO FACILITY,,6 am-2 pm,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+240215,Mexican Border,BOTA CARGO FACILITY,BRIDGE OF AMERICAS CARGO FACILITY ,6 am-2 pm,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+240207,Mexican Border,Bridge of the Americas Port of Entry,,24 hrs/day,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+535501,Mexican Border,Brownsville,B&M,24 hrs/day,3/28/2025,Open,passenger,Manual,4,At 11:00 am CDT,standard,11:00 am,CDT
+535504,Mexican Border,Brownsville,Gateway,24 hrs/day,3/28/2025,Open,passenger,Manual,5,At 11:00 am CDT,standard,11:00 am,CDT
+535503,Mexican Border,Brownsville,Los Indios,6 am-10 pm,3/28/2025,Open,passenger,Manual,4,At 11:00 am CDT,standard,11:00 am,CDT
+535502,Mexican Border,Brownsville,Veterans International,6 am-Midnight,3/28/2025,Open,passenger,Manual,8,At 11:00 am CDT,standard,11:00 am,CDT
+250301,Mexican Border,Calexico,East,6 am-10 pm,3/28/2025,Open,passenger,Manual,8,At 7:00 am PDT,standard,7:00 am,PDT
+250302,Mexican Border,Calexico,West,24 hrs/day,3/28/2025,Open,passenger,Manual,16,At 7:00 am PDT,standard,7:00 am,PDT
+240601,Mexican Border,Columbus,,24 hrs/day,3/28/2025,Open,passenger,Manual,3,At 10:00 am MDT,standard,10:00 am,MDT
+230201,Mexican Border,Del Rio,,24 hrs/day,3/28/2025,Open,passenger,Manual,6,At 10:00 am CDT,standard,10:00 am,CDT
+260101,Mexican Border,Douglas (Raul Hector Castro),,24 hrs/day,3/28/2025,Open,passenger,Manual,7,At 9:00 am PST,standard,9:00 am,PST
+230301,Mexican Border,Eagle Pass,Bridge I,7 am-11 pm,3/28/2025,Open,passenger,Manual,5,,standard,,
+230302,Mexican Border,Eagle Pass,Bridge II,24 hrs/day,3/28/2025,Open,passenger,Manual,7,At 11:00 am CDT,standard,11:00 am,CDT
+240201,Mexican Border,El Paso,Bridge of the Americas (BOTA),24 hrs/day,3/28/2025,Open,passenger,Manual,14,At 10:00 am MDT,standard,10:00 am,MDT
+240202,Mexican Border,El Paso,Paso Del Norte (PDN),24 hrs/day,3/28/2025,Open,passenger,Manual,12,At 10:00 am MDT,standard,10:00 am,MDT
+240204,Mexican Border,El Paso,Stanton DCL,6 am-Midnight,3/28/2025,Open,passenger,Manual,3,,standard,,
+240203,Mexican Border,El Paso,Ysleta,24 hrs/day,3/28/2025,Open,passenger,Manual,13,At 9:00 am MDT,standard,9:00 am,MDT
+l24501,Mexican Border,Fort Hancock,Fort Hancock,6 am-6 pm,3/28/2025,Open,passenger,Manual,2,At 10:00 am MDT,standard,10:00 am,MDT
+230103,Mexican Border,Gateway,,24 hrs/day,3/28/2025,Open,passenger,Manual,5,,standard,,
+230503,Mexican Border,Hidalgo/Pharr,Anzalduas International Bridge,6 am-10 pm,3/28/2025,Open,passenger,Manual,6,At 10:00 am CDT,standard,10:00 am,CDT
+230501,Mexican Border,Hidalgo/Pharr,Hidalgo,24 hrs/day,3/28/2025,Open,passenger,Manual,12,At 10:00 am CDT,standard,10:00 am,CDT
+230502,Mexican Border,Hidalgo/Pharr,Pharr,6 am-Midnight,3/28/2025,Open,passenger,Manual,10,,standard,,
+230401,Mexican Border,Laredo,Bridge I,24 hrs/day,3/28/2025,Open,passenger,Manual,4,,standard,,
+230402,Mexican Border,Laredo,Bridge II,24 hrs/day,3/28/2025,Open,passenger,Manual,15,At 10:00 am CDT,standard,10:00 am,CDT
+230403,Mexican Border,Laredo,Colombia Solidarity,8 am-Midnight,3/28/2025,Open,passenger,Manual,4,At 10:00 am CDT,standard,10:00 am,CDT
+230404,Mexican Border,Laredo,World Trade Bridge,7 am-Midnight,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+260201,Mexican Border,Lukeville,,6 am-8 pm,3/28/2025,Open,passenger,Manual,6,,standard,,
+240401,Mexican Border,Marcelino Serna,Tornillo,6 am-10 pm,3/28/2025,Open,passenger,Manual,4,At 10:00 am MDT,standard,10:00 am,MDT
+260301,Mexican Border,Naco,,6 am-10 pm,3/28/2025,Open,passenger,Manual,2,At 8:00 am PST,standard,8:00 am,PST
+260305,Mexican Border,Naco,,24 hrs/day,3/28/2025,Open,passenger,Manual,2,,standard,,
+260401,Mexican Border,Nogales,Deconcini,24 hrs/day,3/28/2025,Open,passenger,Manual,8,At 9:00 am MST,standard,9:00 am,MST
+260402,Mexican Border,Nogales,Mariposa,6 am-10 pm,3/28/2025,Open,passenger,Manual,13,At 8:00 am MST,standard,8:00 am,MST
+260403,Mexican Border,Nogales,Morley Gate,10 am-6 pm,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+250602,Mexican Border,Otay Mesa,Commercial,6 am-10 pm,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+250601,Mexican Border,Otay Mesa,Passenger,24 hrs/day,3/28/2025,Open,passenger,Manual,13,At 8:00 am PDT,standard,8:00 am,PDT
+202401,Mexican Border,Paso Del Norte,,24 hrs/day,3/28/2025,Open,passenger,Manual,14,,standard,,
+240301,Mexican Border,Presidio,,24 hrs/day,3/28/2025,Open,passenger,Manual,4,At 9:00 am CDT,standard,9:00 am,CDT
+230902,Mexican Border,Progreso,Donna International Bridge,6 am-10 pm,3/28/2025,Open,passenger,Manual,4,At 10:00 am CDT,standard,10:00 am,CDT
+230901,Mexican Border,Progreso,Progreso International Bridge,24 hrs/day,3/28/2025,Open,passenger,Manual,5,At 7:00 am CDT,standard,7:00 am,CDT
+230905,Mexican Border,Progreso - Progreso International Bridge,,24 hrs/day,3/28/2025,Open,passenger,Manual,5,,standard,,
+230701,Mexican Border,Rio Grande City,,7 am-Midnight,3/28/2025,Open,passenger,Manual,3,At 8:00 am CDT,standard,8:00 am,CDT
+231001,Mexican Border,Roma,,24 hrs/day,3/28/2025,Open,passenger,Manual,4,At 10:00 am CDT,standard,10:00 am,CDT
+231002,Mexican Border,ROMA TEXAS,ROMA TEXAS ,24 hrs/day,3/28/2025,Open,passenger,Manual,4,,standard,,
+260801,Mexican Border,San Luis,San Luis I,24 hrs/day,3/28/2025,Open,passenger,Manual,7,At 8:00 am MST,standard,8:00 am,MST
+260802,Mexican Border,San Luis,San Luis II,9 am-8 pm,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+250401,Mexican Border,San Ysidro,,24 hrs/day,3/28/2025,Open,passenger,Manual,34,At 8:00 am PDT,standard,8:00 am,PDT
+250409,Mexican Border,San Ysidro,Cross Border Express,24 hrs/day,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+250407,Mexican Border,San Ysidro,PedWest,6 am-2 pm,3/28/2025,Open,passenger,Manual,N/A,,standard,,
+240801,Mexican Border,Santa Teresa,Santa Teresa Port of Entry,6 am-10 pm,3/28/2025,Open,passenger,Manual,4,At 9:00 am MDT,standard,9:00 am,MDT
+250501,Mexican Border,Tecate,,6 am-10 pm,3/28/2025,Open,passenger,Manual,4,At 7:00 am PDT,standard,7:00 am,PDT
+070801,Canadian Border,Alexandria Bay,Thousand Islands Bridge,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+300401,Canadian Border,Blaine,Pacific Highway,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+300402,Canadian Border,Blaine,Peace Arch,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+300403,Canadian Border,Blaine,Point Roberts,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+090104,Canadian Border,Buffalo/Niagara Falls,Lewiston Bridge,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+090101,Canadian Border,Buffalo/Niagara Falls,Peace Bridge,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+090102,Canadian Border,Buffalo/Niagara Falls,Rainbow Bridge,24 hrs/day,3/28/2025,Open,pedestrian,Manual,1,,standard,,
+090103,Canadian Border,Buffalo/Niagara Falls,Whirlpool Bridge,7 am-11 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+011501,Canadian Border,Calais,Ferry Point,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+011503,Canadian Border,Calais,International Avenue,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+011502,Canadian Border,Calais,Milltown,8 am-4 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+071201,Canadian Border,Champlain,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+020901,Canadian Border,Derby Line,Derby Line I 91,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+380001,Canadian Border,Detroit,Ambassador Bridge,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+380002,Canadian Border,Detroit,Windsor Tunnel,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+021201,Canadian Border,Highgate Springs,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+010601,Canadian Border,Houlton,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+360401,Canadian Border,International Falls,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+010401,Canadian Border,Jackman,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+302301,Canadian Border,Lynden,,8 am-Midnight,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+L01901,Canadian Border,Madawaska,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,0,,standard,,
+070401,Canadian Border,Massena,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+021101,Canadian Border,Norton,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+070101,Canadian Border,Ogdensburg,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+340101,Canadian Border,Pembina,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+380201,Canadian Border,Port Huron,Bluewater Bridge,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+380301,Canadian Border,Sault Ste. Marie,International Bridge   SSM,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+300901,Canadian Border,Sumas,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+331001,Canadian Border,Sweetgrass,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+250201,Mexican Border,Andrade,,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,4,,standard,,
+240216,Mexican Border,bota cargo,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+240214,Mexican Border,BOTA CARGO FACILITY,,6 am-2 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+240211,Mexican Border,BOTA CARGO FACILITY,,6 am-2 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+240215,Mexican Border,BOTA CARGO FACILITY,BRIDGE OF AMERICAS CARGO FACILITY ,6 am-2 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+240207,Mexican Border,Bridge of the Americas Port of Entry,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,0,,standard,,
+535501,Mexican Border,Brownsville,B&M,24 hrs/day,3/28/2025,Open,pedestrian,Manual,2,At 11:00 am CDT,standard,11:00 am,CDT
+535504,Mexican Border,Brownsville,Gateway,24 hrs/day,3/28/2025,Open,pedestrian,Manual,5,At 11:00 am CDT,standard,11:00 am,CDT
+535503,Mexican Border,Brownsville,Los Indios,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+535502,Mexican Border,Brownsville,Veterans International,6 am-Midnight,3/28/2025,Open,pedestrian,Manual,1,At 11:00 am CDT,standard,11:00 am,CDT
+250301,Mexican Border,Calexico,East,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,4,At 7:00 am PDT,standard,7:00 am,PDT
+250302,Mexican Border,Calexico,West,24 hrs/day,3/28/2025,Open,pedestrian,Manual,6,At 7:00 am PDT,standard,7:00 am,PDT
+240601,Mexican Border,Columbus,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,4,At 10:00 am MDT,standard,10:00 am,MDT
+230201,Mexican Border,Del Rio,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+260101,Mexican Border,Douglas (Raul Hector Castro),,24 hrs/day,3/28/2025,Open,pedestrian,Manual,3,At 9:00 am PST,standard,9:00 am,PST
+230301,Mexican Border,Eagle Pass,Bridge I,7 am-11 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+230302,Mexican Border,Eagle Pass,Bridge II,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+240201,Mexican Border,El Paso,Bridge of the Americas (BOTA),24 hrs/day,3/28/2025,Open,pedestrian,Manual,6,At 10:00 am MDT,standard,10:00 am,MDT
+240202,Mexican Border,El Paso,Paso Del Norte (PDN),24 hrs/day,3/28/2025,Open,pedestrian,Manual,14,At 10:00 am MDT,standard,10:00 am,MDT
+240204,Mexican Border,El Paso,Stanton DCL,6 am-Midnight,3/28/2025,Open,pedestrian,Manual,0,,standard,,
+240203,Mexican Border,El Paso,Ysleta,24 hrs/day,3/28/2025,Open,pedestrian,Manual,4,At 9:00 am MDT,standard,9:00 am,MDT
+l24501,Mexican Border,Fort Hancock,Fort Hancock,6 am-6 pm,3/28/2025,Open,pedestrian,Manual,4,,standard,,
+230103,Mexican Border,Gateway,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,4,,standard,,
+230503,Mexican Border,Hidalgo/Pharr,Anzalduas International Bridge,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+230501,Mexican Border,Hidalgo/Pharr,Hidalgo,24 hrs/day,3/28/2025,Open,pedestrian,Manual,10,At 10:00 am CDT,standard,10:00 am,CDT
+230502,Mexican Border,Hidalgo/Pharr,Pharr,6 am-Midnight,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+230401,Mexican Border,Laredo,Bridge I,24 hrs/day,3/28/2025,Open,pedestrian,Manual,12,At 10:00 am CDT,standard,10:00 am,CDT
+230402,Mexican Border,Laredo,Bridge II,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+230403,Mexican Border,Laredo,Colombia Solidarity,8 am-Midnight,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+230404,Mexican Border,Laredo,World Trade Bridge,7 am-Midnight,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+260201,Mexican Border,Lukeville,,6 am-8 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+240401,Mexican Border,Marcelino Serna,Tornillo,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,2,At 10:00 am MDT,standard,10:00 am,MDT
+260301,Mexican Border,Naco,,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,2,At 8:00 am PST,standard,8:00 am,PST
+260305,Mexican Border,Naco,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,1,,standard,,
+260401,Mexican Border,Nogales,Deconcini,24 hrs/day,3/28/2025,Open,pedestrian,Manual,6,At 9:00 am MST,standard,9:00 am,MST
+260402,Mexican Border,Nogales,Mariposa,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,6,At 8:00 am MST,standard,8:00 am,MST
+260403,Mexican Border,Nogales,Morley Gate,10 am-6 pm,3/28/2025,Open,pedestrian,Manual,4,,standard,,
+250602,Mexican Border,Otay Mesa,Commercial,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+250601,Mexican Border,Otay Mesa,Passenger,24 hrs/day,3/28/2025,Open,pedestrian,Manual,6,At 8:00 am PDT,standard,8:00 am,PDT
+202401,Mexican Border,Paso Del Norte,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+240301,Mexican Border,Presidio,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,1,At 9:00 am CDT,standard,9:00 am,CDT
+230902,Mexican Border,Progreso,Donna International Bridge,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,4,,standard,,
+230901,Mexican Border,Progreso,Progreso International Bridge,24 hrs/day,3/28/2025,Open,pedestrian,Manual,6,,standard,,
+230905,Mexican Border,Progreso - Progreso International Bridge,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,3,,standard,,
+230701,Mexican Border,Rio Grande City,,7 am-Midnight,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+231001,Mexican Border,Roma,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+231002,Mexican Border,ROMA TEXAS,ROMA TEXAS ,24 hrs/day,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+260801,Mexican Border,San Luis,San Luis I,24 hrs/day,3/28/2025,Open,pedestrian,Manual,7,At 8:00 am MST,standard,8:00 am,MST
+260802,Mexican Border,San Luis,San Luis II,9 am-8 pm,3/28/2025,Open,pedestrian,Manual,N/A,,standard,,
+250401,Mexican Border,San Ysidro,,24 hrs/day,3/28/2025,Open,pedestrian,Manual,22,At 8:00 am PDT,standard,8:00 am,PDT
+250409,Mexican Border,San Ysidro,Cross Border Express,24 hrs/day,3/28/2025,Open,pedestrian,Manual,8,At 5:00 am PDT,standard,5:00 am,PDT
+250407,Mexican Border,San Ysidro,PedWest,6 am-2 pm,3/28/2025,Open,pedestrian,Manual,14,At 8:00 am PDT,standard,8:00 am,PDT
+240801,Mexican Border,Santa Teresa,Santa Teresa Port of Entry,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,2,At 9:00 am MDT,standard,9:00 am,MDT
+250501,Mexican Border,Tecate,,6 am-10 pm,3/28/2025,Open,pedestrian,Manual,4,At 7:00 am PDT,standard,7:00 am,PDT
