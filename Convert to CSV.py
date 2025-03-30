@@ -1,14 +1,29 @@
+import requests
 import pandas as pd
 import xml.etree.ElementTree as ET
 import pytz
 from datetime import datetime
+from dotenv import load_dotenv
+import os
 
 
 # Ruta del archivo XML
-xml_file = "xml_files/rss-2025-03-28_16-04-56.xml"
+# xml_file = "xml_files/rss-2025-03-28_16-04-56.xml"
+
+load_dotenv()
+RSS_URL = os.getenv("RSS_FEED_URL")
+
+# Fetch the XML data
+response = requests.get(RSS_URL)
+response.raise_for_status()  # Raise an exception for HTTP errors
+
+# Parse the XML data
+xml_file = ET.fromstring(response.content)
+
+print(xml_file)
 
 # Analizar el archivo XML
-tree = ET.parse(xml_file)
+tree = ET.ElementTree(xml_file)
 root = tree.getroot()
 
 # Función para recorrer todos los nodos
