@@ -77,11 +77,11 @@ pivot_columns = {
     'pedestrain_automation_type': 'pedestrian'
 }
 
-id_columns=['port_number', 'border', 'port_name', 'crossing_name', 'hours', 'date', 'port_status']
+id_columns=['port_number', 'border', 'port_name', 'crossing_name', 'hours', 'date', 'port_status', 'construction_notice']
 column_name='lane_type'
 column_value='automation_type'
 df1=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
-#df.head(5)
+
 
 #pivot las columnas de maximum_lanes
 pivot_columns = {
@@ -106,34 +106,6 @@ df3=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
 
 # Add the new column 'lane_subtype' with the value 'standard'
 df3['lane_subtype'] = 'standard'
-
-# Reemplazar "At Noon" por "At 12:00 pm" en la columna 'update_time'
-df3['update_time'] = df3['update_time'].str.replace(r'At Noon', 'At 12:00 pm', regex=True)
-
-# Dividir el campo 'update_time' en 'hora' (formato 24 horas) y 'zona_horaria'
-df3[['time', 'time_zone']] = df3['update_time'].str.extract(r'At (\d{1,2}:\d{2} (?:am|pm)) (\w{3})')
-
-# Convertir la columna 'hora' al formato de 24 horas
-df3['time'] = pd.to_datetime(df3['time'], format='%I:%M %p').dt.time
-
-# Mapeo de abreviaturas de zonas horarias a nombres válidos de pytz
-time_zone_mapping = {
-    'EDT': 'US/Eastern',
-    'EST': 'US/Eastern',
-    'CDT': 'US/Central',
-    'CST': 'US/Central',
-    'MDT': 'US/Mountain',
-    'MST': 'US/Mountain',
-    'PDT': 'US/Pacific',
-    'PST': 'US/Pacific'
-}
-
-df3['time_mdt'] = df3.apply(convert_to_mdt, axis=1)
-
-# Convertir la columna 'time_24h' a formato de hora
-#df3['time_24h'] = pd.to_datetime(df3['time_24h'], format='%H:%M:%S').dt.time
-
-#print(df3.head())
 
 #pivot las columnas de standard_lanes.lanes_open
 pivot_columns = {
@@ -167,6 +139,7 @@ df6=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
 
 # Realizar el "left join" entre df1 y df2 utilizando las columnas 'port_number' y 'lane_type' como claves
 merged_df = pd.merge(df1, df2, on=['port_number', 'lane_type'], how='left')
+merged_df.head(5)
 
 # Realizar el "left join" entre el resultado anterior y df3 utilizando las mismas claves
 merged1_df = pd.merge(merged_df, df3, on=['port_number', 'lane_type'], how='left')
@@ -178,7 +151,144 @@ merged2_df = pd.merge(merged1_df, df4, on=['port_number', 'lane_type'], how='lef
 merged3_df = pd.merge(merged2_df, df5, on=['port_number', 'lane_type'], how='left')
 
 # Realizar el "left join" entre el resultado anterior y df3 utilizando las mismas claves
-final_df = pd.merge(merged3_df, df6, on=['port_number', 'lane_type'], how='left')
+merged4_df = pd.merge(merged3_df, df6, on=['port_number', 'lane_type'], how='left')
+
+
+# Crear el DataFrame df7 con las columnas commercial_vehicle_lanes.FAST_lanes
+df7 = df[['port_number', 
+          'commercial_vehicle_lanes.FAST_lanes.operational_status', 
+          'commercial_vehicle_lanes.FAST_lanes.update_time', 
+          'commercial_vehicle_lanes.FAST_lanes.delay_minutes', 
+          'commercial_vehicle_lanes.FAST_lanes.lanes_open']].copy()
+
+# Renombrar las columnas 
+df7.rename(columns={
+    'commercial_vehicle_lanes.FAST_lanes.operational_status': 'operational_status',
+    'commercial_vehicle_lanes.FAST_lanes.update_time': 'update_time',
+    'commercial_vehicle_lanes.FAST_lanes.delay_minutes': 'delay_minutes',
+    'commercial_vehicle_lanes.FAST_lanes.lanes_open': 'lanes_open'
+}, inplace=True)
+
+# Filtrar las filas de merged_df donde 'lane_type' sea 'commercial'
+merged_df_commercial = merged_df[merged_df['lane_type'] == 'commercial']
+
+# Unir df7 con merged_df_commercial utilizando el campo 'port_number'
+df8 = pd.merge(merged_df_commercial, df7, on='port_number', how='left')
+
+# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
+df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'FAST lanes')
+
+# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
+final_df = pd.concat([merged4_df, df8], ignore_index=True)
+
+#print(df.columns)
+
+# Crear el DataFrame con las columnas passenger_vehicle_lanes.NEXUS_SENTRI_lane
+df7 = df[['port_number', 
+          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.operational_status', 
+          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.update_time', 
+          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.delay_minutes', 
+          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.lanes_open']].copy()
+
+# Renombrar las columnas 
+df7.rename(columns={
+    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.operational_status': 'operational_status',
+    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.update_time': 'update_time',
+    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.delay_minutes': 'delay_minutes',
+    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.lanes_open': 'lanes_open'
+}, inplace=True)
+
+# Filtrar las filas de merged_df donde 'lane_type' sea 'passenger'
+merged_df_passenger = merged_df[merged_df['lane_type'] == 'passenger']
+
+# Unir df7 con merged_df_passenger utilizando el campo 'port_number'
+df8 = pd.merge(merged_df_passenger, df7, on='port_number', how='left')
+
+# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
+df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'NEXUS SENTRI lane')
+
+# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
+final_df = pd.concat([final_df, df8], ignore_index=True)
+
+# Crear el DataFrame df7 con las columnas passenger_vehicle_lanes.ready_lanes
+df7 = df[['port_number', 
+          'passenger_vehicle_lanes.ready_lanes.operational_status', 
+          'passenger_vehicle_lanes.ready_lanes.update_time', 
+          'passenger_vehicle_lanes.ready_lanes.delay_minutes', 
+          'passenger_vehicle_lanes.ready_lanes.lanes_open']].copy()
+
+# Renombrar las columnas 
+df7.rename(columns={
+    'passenger_vehicle_lanes.ready_lanes.operational_status': 'operational_status',
+    'passenger_vehicle_lanes.ready_lanes.update_time': 'update_time',
+    'passenger_vehicle_lanes.ready_lanes.delay_minutes': 'delay_minutes',
+    'passenger_vehicle_lanes.ready_lanes.lanes_open': 'lanes_open'
+}, inplace=True)
+
+# Filtrar las filas de merged_df donde 'lane_type' sea 'passenger'
+#merged_df_passenger = merged_df[merged_df['lane_type'] == 'passenger']
+
+# Unir df7 con merged_df_passenger utilizando el campo 'port_number'
+df8 = pd.merge(merged_df_passenger, df7, on='port_number', how='left')
+
+# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
+df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'ready_lanes')
+
+# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
+final_df = pd.concat([final_df, df8], ignore_index=True)
+
+# Crear el DataFrame df7 con las columnas pedestrian_lanes.ready_lanes
+df7 = df[['port_number', 
+          'pedestrian_lanes.ready_lanes.operational_status', 
+          'pedestrian_lanes.ready_lanes.update_time', 
+          'pedestrian_lanes.ready_lanes.delay_minutes', 
+          'pedestrian_lanes.ready_lanes.lanes_open']].copy()
+
+# Renombrar las columnas 
+df7.rename(columns={
+    'pedestrian_lanes.ready_lanes.operational_status': 'operational_status',
+    'pedestrian_lanes.ready_lanes.update_time': 'update_time',
+    'pedestrian_lanes.ready_lanes.delay_minutes': 'delay_minutes',
+    'pedestrian_lanes.ready_lanes.lanes_open': 'lanes_open'
+}, inplace=True)
+
+# Filtrar las filas de merged_df donde 'lane_type' sea 'passenger'
+merged_df_passenger = merged_df[merged_df['lane_type'] == 'pedestrian']
+
+# Unir df7 con merged_df_passenger utilizando el campo 'port_number'
+df8 = pd.merge(merged_df_passenger, df7, on='port_number', how='left')
+
+# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
+df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'ready_lanes')
+
+# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
+final_df = pd.concat([final_df, df8], ignore_index=True)
+
+# Reemplazar "At Noon" por "At 12:00 pm" en la columna 'update_time'
+final_df['update_time'] = final_df['update_time'].str.replace(r'At Noon', 'At 12:00 pm', regex=True)
+
+# Dividir el campo 'update_time' en 'hora' (formato 24 horas) y 'zona_horaria'
+final_df[['time', 'time_zone']] = final_df['update_time'].str.extract(r'At (\d{1,2}:\d{2} (?:am|pm)) (\w{3})')
+
+# Convertir la columna 'hora' al formato de 24 horas
+final_df['time'] = pd.to_datetime(final_df['time'], format='%I:%M %p').dt.time
+
+# Mapeo de abreviaturas de zonas horarias a nombres válidos de pytz
+time_zone_mapping = {
+    'EDT': 'US/Eastern',
+    'EST': 'US/Eastern',
+    'CDT': 'US/Central',
+    'CST': 'US/Central',
+    'MDT': 'US/Mountain',
+    'MST': 'US/Mountain',
+    'PDT': 'US/Pacific',
+    'PST': 'US/Pacific'
+}
+
+final_df['time_mdt'] = final_df.apply(convert_to_mdt, axis=1)
+
+# Verificar el resultado
+#print(final_df.head())
 
 # Guardar el DataFrame en un archivo CSV
 csv_file = "csv_files/rss-2025-03-28_16-04-56.csv"
