@@ -16,20 +16,27 @@ jobs:
     steps:
       - uses: actions/checkout@v3
 
-      - name: Download RSS file with unique filename
+      - name: Download and compress RSS file with unique filename
         run: |
           # Create the directory if it doesn't exist
           mkdir -p xml_files
           # Create a unique filename using the current date and time
           FILENAME="xml_files/rss-$(date +'%Y-%m-%d_%H-%M-%S').xml"
+          COMPRESSED_FILENAME="$FILENAME.gz"
           echo "Downloading RSS feed to $FILENAME"
           curl -o "$FILENAME" "$RSS_FEED_URL"
-          head -n 10 "$FILENAME"
+          # Compress the file
+          gzip -c "$FILENAME" > "$COMPRESSED_FILENAME"
+          echo "Compressed RSS feed to $COMPRESSED_FILENAME"
+          # Optionally, remove the uncompressed file
+          rm "$FILENAME"
+          # Display the first few lines of the compressed file for verification
+          gunzip -c "$COMPRESSED_FILENAME" | head -n 10
 
       - name: Commit new RSS file
         run: |
           git config user.name "GitHub Actions"
           git config user.email "actions@github.com"
-          git add xml_files/*.xml
+          git add xml_files/*.xml.gz
           git commit -m "Add new RSS file" || echo "No changes to commit"
           git push
