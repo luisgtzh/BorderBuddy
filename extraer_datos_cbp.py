@@ -5,6 +5,7 @@ import pytz
 from datetime import datetime
 from dotenv import load_dotenv
 import os
+import psycopg2
 
 
 # Ruta del archivo XML
@@ -12,6 +13,13 @@ import os
 
 load_dotenv()
 RSS_URL = os.getenv("RSS_FEED_URL")
+
+# Detalles de conexión a la base de datos
+USER = os.getenv("SUPABASE_USER")
+PASSWORD = os.getenv("SUPABASE_PASSWORD")
+HOST = os.getenv("SUPABASE_HOST")
+PORT = os.getenv("SUPABASE_PORT")
+DBNAME = os.getenv("SUPABASE_DBNAME")
 
 # Fetch the XML data
 response = requests.get(RSS_URL)
@@ -302,11 +310,55 @@ time_zone_mapping = {
 
 final_df['time_mdt'] = final_df.apply(convert_to_mdt, axis=1)
 
+# Replace 'NaT' with None for the 'time' and 'time_mdt' columns
+final_df['time'] = final_df['time'].apply(lambda x: None if pd.isnull(x) else x)
+final_df['time_mdt'] = final_df['time_mdt'].apply(lambda x: None if pd.isnull(x) else x)
+
+# Replace empty strings with None
+final_df.replace("", None, inplace=True)
+
+# Replace NaN values with None
+final_df = final_df.where(pd.notnull(final_df), None)
+
 # Verificar el resultado
-#print(final_df.head())
+print(final_df.head())
 
 # Guardar el DataFrame en un archivo CSV
-csv_file = "csv_files/rss-2025-03-28_16-04-56.csv"
-final_df.to_csv(csv_file, index=False, encoding="utf-8")
+#csv_file = "csv_files/rss-2025-03-28_16-04-56.csv"
+#final_df.to_csv(csv_file, index=False, encoding="utf-8")
 
-print(f"Los datos se han guardado en {csv_file}")
+#data_to_insert = final_df.to_dict(orient="records")
+
+try:
+    connection = psycopg2.connect(
+        user=USER,
+        password=PASSWORD,
+        host=HOST,
+        port=PORT,
+        dbname=DBNAME
+    )
+    print("Conexión exitosa a la base de datos.")
+    
+    # Create a cursor to execute SQL queries
+    cursor = connection.cursor()
+
+    table_name = "cruces_fronterizos"
+    columns = list(final_df.columns)
+    insert_sql = (
+        f"INSERT INTO {table_name} ({', '.join(columns)}) "
+        f"VALUES ({', '.join(['%s'] * len(columns))});"
+    )
+
+    records = final_df.values.tolist()
+    for record in records:
+        cursor.execute(insert_sql, record)
+
+    connection.commit()
+
+    # Close the cursor and connection
+    cursor.close()
+    connection.close()
+    print("Conexión cerrada.")
+
+except Exception as e:
+    print(f"Error al insertar datos: {e}")
