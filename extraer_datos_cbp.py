@@ -293,6 +293,9 @@ final_df['update_time'] = final_df['update_time'].str.replace(r'At Noon', 'At 12
 # Dividir el campo 'update_time' en 'hora' (formato 24 horas) y 'zona_horaria'
 final_df[['time', 'time_zone']] = final_df['update_time'].str.extract(r'At (\d{1,2}:\d{2} (?:am|pm)) (\w{3})')
 
+# Fix invalid 12-hour times like '0:02 am' to '12:02 am'
+final_df['time'] = final_df['time'].str.replace(r'^0:', '12:', regex=True)
+
 # Convertir la columna 'hora' al formato de 24 horas
 final_df['time'] = pd.to_datetime(final_df['time'], format='%I:%M %p').dt.time
 
