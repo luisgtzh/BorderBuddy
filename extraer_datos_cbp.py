@@ -177,115 +177,41 @@ merged3_df = pd.merge(merged2_df, df5, on=['port_number', 'lane_type'], how='lef
 merged4_df = pd.merge(merged3_df, df6, on=['port_number', 'lane_type'], how='left')
 
 
-# Crear el DataFrame df7 con las columnas commercial_vehicle_lanes.FAST_lanes
-df7 = df[['port_number', 
-          'commercial_vehicle_lanes.FAST_lanes.operational_status', 
-          'commercial_vehicle_lanes.FAST_lanes.update_time', 
-          'commercial_vehicle_lanes.FAST_lanes.delay_minutes', 
-          'commercial_vehicle_lanes.FAST_lanes.lanes_open']].copy()
+# --- Efficiently handle special lane types (FAST, NEXUS_SENTRI, ready_lanes) ---
+special_lanes = [
+    # (lane_type, prefix, key, subtype)
+    ('commercial', 'commercial_vehicle_lanes', 'FAST_lanes', 'FAST lanes'),
+    ('passenger', 'passenger_vehicle_lanes', 'NEXUS_SENTRI_lanes', 'NEXUS SENTRI lane'),
+    ('passenger', 'passenger_vehicle_lanes', 'ready_lanes', 'ready_lanes'),
+    ('pedestrian', 'pedestrian_lanes', 'ready_lanes', 'ready_lanes')
+]
+special_dfs = []
+for lane_type, prefix, key, subtype in special_lanes:
+    base_cols = [
+        'port_number',
+        f'{prefix}.{key}.operational_status',
+        f'{prefix}.{key}.update_time',
+        f'{prefix}.{key}.delay_minutes',
+        f'{prefix}.{key}.lanes_open'
+    ]
+    # Only keep columns that exist in df
+    cols = [c for c in base_cols if c in df.columns]
+    if len(cols) < 2:
+        continue
+    temp = df[cols].copy()
+    rename_dict = {
+        f'{prefix}.{key}.operational_status': 'operational_status',
+        f'{prefix}.{key}.update_time': 'update_time',
+        f'{prefix}.{key}.delay_minutes': 'delay_minutes',
+        f'{prefix}.{key}.lanes_open': 'lanes_open'
+    }
+    temp.rename(columns=rename_dict, inplace=True)
+    temp['lane_type'] = lane_type
+    temp['lane_subtype'] = subtype
+    special_dfs.append(temp)
 
-# Renombrar las columnas 
-df7.rename(columns={
-    'commercial_vehicle_lanes.FAST_lanes.operational_status': 'operational_status',
-    'commercial_vehicle_lanes.FAST_lanes.update_time': 'update_time',
-    'commercial_vehicle_lanes.FAST_lanes.delay_minutes': 'delay_minutes',
-    'commercial_vehicle_lanes.FAST_lanes.lanes_open': 'lanes_open'
-}, inplace=True)
-
-# Filtrar las filas de merged_df donde 'lane_type' sea 'commercial'
-merged_df_commercial = merged_df[merged_df['lane_type'] == 'commercial']
-
-# Unir df7 con merged_df_commercial utilizando el campo 'port_number'
-df8 = pd.merge(merged_df_commercial, df7, on='port_number', how='left')
-
-# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
-df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'FAST lanes')
-
-# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
-final_df = pd.concat([merged4_df, df8], ignore_index=True)
-
-#print(df.columns)
-
-# Crear el DataFrame con las columnas passenger_vehicle_lanes.NEXUS_SENTRI_lane
-df7 = df[['port_number', 
-          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.operational_status', 
-          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.update_time', 
-          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.delay_minutes', 
-          'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.lanes_open']].copy()
-
-# Renombrar las columnas 
-df7.rename(columns={
-    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.operational_status': 'operational_status',
-    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.update_time': 'update_time',
-    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.delay_minutes': 'delay_minutes',
-    'passenger_vehicle_lanes.NEXUS_SENTRI_lanes.lanes_open': 'lanes_open'
-}, inplace=True)
-
-# Filtrar las filas de merged_df donde 'lane_type' sea 'passenger'
-merged_df_passenger = merged_df[merged_df['lane_type'] == 'passenger']
-
-# Unir df7 con merged_df_passenger utilizando el campo 'port_number'
-df8 = pd.merge(merged_df_passenger, df7, on='port_number', how='left')
-
-# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
-df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'NEXUS SENTRI lane')
-
-# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
-final_df = pd.concat([final_df, df8], ignore_index=True)
-
-# Crear el DataFrame df7 con las columnas passenger_vehicle_lanes.ready_lanes
-df7 = df[['port_number', 
-          'passenger_vehicle_lanes.ready_lanes.operational_status', 
-          'passenger_vehicle_lanes.ready_lanes.update_time', 
-          'passenger_vehicle_lanes.ready_lanes.delay_minutes', 
-          'passenger_vehicle_lanes.ready_lanes.lanes_open']].copy()
-
-# Renombrar las columnas 
-df7.rename(columns={
-    'passenger_vehicle_lanes.ready_lanes.operational_status': 'operational_status',
-    'passenger_vehicle_lanes.ready_lanes.update_time': 'update_time',
-    'passenger_vehicle_lanes.ready_lanes.delay_minutes': 'delay_minutes',
-    'passenger_vehicle_lanes.ready_lanes.lanes_open': 'lanes_open'
-}, inplace=True)
-
-# Filtrar las filas de merged_df donde 'lane_type' sea 'passenger'
-#merged_df_passenger = merged_df[merged_df['lane_type'] == 'passenger']
-
-# Unir df7 con merged_df_passenger utilizando el campo 'port_number'
-df8 = pd.merge(merged_df_passenger, df7, on='port_number', how='left')
-
-# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
-df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'ready_lanes')
-
-# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
-final_df = pd.concat([final_df, df8], ignore_index=True)
-
-# Crear el DataFrame df7 con las columnas pedestrian_lanes.ready_lanes
-df7 = df[['port_number', 
-          'pedestrian_lanes.ready_lanes.operational_status', 
-          'pedestrian_lanes.ready_lanes.update_time', 
-          'pedestrian_lanes.ready_lanes.delay_minutes', 
-          'pedestrian_lanes.ready_lanes.lanes_open']].copy()
-
-# Renombrar las columnas 
-df7.rename(columns={
-    'pedestrian_lanes.ready_lanes.operational_status': 'operational_status',
-    'pedestrian_lanes.ready_lanes.update_time': 'update_time',
-    'pedestrian_lanes.ready_lanes.delay_minutes': 'delay_minutes',
-    'pedestrian_lanes.ready_lanes.lanes_open': 'lanes_open'
-}, inplace=True)
-
-# Filtrar las filas de merged_df donde 'lane_type' sea 'passenger'
-merged_df_passenger = merged_df[merged_df['lane_type'] == 'pedestrian']
-
-# Unir df7 con merged_df_passenger utilizando el campo 'port_number'
-df8 = pd.merge(merged_df_passenger, df7, on='port_number', how='left')
-
-# Insertar la columna 'lane_subtype' con el valor 'FAST lanes' después de la columna 'update_time'
-df8.insert(df8.columns.get_loc('update_time') + 1, 'lane_subtype', 'ready_lanes')
-
-# Unir los DataFrames merged4_df y df8 en el DataFrame final_df
-final_df = pd.concat([final_df, df8], ignore_index=True)
+# Concatenate all DataFrames
+final_df = pd.concat([merged4_df] + special_dfs, ignore_index=True)
 
 # Reemplazar "At Noon" por "At 12:00 pm" en la columna 'update_time'
 final_df['update_time'] = final_df['update_time'].str.replace(r'At Noon', 'At 12:00 pm', regex=True)
@@ -332,6 +258,7 @@ print(final_df.head())
 
 #data_to_insert = final_df.to_dict(orient="records")
 
+# --- Bulk Insert to Database ---
 try:
     connection = psycopg2.connect(
         user=USER,
@@ -341,27 +268,18 @@ try:
         dbname=DBNAME
     )
     print("Conexión exitosa a la base de datos.")
-    
-    # Create a cursor to execute SQL queries
     cursor = connection.cursor()
-
     table_name = "cruces_fronterizos"
     columns = list(final_df.columns)
     insert_sql = (
         f"INSERT INTO {table_name} ({', '.join(columns)}) "
         f"VALUES ({', '.join(['%s'] * len(columns))});"
     )
-
     records = final_df.values.tolist()
-    for record in records:
-        cursor.execute(insert_sql, record)
-
+    cursor.executemany(insert_sql, records)  # Bulk insert
     connection.commit()
-
-    # Close the cursor and connection
     cursor.close()
     connection.close()
     print("Conexión cerrada.")
-
 except Exception as e:
     print(f"Error al insertar datos: {e}")

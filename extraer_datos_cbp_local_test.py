@@ -1,0 +1,193 @@
+import requests
+import pandas as pd
+import xml.etree.ElementTree as ET
+import pytz
+from datetime import datetime
+import os
+
+# For local testing, allow user to specify XML file or use RSS URL
+def get_xml_content():
+    xml_path = input("Enter path to XML file for local test (leave blank to use RSS_FEED_URL): ").strip()
+    if xml_path:
+        with open(xml_path, 'r', encoding='utf-8') as f:
+            return f.read()
+    else:
+        from dotenv import load_dotenv
+        load_dotenv()
+        RSS_URL = os.getenv("RSS_FEED_URL")
+        response = requests.get(RSS_URL)
+        response.raise_for_status()
+        return response.content
+
+xml_content = get_xml_content()
+xml_file = ET.fromstring(xml_content)
+
+# Analizar el archivo XML
+root = ET.ElementTree(xml_file).getroot()
+
+def parse_element(element, parent_tag=""):
+    data = {}
+    for child in element:
+        tag_name = f"{parent_tag}.{child.tag}" if parent_tag else child.tag
+        if len(child) > 0:
+            data.update(parse_element(child, tag_name))
+        else:
+            data[tag_name] = child.text if child.text is not None else ""
+    return data
+
+data = []
+for port in root.findall(".//port"):
+    port_data = parse_element(port)
+    data.append(port_data)
+
+df = pd.DataFrame(data)
+
+def pivot_col(datafram, piv_columns, id_cols, col_name, col_value):
+    piv_df = datafram.melt(
+        id_vars=id_cols,
+        value_vars=piv_columns.keys(),
+        var_name=col_name,
+        value_name=col_value
+    )
+    piv_df[col_name] = piv_df[col_name].map(piv_columns)
+    return piv_df
+
+# --- Standard lanes pivots ---
+pivot_columns = {
+    'commercial_automation_type': 'commercial',
+    'passenger_automation_type': 'passenger',
+    'pedestrain_automation_type': 'pedestrian'
+}
+id_columns=['port_number', 'border', 'port_name', 'crossing_name', 'hours', 'date', 'port_status', 'construction_notice']
+column_name='lane_type'
+column_value='automation_type'
+df1=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
+
+pivot_columns = {
+    'commercial_vehicle_lanes.maximum_lanes': 'commercial',
+    'passenger_vehicle_lanes.maximum_lanes': 'passenger',
+    'pedestrian_lanes.maximum_lanes': 'pedestrian'
+}
+id_columns=['port_number']
+column_value='max_lanes'
+df2=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
+
+pivot_columns = {
+    'commercial_vehicle_lanes.standard_lanes.update_time': 'commercial',
+    'passenger_vehicle_lanes.standard_lanes.update_time': 'passenger',
+    'pedestrian_lanes.standard_lanes.update_time': 'pedestrian'
+}
+column_value='update_time'
+df3=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
+df3['lane_subtype'] = 'standard'
+
+pivot_columns = {
+    'commercial_vehicle_lanes.standard_lanes.lanes_open': 'commercial',
+    'passenger_vehicle_lanes.standard_lanes.lanes_open': 'passenger',
+    'pedestrian_lanes.standard_lanes.lanes_open': 'pedestrian'
+}
+column_value='lanes_open'
+df4=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
+
+pivot_columns = {
+    'commercial_vehicle_lanes.standard_lanes.operational_status': 'commercial',
+    'passenger_vehicle_lanes.standard_lanes.operational_status': 'passenger',
+    'pedestrian_lanes.standard_lanes.operational_status': 'pedestrian'
+}
+column_value='operational_status'
+df5=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
+
+pivot_columns = {
+    'commercial_vehicle_lanes.standard_lanes.delay_minutes': 'commercial',
+    'passenger_vehicle_lanes.standard_lanes.delay_minutes': 'passenger',
+    'pedestrian_lanes.standard_lanes.delay_minutes': 'pedestrian'
+}
+column_value='delay_minutes'
+df6=pivot_col(df, pivot_columns, id_columns, column_name, column_value)
+
+merged_df = pd.merge(df1, df2, on=['port_number', 'lane_type'], how='left')
+merged1_df = pd.merge(merged_df, df3, on=['port_number', 'lane_type'], how='left')
+merged2_df = pd.merge(merged1_df, df4, on=['port_number', 'lane_type'], how='left')
+merged3_df = pd.merge(merged2_df, df5, on=['port_number', 'lane_type'], how='left')
+merged4_df = pd.merge(merged3_df, df6, on=['port_number', 'lane_type'], how='left')
+
+# --- Special lanes ---
+special_lanes = [
+    ('commercial', 'commercial_vehicle_lanes', 'FAST_lanes', 'FAST lanes'),
+    ('passenger', 'passenger_vehicle_lanes', 'NEXUS_SENTRI_lanes', 'NEXUS SENTRI lane'),
+    ('passenger', 'passenger_vehicle_lanes', 'ready_lanes', 'ready_lanes'),
+    ('pedestrian', 'pedestrian_lanes', 'ready_lanes', 'ready_lanes')
+]
+special_dfs = []
+for lane_type, prefix, key, subtype in special_lanes:
+    base_cols = [
+        'port_number',
+        f'{prefix}.{key}.operational_status',
+        f'{prefix}.{key}.update_time',
+        f'{prefix}.{key}.delay_minutes',
+        f'{prefix}.{key}.lanes_open'
+    ]
+    cols = [c for c in base_cols if c in df.columns]
+    if len(cols) < 2:
+        continue
+    temp = df[cols].copy()
+    rename_dict = {
+        f'{prefix}.{key}.operational_status': 'operational_status',
+        f'{prefix}.{key}.update_time': 'update_time',
+        f'{prefix}.{key}.delay_minutes': 'delay_minutes',
+        f'{prefix}.{key}.lanes_open': 'lanes_open'
+    }
+    temp.rename(columns=rename_dict, inplace=True)
+    temp['lane_type'] = lane_type
+    temp['lane_subtype'] = subtype
+    special_dfs.append(temp)
+
+final_df = pd.concat([merged4_df] + special_dfs, ignore_index=True)
+
+final_df['update_time'] = final_df['update_time'].str.replace(r'At Noon', 'At 12:00 pm', regex=True)
+final_df[['time', 'time_zone']] = final_df['update_time'].str.extract(r'At (\d{1,2}:\d{2} (?:am|pm)) (\w{3})')
+final_df['time'] = final_df['time'].str.replace(r'^0:', '12:', regex=True)
+final_df['time'] = pd.to_datetime(final_df['time'], format='%I:%M %p').dt.time
+
+time_zone_mapping = {
+    'EDT': 'US/Eastern',
+    'EST': 'US/Eastern',
+    'CDT': 'US/Central',
+    'CST': 'US/Central',
+    'MDT': 'US/Mountain',
+    'MST': 'US/Mountain',
+    'PDT': 'US/Pacific',
+    'PST': 'US/Pacific'
+}
+
+def convert_to_mdt(row):
+    try:
+        local_tz_name = time_zone_mapping.get(row['time_zone'], None)
+        if not local_tz_name:
+            return None
+        local_tz = pytz.timezone(local_tz_name)
+        mdt_tz = pytz.timezone('US/Mountain')
+        local_time = local_tz.localize(datetime.combine(datetime.today(), row['time']))
+        mdt_time = local_time.astimezone(mdt_tz)
+        return mdt_time.strftime('%H:%M:%S')
+    except Exception as e:
+        print(f"Error al convertir la hora: {e}")
+        return None
+
+final_df['time_mdt'] = final_df.apply(convert_to_mdt, axis=1)
+final_df['time'] = final_df['time'].apply(lambda x: None if pd.isnull(x) else x)
+final_df['time_mdt'] = final_df['time_mdt'].apply(lambda x: None if pd.isnull(x) else x)
+final_df.replace("", None, inplace=True)
+final_df = final_df.where(pd.notnull(final_df), None)
+
+print(final_df.head())
+
+# Save to CSV for local inspection
+def get_csv_path():
+    default = 'csv_files/rss_local_test.csv'
+    path = input(f"Enter CSV output path (default: {default}): ").strip()
+    return path if path else default
+
+csv_file = get_csv_path()
+final_df.to_csv(csv_file, index=False, encoding="utf-8")
+print(f"CSV saved to {csv_file}")
