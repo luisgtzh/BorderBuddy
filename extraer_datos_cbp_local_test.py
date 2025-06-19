@@ -191,3 +191,44 @@ def get_csv_path():
 csv_file = get_csv_path()
 final_df.to_csv(csv_file, index=False, encoding="utf-8")
 print(f"CSV saved to {csv_file}")
+
+# --- Add port_id to final_df by merging with puertos.csv ---
+puertos_csv_path = '../Supabase/puertos.csv'
+puertos_df = pd.read_csv(puertos_csv_path)
+puertos_df['port_name'] = puertos_df['port_name'].astype(str).str.strip()
+puertos_df['border'] = puertos_df['border'].astype(str).str.strip()
+if 'port_name' in final_df.columns and 'border' in final_df.columns:
+    final_df['port_name'] = final_df['port_name'].astype(str).str.strip()
+    final_df['border'] = final_df['border'].astype(str).str.strip()
+    final_df = pd.merge(final_df, puertos_df[['id', 'port_name', 'border']], on=['port_name', 'border'], how='left')
+    final_df.rename(columns={'id': 'port_id'}, inplace=True)
+else:
+    # If port_name/border are missing, fill with None for compatibility
+    final_df['port_id'] = None
+
+# Remove rows from final_df where port_id is missing (None or nan)
+final_df = final_df[final_df['port_id'].notnull() & (final_df['port_id'].astype(str).str.lower() != 'none')]
+
+# --- Simulate cruces table update for local test ---
+cruces_csv_path = '../Supabase/cruces.csv'
+cruces_df = pd.read_csv(cruces_csv_path)
+for col in ['crossing_name', 'port_id', 'lane_type', 'lane_subtype']:
+    cruces_df[col] = cruces_df[col].astype(str).str.strip().str.lower()
+    if col in final_df.columns:
+        final_df[col] = final_df[col].astype(str).str.strip().str.lower()
+    else:
+        final_df[col] = None
+cruces_df['merge_key'] = cruces_df['crossing_name'] + '|' + cruces_df['port_id'] + '|' + cruces_df['lane_type'] + '|' + cruces_df['lane_subtype']
+final_df['merge_key'] = final_df['crossing_name'] + '|' + final_df['port_id'] + '|' + final_df['lane_type'] + '|' + final_df['lane_subtype']
+cruces_df.set_index('merge_key', inplace=True)
+final_df.set_index('merge_key', inplace=True)
+update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time']
+# Only update rows where the merge key exists in both DataFrames
+common_keys = cruces_df.index.intersection(final_df.index)
+for col in update_cols:
+    if col in final_df.columns:
+        cruces_df.loc[common_keys, col] = final_df.loc[common_keys, col]
+cruces_df.reset_index(drop=True, inplace=True)
+updated_cruces_csv = 'csv_files/cruces_updated_local_test.csv'
+cruces_df.to_csv(updated_cruces_csv, index=False, encoding='utf-8')
+print(f"Updated cruces table saved to {updated_cruces_csv}")
