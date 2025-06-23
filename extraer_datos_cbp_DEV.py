@@ -15,11 +15,11 @@ load_dotenv()
 RSS_URL = os.getenv("RSS_FEED_URL")
 
 # Detalles de conexión a la base de datos
-USER = os.getenv("SUPABASE_USER")
-PASSWORD = os.getenv("SUPABASE_PASSWORD")
-HOST = os.getenv("SUPABASE_HOST")
-PORT = os.getenv("SUPABASE_PORT")
-DBNAME = os.getenv("SUPABASE_DBNAME")
+USER = os.getenv("SUPABASE_USER_DEV")
+PASSWORD = os.getenv("SUPABASE_PASSWORD_DEV")
+HOST = os.getenv("SUPABASE_HOST_DEV")
+PORT = os.getenv("SUPABASE_PORT_DEV")
+DBNAME = os.getenv("SUPABASE_DBNAME_DEV")
 
 # Fetch the XML data
 response = requests.get(RSS_URL)
