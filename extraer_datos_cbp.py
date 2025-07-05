@@ -315,11 +315,23 @@ try:
         final_df.set_index('merge_key', inplace=True)
         update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time']
         common_keys = cruces_df.index.intersection(final_df.index)
+        # Ensure update columns are object dtype to avoid dtype warnings
         for col in update_cols:
-            if col in final_df.columns:
-                cruces_df.loc[common_keys, col] = final_df.loc[common_keys, col]
+            if col in cruces_df.columns:
+                cruces_df[col] = cruces_df[col].astype('object')
+        # Merge logic: for each cell, use value from final_df if not null/empty, else keep cruces_df value
+        for key in common_keys:
+            for col in update_cols:
+                if col in final_df.columns:
+                    val = final_df.at[key, col]
+                    if val is not None and (not (isinstance(val, float) and pd.isnull(val))) and str(val).strip() != '':
+                        cruces_df.at[key, col] = val
+        # Convert columns that should be integers to Int64 (nullable integer)
+        int_columns = ['lanes_open', 'delay_minutes', 'max_lanes']
+        for col in int_columns:
+            if col in cruces_df.columns:
+                cruces_df[col] = pd.to_numeric(cruces_df[col], errors='coerce').astype('Int64')
         cruces_df.reset_index(drop=True, inplace=True)
-
         # Use a temp table for safe update
         temp_table = 'cruces_temp_update'
         cursor.execute(f"DROP TABLE IF EXISTS {temp_table};")
@@ -334,10 +346,10 @@ try:
         cursor.execute(f'INSERT INTO cruces SELECT * FROM {temp_table};')
         cursor.execute(f'DROP TABLE {temp_table};')
         cursor.execute('COMMIT;')
-        print('cruces table updated successfully.')
+        print('cruces table updated successfully (merged with non-null values from final_df).')
     except Exception as e:
         connection.rollback()
-        print(f"Error al actualizar cruces: {e}")
+        print(f"Error al actualizar cruces (overwrite non-null values): {e}")
 
     cursor.close()
     connection.close()
