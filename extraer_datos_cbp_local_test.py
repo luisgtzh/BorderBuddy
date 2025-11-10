@@ -41,6 +41,22 @@ for port in root.findall(".//port"):
     data.append(port_data)
 
 df = pd.DataFrame(data)
+CONTEXT_COLUMNS = [
+    'port_number', 'border', 'port_name', 'crossing_name',
+    'hours', 'date', 'port_status', 'construction_notice'
+]
+
+def read_csv_with_fallback(path, **kwargs):
+    """Try a handful of encodings so local CSVs with ANSI characters still load."""
+    encodings = ['utf-8', 'latin-1', 'cp1252']
+    last_err = None
+    for enc in encodings:
+        try:
+            return pd.read_csv(path, encoding=enc, **kwargs)
+        except UnicodeDecodeError as exc:
+            last_err = exc
+            continue
+    raise last_err  # Bubble up the final error if all encodings fail
 
 def pivot_col(datafram, piv_columns, id_cols, col_name, col_value):
     piv_df = datafram.melt(
@@ -119,16 +135,16 @@ special_lanes = [
     ('pedestrian', 'pedestrian_lanes', 'ready_lanes', 'ready_lanes')
 ]
 special_dfs = []
+context_cols = [c for c in CONTEXT_COLUMNS if c in df.columns]
 for lane_type, prefix, key, subtype in special_lanes:
-    base_cols = [
-        'port_number',
+    metric_cols = [
         f'{prefix}.{key}.operational_status',
         f'{prefix}.{key}.update_time',
         f'{prefix}.{key}.delay_minutes',
         f'{prefix}.{key}.lanes_open'
     ]
-    cols = [c for c in base_cols if c in df.columns]
-    if len(cols) < 2:
+    cols = context_cols + [c for c in metric_cols if c in df.columns]
+    if len(cols) <= len(context_cols):
         continue
     temp = df[cols].copy()
     rename_dict = {
@@ -140,6 +156,8 @@ for lane_type, prefix, key, subtype in special_lanes:
     temp.rename(columns=rename_dict, inplace=True)
     temp['lane_type'] = lane_type
     temp['lane_subtype'] = subtype
+    if 'automation_type' not in temp.columns:
+        temp['automation_type'] = None
     special_dfs.append(temp)
 
 final_df = pd.concat([merged4_df] + special_dfs, ignore_index=True)
@@ -194,7 +212,7 @@ print(f"CSV saved to {csv_file}")
 
 # --- Add port_id to final_df by merging with puertos.csv ---
 puertos_csv_path = '../Supabase/puertos.csv'
-puertos_df = pd.read_csv(puertos_csv_path)
+puertos_df = read_csv_with_fallback(puertos_csv_path)
 puertos_df['port_name'] = puertos_df['port_name'].astype(str).str.strip()
 puertos_df['border'] = puertos_df['border'].astype(str).str.strip()
 if 'port_name' in final_df.columns and 'border' in final_df.columns:
@@ -206,18 +224,17 @@ else:
     # If port_name/border are missing, fill with None for compatibility
     final_df['port_id'] = None
 
-# Remove rows from final_df where port_id is missing (None or nan)
-final_df = final_df[final_df['port_id'].notnull() & (final_df['port_id'].astype(str).str.lower() != 'none')]
-
 # --- Simulate cruces table update for local test ---
 cruces_csv_path = '../Supabase/cruces.csv'
-cruces_df = pd.read_csv(cruces_csv_path)
+cruces_df = read_csv_with_fallback(cruces_csv_path)
 for col in ['crossing_name', 'port_id', 'lane_type', 'lane_subtype']:
     cruces_df[col] = cruces_df[col].astype(str).str.strip().str.lower()
     if col in final_df.columns:
         final_df[col] = final_df[col].astype(str).str.strip().str.lower()
     else:
         final_df[col] = None
+# Remove rows from final_df where port_id is missing (None or nan)
+final_df = final_df[final_df['port_id'].notnull() & (final_df['port_id'].astype(str).str.lower() != 'none')]
 cruces_df['merge_key'] = cruces_df['crossing_name'] + '|' + cruces_df['port_id'] + '|' + cruces_df['lane_type'] + '|' + cruces_df['lane_subtype']
 final_df['merge_key'] = final_df['crossing_name'] + '|' + final_df['port_id'] + '|' + final_df['lane_type'] + '|' + final_df['lane_subtype']
 cruces_df.set_index('merge_key', inplace=True)
@@ -225,9 +242,21 @@ final_df.set_index('merge_key', inplace=True)
 update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time']
 # Only update rows where the merge key exists in both DataFrames
 common_keys = cruces_df.index.intersection(final_df.index)
+# Ensure update columns are objects so pandas lets us mix str/numbers safely
 for col in update_cols:
-    if col in final_df.columns:
-        cruces_df.loc[common_keys, col] = final_df.loc[common_keys, col]
+    if col in cruces_df.columns:
+        cruces_df[col] = cruces_df[col].astype('object')
+for key in common_keys:
+    for col in update_cols:
+        if col in final_df.columns:
+            val = final_df.at[key, col]
+            if val is not None and (not (isinstance(val, float) and pd.isnull(val))) and str(val).strip() != '':
+                cruces_df.at[key, col] = val
+# Align numeric fields with the production script behaviour
+int_columns = ['lanes_open', 'delay_minutes', 'max_lanes']
+for col in int_columns:
+    if col in cruces_df.columns:
+        cruces_df[col] = pd.to_numeric(cruces_df[col], errors='coerce').astype('Int64')
 cruces_df.reset_index(drop=True, inplace=True)
 updated_cruces_csv = 'csv_files/cruces_updated_local_test.csv'
 cruces_df.to_csv(updated_cruces_csv, index=False, encoding='utf-8')

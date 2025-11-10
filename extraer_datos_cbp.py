@@ -57,6 +57,11 @@ for port in root.findall(".//port"):
 df = pd.DataFrame(data)
 df.head(5)
 
+CONTEXT_COLUMNS = [
+    'port_number', 'border', 'port_name', 'crossing_name',
+    'hours', 'date', 'port_status', 'construction_notice'
+]
+
 def pivot_col(datafram, piv_columns, id_cols, col_name, col_value):
     # Reestructurar el DataFrame usando melt
     # print(datafram.columns)
@@ -186,17 +191,16 @@ special_lanes = [
     ('pedestrian', 'pedestrian_lanes', 'ready_lanes', 'ready_lanes')
 ]
 special_dfs = []
+context_cols = [c for c in CONTEXT_COLUMNS if c in df.columns]
 for lane_type, prefix, key, subtype in special_lanes:
-    base_cols = [
-        'port_number',
+    metric_cols = [
         f'{prefix}.{key}.operational_status',
         f'{prefix}.{key}.update_time',
         f'{prefix}.{key}.delay_minutes',
         f'{prefix}.{key}.lanes_open'
     ]
-    # Only keep columns that exist in df
-    cols = [c for c in base_cols if c in df.columns]
-    if len(cols) < 2:
+    cols = context_cols + [c for c in metric_cols if c in df.columns]
+    if len(cols) <= len(context_cols):
         continue
     temp = df[cols].copy()
     rename_dict = {
@@ -208,6 +212,8 @@ for lane_type, prefix, key, subtype in special_lanes:
     temp.rename(columns=rename_dict, inplace=True)
     temp['lane_type'] = lane_type
     temp['lane_subtype'] = subtype
+    if 'automation_type' not in temp.columns:
+        temp['automation_type'] = None
     special_dfs.append(temp)
 
 # Concatenate all DataFrames
