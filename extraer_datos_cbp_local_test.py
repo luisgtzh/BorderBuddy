@@ -162,6 +162,11 @@ for lane_type, prefix, key, subtype in special_lanes:
 
 final_df = pd.concat([merged4_df] + special_dfs, ignore_index=True)
 
+# Ensure these fields are always present so they appear in local outputs
+for col in ['construction_notice', 'operational_status']:
+    if col not in final_df.columns:
+        final_df[col] = None
+
 final_df['update_time'] = final_df['update_time'].str.replace(r'At Noon', 'At 12:00 pm', regex=True)
 final_df[['time', 'time_zone']] = final_df['update_time'].str.extract(r'At (\d{1,2}:\d{2} (?:am|pm)) (\w{3})')
 final_df['time'] = final_df['time'].str.replace(r'^0:', '12:', regex=True)
@@ -227,6 +232,10 @@ else:
 # --- Simulate cruces table update for local test ---
 cruces_csv_path = '../Supabase/cruces.csv'
 cruces_df = read_csv_with_fallback(cruces_csv_path)
+# Ensure cruces_df has the descriptive columns we want to surface
+for col in ['construction_notice', 'operational_status']:
+    if col not in cruces_df.columns:
+        cruces_df[col] = None
 for col in ['crossing_name', 'port_id', 'lane_type', 'lane_subtype']:
     cruces_df[col] = cruces_df[col].astype(str).str.strip().str.lower()
     if col in final_df.columns:
@@ -239,7 +248,7 @@ cruces_df['merge_key'] = cruces_df['crossing_name'] + '|' + cruces_df['port_id']
 final_df['merge_key'] = final_df['crossing_name'] + '|' + final_df['port_id'] + '|' + final_df['lane_type'] + '|' + final_df['lane_subtype']
 cruces_df.set_index('merge_key', inplace=True)
 final_df.set_index('merge_key', inplace=True)
-update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time']
+update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time', 'construction_notice', 'operational_status']
 # Only update rows where the merge key exists in both DataFrames
 common_keys = cruces_df.index.intersection(final_df.index)
 # Ensure update columns are objects so pandas lets us mix str/numbers safely

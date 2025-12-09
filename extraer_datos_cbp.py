@@ -13,6 +13,7 @@ import psycopg2
 
 load_dotenv()
 RSS_URL = os.getenv("RSS_FEED_URL")
+ENV = (os.getenv("ENV") or "dev").lower()
 
 # Detalles de conexión a la base de datos
 USER = os.getenv("SUPABASE_USER")
@@ -28,7 +29,8 @@ response.raise_for_status()  # Raise an exception for HTTP errors
 # Parse the XML data
 xml_file = ET.fromstring(response.content)
 
-print(xml_file)
+if ENV != "prod":
+    print(xml_file)
 
 # Analizar el archivo XML
 tree = ET.ElementTree(xml_file)
@@ -219,6 +221,11 @@ for lane_type, prefix, key, subtype in special_lanes:
 # Concatenate all DataFrames
 final_df = pd.concat([merged4_df] + special_dfs, ignore_index=True)
 
+# Ensure these fields are always present for downstream inserts/updates
+for col in ['construction_notice', 'operational_status']:
+    if col not in final_df.columns:
+        final_df[col] = None
+
 # Reemplazar "At Noon" por "At 12:00 pm" en la columna 'update_time'
 final_df['update_time'] = final_df['update_time'].str.replace(r'At Noon', 'At 12:00 pm', regex=True)
 
@@ -256,7 +263,8 @@ final_df.replace("", None, inplace=True)
 final_df = final_df.where(pd.notnull(final_df), None)
 
 # Verificar el resultado
-print(final_df.head())
+if ENV != "prod":
+    print(final_df.head())
 
 # Guardar el DataFrame en un archivo CSV
 #csv_file = "csv_files/rss-2025-03-28_16-04-56.csv"
@@ -277,23 +285,37 @@ try:
     cursor = connection.cursor()
 
     # --- Transaction 1: Insert into cruces_fronterizos ---
-    try:
-        table_name = "cruces_fronterizos"
-        columns = list(final_df.columns)
-        insert_sql = (
-            f"INSERT INTO {table_name} ({', '.join(columns)}) "
-            f"VALUES ({', '.join(['%s'] * len(columns))});"
-        )
-        records = final_df.values.tolist()
-        cursor.executemany(insert_sql, records)  # Bulk insert
-        connection.commit()
-        print("Datos insertados en cruces_fronterizos.")
-    except Exception as e:
-        connection.rollback()
-        print(f"Error al insertar datos en cruces_fronterizos: {e}")
+    if ENV == "prod":
+        try:
+            table_name = "cruces_fronterizos"
+            columns = list(final_df.columns)
+            insert_sql = (
+                f"INSERT INTO {table_name} ({', '.join(columns)}) "
+                f"VALUES ({', '.join(['%s'] * len(columns))});"
+            )
+            records = final_df.values.tolist()
+            cursor.executemany(insert_sql, records)  # Bulk insert
+            connection.commit()
+            print("Datos insertados en cruces_fronterizos.")
+        except Exception as e:
+            connection.rollback()
+            print(f"Error al insertar datos en cruces_fronterizos: {e}")
+    else:
+        print(f"ENV='{ENV}' detectado; se omite inserción en cruces_fronterizos.")
 
     # --- Transaction 2: Update cruces table ---
     try:
+        # Get current cruces table schema to align columns/order
+        cursor.execute(
+            """
+            SELECT column_name
+            FROM information_schema.columns
+            WHERE table_schema = 'public' AND table_name = 'cruces'
+            ORDER BY ordinal_position
+            """
+        )
+        cruces_columns = [row[0] for row in cursor.fetchall()]
+
         # Getpuertos table from Supabase 
         puertos_df = pd.read_sql('SELECT id, port_name, border FROM puertos', connection)
         puertos_df['port_name'] = puertos_df['port_name'].astype(str).str.strip()
@@ -307,6 +329,12 @@ try:
             final_df['port_id'] = None
 
         cruces_df = pd.read_sql('SELECT * FROM cruces', connection)
+        # Add any schema columns that might be missing in the DataFrame
+        for col in cruces_columns:
+            if col not in cruces_df.columns:
+                cruces_df[col] = None
+        # Drop any unexpected columns and align order to match the table for COPY
+        cruces_df = cruces_df[[c for c in cruces_columns if c in cruces_df.columns]]
         for col in ['crossing_name', 'port_id', 'lane_type', 'lane_subtype']:
             cruces_df[col] = cruces_df[col].astype(str).str.strip().str.lower()
             if col in final_df.columns:
@@ -319,12 +347,12 @@ try:
         final_df['merge_key'] = final_df['crossing_name'] + '|' + final_df['port_id'] + '|' + final_df['lane_type'] + '|' + final_df['lane_subtype']
         cruces_df.set_index('merge_key', inplace=True)
         final_df.set_index('merge_key', inplace=True)
-        update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time']
+        update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time', 'construction_notice', 'operational_status']
+        update_cols = [col for col in update_cols if col in cruces_columns]  # only work with columns that exist in the table
         common_keys = cruces_df.index.intersection(final_df.index)
         # Ensure update columns are object dtype to avoid dtype warnings
         for col in update_cols:
-            if col in cruces_df.columns:
-                cruces_df[col] = cruces_df[col].astype('object')
+            cruces_df[col] = cruces_df[col].astype('object')
         # Merge logic: for each cell, use value from final_df if not null/empty, else keep cruces_df value
         for key in common_keys:
             for col in update_cols:
@@ -338,15 +366,19 @@ try:
             if col in cruces_df.columns:
                 cruces_df[col] = pd.to_numeric(cruces_df[col], errors='coerce').astype('Int64')
         cruces_df.reset_index(drop=True, inplace=True)
+        # Ensure column order matches table schema for COPY and fill missing schema cols with nulls
+        cruces_df = cruces_df.reindex(columns=cruces_columns)
+        cruces_df = cruces_df.where(pd.notnull(cruces_df), None)
         # Use a temp table for safe update
         temp_table = 'cruces_temp_update'
         cursor.execute(f"DROP TABLE IF EXISTS {temp_table};")
         cursor.execute(f"CREATE TABLE {temp_table} (LIKE cruces INCLUDING ALL);")
         from io import StringIO
         sio = StringIO()
-        cruces_df.to_csv(sio, sep='\t', header=False, index=False, na_rep='\\N')
+        cruces_df.to_csv(sio, header=False, index=False, na_rep='\\N')
         sio.seek(0)
-        cursor.copy_from(sio, temp_table, null='\\N')
+        copy_sql = f"COPY {temp_table} ({', '.join(cruces_columns)}) FROM STDIN WITH (FORMAT CSV, NULL '\\N')"
+        cursor.copy_expert(copy_sql, sio)
         cursor.execute('BEGIN;')
         cursor.execute('DELETE FROM cruces;')
         cursor.execute(f'INSERT INTO cruces SELECT * FROM {temp_table};')
