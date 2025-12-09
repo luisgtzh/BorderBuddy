@@ -1,10 +1,10 @@
 id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,lanes_open,time,time_zone,update_time
 0008a2fb-9274-4b9f-8cab-a396866c3099,ferry point,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,pedestrian,ready_lanes,,,,,,
-01b47da5-18ee-4197-9d95-cae6c6538905,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,standard,4,2,2,11:00:00,MST,At 11:00 am MST
-01cc233b-151a-4ae9-9cb5-8472806d158d,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,standard,17,3,3,12:55:00,EST,At 12:55 pm EST
-022d5643-13c2-4f8d-b177-38011e685c90,bridge i,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,pedestrian,ready_lanes,,0,3,11:00:00,CST,At 11:00 am CST
+01b47da5-18ee-4197-9d95-cae6c6538905,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,standard,4,1,1,18:00:00,MST,At 6:00 pm MST
+01cc233b-151a-4ae9-9cb5-8472806d158d,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,standard,17,1,3,20:57:00,EST,At 8:57 pm EST
+022d5643-13c2-4f8d-b177-38011e685c90,bridge i,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,pedestrian,ready_lanes,,0,2,19:00:00,CST,At 7:00 pm CST
 04822525-58ca-4c33-a60f-d3a46d184497,milltown,baee5bf9-f517-4f1b-b6a4-86387ccf274b,8 am-4 pm,pedestrian,ready_lanes,,,,,,
-04d6e6bf-67c4-4d9f-a56c-a270c500d33c,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,passenger,ready_lanes,,40,3,12:00:00,CST,At 12:00 pm CST
+04d6e6bf-67c4-4d9f-a56c-a270c500d33c,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,passenger,ready_lanes,,50,3,17:00:00,CST,At 5:00 pm CST
 050f3613-19a3-4fae-afd0-90c8e08060f2,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,ready_lanes,,,,,,
 0578c310-4f3e-472d-b497-d1c516a1a82c,rainbow bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,nexus sentri lane,,,,,,
 05afbf06-3744-4358-8f06-f922adb08308,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,commercial,standard,,,,,,
@@ -24,12 +24,12 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 0b0f0c35-5453-494c-8fc9-11f31f984622,stanton dcl,557415d2-3cea-46dc-a527-76d5e2214aba,6 am-Midnight,passenger,ready_lanes,,,,,,
 0bba6ad7-cab3-491a-9ff1-87f0daf74706,stanton dcl,557415d2-3cea-46dc-a527-76d5e2214aba,6 am-Midnight,passenger,standard,3,,,,,
 0c531e62-e942-4dd0-8cff-945a994558f3,highgate springs,8a36cf52-e3ae-4439-b490-99bb8aa90641,24 hrs/day,commercial,fast lanes,,,,,,
-0e4000e3-ee2d-4985-a1a9-4c885e28857f,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,commercial,standard,1,10,1,12:00:00,CST,At 12:00 pm CST
+0e4000e3-ee2d-4985-a1a9-4c885e28857f,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,commercial,standard,1,,,,,
 0e72d06e-1077-4507-9b16-a266713eca33,sweetgrass,3be54429-7665-424a-bdc6-1e9bcc31ac00,24 hrs/day,passenger,standard,,,,,,
 0ec929b3-987a-4b36-a248-51eb3ca146c0,anzalduas international bridge,74ed69d7-569c-4192-9705-1325a4496807,6 am-10 pm,commercial,standard,,,,,,
 0f2fb30b-33ac-48b1-bd18-df77557abc21,bridge of the americas port of entry,4b87de14-ef26-44fb-b21f-1e0c3a47d4be,24 hrs/day,pedestrian,standard,,,,,,
 0ff8cecf-d029-4a7d-9349-5350a2572869,lukeville,685a5bfc-7e29-484c-a930-a37bb989c5e4,6 am-8 pm,passenger,standard,,,,,,
-101b0b62-198f-478c-ac44-e3d6008dd84f,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,commercial,fast lanes,,2,1,12:00:00,EST,At 12:00 pm EST
+101b0b62-198f-478c-ac44-e3d6008dd84f,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,commercial,fast lanes,,,,,,
 103331fa-9d99-408b-9e6b-cc4873e06840,champlain,f6ae4f32-aa38-420a-af0e-2e15ceec4cb0,24 hrs/day,passenger,nexus sentri lane,,,,,,
 107f1bf3-493b-4d53-97c9-a4f73007c401,morley gate,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,10 am-6 pm,passenger,standard,,,,,,
 11163097-4f69-4387-8955-2b0b932e8915,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,ready_lanes,,,,,,
@@ -40,7 +40,7 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 12dcf1bd-dc7e-4de1-9f26-a135ae2b61ea,donna international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,6 am-10 pm,passenger,nexus sentri lane,,,,,,
 14538721-f144-4c8e-8305-a3c30d778759,jackman,e4f627eb-7938-4d14-b817-9f1e93e44987,24 hrs/day,passenger,nexus sentri lane,,,,,,
 14bde798-d722-4bc1-b250-479ae499af60,douglas (raul hector castro),64bfd728-210a-47cd-8c50-6ccb299a50aa,24 hrs/day,commercial,standard,,,,,,
-15422d02-4baa-4e26-b96a-867eeeabf73c,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,pedestrian,ready_lanes,,0,1,12:00:00,CST,At 12:00 pm CST
+15422d02-4baa-4e26-b96a-867eeeabf73c,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,pedestrian,ready_lanes,,,,,,
 165f6be0-4b15-4c04-80f0-440b972e5032,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,pedestrian,ready_lanes,,,,,,
 170f0a0f-41b4-4e42-829d-ac36a1db0375,san ysidro,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,passenger,nexus sentri lane,,,,,,
 1757546e-c639-40d4-9887-71a9d0e9e9b5,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,pedestrian,ready_lanes,,,,,,
@@ -48,57 +48,57 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 17ec9077-53d6-43dc-879c-ddc0c719d893,massena,476ef7fd-f9ab-43be-8895-c8fa1dde670c,24 hrs/day,commercial,standard,,,,,,
 1820daa9-2ab7-4434-ba3e-98aaa84dadff,bridge of americas cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,passenger,standard,,,,,,
 187cd41e-b94e-429b-af9d-d79c38305f96,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,commercial,fast lanes,,,,,,
-18892fed-fad0-4820-8c57-a5c2d434290d,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,pedestrian,standard,10,20,4,12:00:00,CST,At 12:00 pm CST
+18892fed-fad0-4820-8c57-a5c2d434290d,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,pedestrian,standard,10,25,4,17:00:00,CST,At 5:00 pm CST
 1919253b-7dfc-462e-87a5-64e9e5dbbe7c,andrade,877f58b3-ad3c-49d6-88e3-a900b8203bc6,6 am-10 pm,passenger,ready_lanes,,,,,,
-192e18c6-6196-4a51-9568-9e31b163f71c,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,passenger,ready_lanes,,35,7,11:00:00,CST,At 11:00 am CST
-19f27e11-e17a-4528-9f1c-79b3a256b5b3,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,pedestrian,standard,6,0,2,11:00:00,MST,At 11:00 am MST
+192e18c6-6196-4a51-9568-9e31b163f71c,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,passenger,ready_lanes,,55,7,19:00:00,CST,At 7:00 pm CST
+19f27e11-e17a-4528-9f1c-79b3a256b5b3,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,pedestrian,standard,6,0,2,18:00:00,MST,At 6:00 pm MST
 1ad318ed-2fb0-43a7-ab48-4983efb4aba3,sumas,1a4bbf74-cedb-44ef-8198-aa2bb5848979,24 hrs/day,passenger,nexus sentri lane,,,,,,
-1b40730a-5660-43f5-9ee9-be1b66e1718d,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,pedestrian,standard,4,0,1,11:00:00,MST,At 11:00 am MST
-1c23e886-61f5-4ac1-ac3c-aadddb72ee5c,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,pedestrian,standard,6,0,1,12:00:00,CST,At 12:00 pm CST
+1b40730a-5660-43f5-9ee9-be1b66e1718d,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,pedestrian,standard,4,0,1,17:00:00,MST,At 5:00 pm MST
+1c23e886-61f5-4ac1-ac3c-aadddb72ee5c,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,pedestrian,standard,6,5,2,18:00:00,CST,At 6:00 pm CST
 1c25e485-b0ee-4de6-8b9e-bb1d33dcfd41,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,commercial,standard,,,,,,
 1c33678b-b989-4ae2-920e-6c978bcbcefc,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,passenger,nexus sentri lane,,,,,,
 1c3df27e-3dd5-40b7-b63d-9552152e542d,bridge i,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,commercial,standard,,,,,,
 1c830f0b-0ddd-4f3e-b3b0-d3c9d828ce7c,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-8 pm,commercial,fast lanes,,,,,,
 1c8e392d-69a7-4b92-b09a-db6ce08def05,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,passenger,ready_lanes,,,,,,
 1d6eb58e-2a71-4376-861d-8086076c637a,san ysidro,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,passenger,ready_lanes,,,,,,
-1e32a1c7-2b0a-4b31-824e-8a973844ab7a,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,passenger,ready_lanes,,15,1,12:00:00,CST,At 12:00 pm CST
+1e32a1c7-2b0a-4b31-824e-8a973844ab7a,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,passenger,ready_lanes,,,,,,
 1ea1b6d2-71b7-4b09-9e6e-9a58d9f81641,paso del norte,6eb4dcd3-acc2-4379-897c-52d891e6d464,24 hrs/day,passenger,ready_lanes,,,,,,
 1f0af9a4-c660-42d8-ad84-57f864bda3c2,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-8 pm,passenger,ready_lanes,,,,,,
-202324f1-ed4c-417f-a890-1340ff95fa5f,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,commercial,fast lanes,,10,1,12:00:00,CST,At 12:00 pm CST
-20e1a5e3-5aea-44a8-b874-01f49190c00d,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,commercial,fast lanes,,5,1,10:00:00,PST,At 10:00 am PST
+202324f1-ed4c-417f-a890-1340ff95fa5f,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,commercial,fast lanes,,,,,,
+20e1a5e3-5aea-44a8-b874-01f49190c00d,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,commercial,fast lanes,,,,,,
 20eca5f8-bbd7-42b6-a21a-1e2fed436528,highgate springs,8a36cf52-e3ae-4439-b490-99bb8aa90641,24 hrs/day,commercial,standard,,,,,,
-218c9aa1-295b-4aa5-b5bf-22e230056be3,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,passenger,standard,4,5,1,20:00:00,EST,At 8:00 pm EST
+218c9aa1-295b-4aa5-b5bf-22e230056be3,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,passenger,standard,4,0,1,23:00:00,EST,At 11:00 pm EST
 21ac6a48-f37b-41a9-add5-476c3a6cb6d8,lynden,4ff15869-0e87-47b9-83d8-d25ea69a3486,8 am-Midnight,pedestrian,standard,,,,,,
 21ddbe7d-10af-4b19-a06c-b43d51585ef8,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,commercial,standard,,,,,,
 228abc5c-11fa-4da7-82d0-862d9824aad0,gateway,0ae0b715-dbd2-4ec2-8755-da9ad9766b90,24 hrs/day,pedestrian,ready_lanes,,,,,,
 238ac2ae-2964-4f91-a7d7-490b62a5c4a7,lukeville,685a5bfc-7e29-484c-a930-a37bb989c5e4,6 am-8 pm,pedestrian,standard,,,,,,
-2424cdc4-b45f-4775-99c1-54ff68afcf49,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,commercial,standard,13,5,7,13:00:00,EST,At 1:00 pm EST
+2424cdc4-b45f-4775-99c1-54ff68afcf49,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,commercial,standard,13,5,3,20:00:00,EST,At 8:00 pm EST
 2431de5d-ff5a-4a31-98cb-2e7ec1aadd06,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,commercial,fast lanes,,,,,,
 2560b56e-6cac-4f6c-95b3-344d2df23a18,lynden,4ff15869-0e87-47b9-83d8-d25ea69a3486,8 am-Midnight,commercial,standard,,,,,,
 2561b526-ee1e-4a75-a726-befdd3f95795,bridge of the americas port of entry,4b87de14-ef26-44fb-b21f-1e0c3a47d4be,24 hrs/day,passenger,ready_lanes,,,,,,
-25a698ba-65cb-4fcf-acb8-8551e86acaf6,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,passenger,standard,5,15,1,12:00:00,CST,At 12:00 pm CST
+25a698ba-65cb-4fcf-acb8-8551e86acaf6,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,passenger,standard,5,30,3,18:00:00,CST,At 6:00 pm CST
 25cb315e-923d-4485-9ccd-4eb92cf12f5a,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,fast lanes,,,,,,
 26bb8be6-4c3e-429c-99f8-5f62c9301947,gateway,0ae0b715-dbd2-4ec2-8755-da9ad9766b90,24 hrs/day,passenger,nexus sentri lane,,,,,,
 275933d8-8003-4aab-ac40-ce63b95fc203,houlton,b4a74037-d34a-4d29-9e86-daf22535f2b4,24 hrs/day,passenger,nexus sentri lane,,,,,,
-27ec0aec-1db2-43a9-9e19-eb08a1681a49,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,commercial,standard,8,6,4,12:55:00,EST,At 12:55 pm EST
+27ec0aec-1db2-43a9-9e19-eb08a1681a49,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,commercial,standard,8,1,4,20:57:00,EST,At 8:57 pm EST
 281d224f-918c-4e00-b3ca-1d1a8d9c109a,international falls,fc1f0aa7-b765-43b4-96ba-d95b01b8e4ca,24 hrs/day,commercial,fast lanes,,,,,,
 284e55bb-830d-4d2b-aabc-65e4fc287337,douglas (raul hector castro),64bfd728-210a-47cd-8c50-6ccb299a50aa,24 hrs/day,passenger,ready_lanes,,,,,,
-28e343f2-a7b7-4106-8f91-11f5f4f75c50,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,standard,8,0,3,12:55:00,EST,At 12:55 pm EST
-29a39257-5070-4c24-8883-366925b4ee79,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,pedestrian,standard,9,5,2,10:00:00,MST,At 10:00 am MST
+28e343f2-a7b7-4106-8f91-11f5f4f75c50,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,standard,8,10,2,20:57:00,EST,At 8:57 pm EST
+29a39257-5070-4c24-8883-366925b4ee79,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,pedestrian,standard,7,10,4,18:00:00,MST,At 6:00 pm MST
 29ec8452-4eb9-4abc-a457-6a3bb5f2f29a,sweetgrass,3be54429-7665-424a-bdc6-1e9bcc31ac00,24 hrs/day,commercial,fast lanes,,,,,,
 29f99b5d-0ba5-4dcc-b70e-9927b61ddb70,ogdensburg,9306f7a9-e27f-4bf7-83d5-21c43bfffc25,24 hrs/day,passenger,nexus sentri lane,,,,,,
 29fac4c7-67fc-4c21-92dd-d21aba9a4193,columbus,56fc59d7-56e4-4b2f-bb90-99e8058bdacd,24 hrs/day,passenger,nexus sentri lane,,,,,,
 2a567da7-3dc1-4210-b02b-673238c25985,bridge of americas cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,pedestrian,ready_lanes,,,,,,
 2a67234e-83a1-4873-bd96-5f07067f511a,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,passenger,standard,,,,,,
-2c3a0aec-a1b6-4412-995d-dc65d0c0439f,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,commercial,standard,5,0,2,12:00:00,EST,At 12:00 pm EST
+2c3a0aec-a1b6-4412-995d-dc65d0c0439f,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,commercial,standard,5,0,1,20:00:00,EST,At 8:00 pm EST
 2c482dd9-78f0-4be0-8d8f-a9a5e98a9fe1,bota cargo,956e6a6b-3da1-4f40-a136-ce114e612ba4,24 hrs/day,pedestrian,standard,,,,,,
 2c64b69e-0a65-4087-b1d0-964a895825c9,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,24 hrs/day,passenger,ready_lanes,,,,,,
-2ccb89ac-8926-4233-883a-a752ad5c7e8e,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,passenger,standard,4,25,3,11:00:00,MST,At 11:00 am MST
+2ccb89ac-8926-4233-883a-a752ad5c7e8e,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,passenger,standard,4,15,3,19:00:00,MST,At 7:00 pm MST
 2d0ef40c-9dcf-4880-bbc3-39a1a9fc8b17,sumas,1a4bbf74-cedb-44ef-8198-aa2bb5848979,24 hrs/day,pedestrian,standard,,,,,,
-2d1fe8dd-aabd-415d-a8f4-312eeee1ed33,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,commercial,standard,3,15,2,10:00:00,PST,At 10:00 am PST
+2d1fe8dd-aabd-415d-a8f4-312eeee1ed33,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,commercial,standard,3,,,,,
 2d2a58aa-35d1-4bed-8277-46bc64c5fce0,champlain,f6ae4f32-aa38-420a-af0e-2e15ceec4cb0,24 hrs/day,passenger,ready_lanes,,,,,,
-2d2d97bc-b0d1-4c49-808a-b34560442565,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,commercial,standard,3,10,3,09:00:00,PST,At 9:00 am PST
-2e9d7420-d419-4c45-ba69-27055498b713,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,commercial,fast lanes,,0,1,11:00:00,CST,At 11:00 am CST
+2d2d97bc-b0d1-4c49-808a-b34560442565,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,commercial,standard,3,5,2,15:00:00,PST,At 3:00 pm PST
+2e9d7420-d419-4c45-ba69-27055498b713,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,commercial,fast lanes,,,,,,
 2ebd52ca-4d95-4835-bd6c-b884992fe1a2,international falls,fc1f0aa7-b765-43b4-96ba-d95b01b8e4ca,24 hrs/day,commercial,standard,,,,,,
 2ec4991d-7678-4574-8c65-350bb5117f4d,del rio,fd24d198-e536-4706-b9c4-2047446460bb,24 hrs/day,passenger,standard,,,,,,
 2ed88b7c-4cb3-4f99-bf28-419fc651750b,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,pedestrian,standard,,,,,,
@@ -106,16 +106,16 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 2f84526c-f537-4711-80b7-d2dbba472d2c,massena,476ef7fd-f9ab-43be-8895-c8fa1dde670c,24 hrs/day,pedestrian,ready_lanes,,,,,,
 2f88cc2f-be8b-4b51-aefe-cf54803dae0a,sweetgrass,3be54429-7665-424a-bdc6-1e9bcc31ac00,24 hrs/day,commercial,standard,,,,,,
 2fc7c0e4-9be7-4d6b-8e4c-278da8d121f0,houlton,b4a74037-d34a-4d29-9e86-daf22535f2b4,24 hrs/day,pedestrian,ready_lanes,,,,,,
-30334b3b-284b-49fd-8d6b-afa3722893e3,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,standard,4,5,2,10:00:00,MST,At 10:00 am MST
-30806766-f66c-4ff3-b30c-de4307fd32cb,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,passenger,standard,10,,,,,
+30334b3b-284b-49fd-8d6b-afa3722893e3,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,standard,4,20,2,19:00:00,MST,At 7:00 pm MST
+30806766-f66c-4ff3-b30c-de4307fd32cb,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,passenger,standard,10,45,2,17:00:00,CST,At 5:00 pm CST
 30d6bb7d-6d94-4098-9733-b3ab8f8aaeb4,paso del norte,6eb4dcd3-acc2-4379-897c-52d891e6d464,24 hrs/day,passenger,nexus sentri lane,,,,,,
 31500f4b-ce38-4564-b0e8-58105cfa4cad,bota cargo,956e6a6b-3da1-4f40-a136-ce114e612ba4,24 hrs/day,commercial,fast lanes,,,,,,
-32212da3-4594-4dea-92eb-050d23b6b015,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,commercial,standard,4,1,2,12:55:00,EST,At 12:55 pm EST
+32212da3-4594-4dea-92eb-050d23b6b015,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,commercial,standard,4,4,2,20:57:00,EST,At 8:57 pm EST
 3251fb79-490a-40ee-9f59-9cd6239562f4,andrade,877f58b3-ad3c-49d6-88e3-a900b8203bc6,6 am-10 pm,commercial,standard,,,,,,
-32c17be7-e009-4fbe-a84d-9f70a33f4fa6,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,fast lanes,,20,1,11:00:00,MST,At 11:00 am MST
+32c17be7-e009-4fbe-a84d-9f70a33f4fa6,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,fast lanes,,,,,,
 32ef730c-8b26-4487-b9bf-fae5bfcc41dc,bridge i,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,7 am-11 pm,pedestrian,ready_lanes,,,,,,
 32f7c0b6-2beb-47a5-a844-0c881a190b77,bota cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,pedestrian,standard,,,,,,
-33226894-d5d6-4580-ba6a-c687f76e68b5,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,commercial,standard,9,30,6,12:00:00,EST,At 12:00 pm EST
+33226894-d5d6-4580-ba6a-c687f76e68b5,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,commercial,standard,9,32,6,20:00:00,EST,At 8:00 pm EST
 33361075-1cc8-42e4-a1f2-c276749041a5,rio grande city,b8780f6b-8054-4e5b-a063-089d1d9a0c2e,7 am-Midnight,passenger,standard,,,,,,
 339caf27-666f-4aba-bd23-d8af796a498e,donna international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,6 am-10 pm,commercial,fast lanes,,,,,,
 33c1264a-3cee-44d1-bd66-6042b91f2435,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,pedestrian,ready_lanes,,,,,,
@@ -123,12 +123,12 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 34b4995a-945b-4a07-a09d-b24151bfca86,milltown,baee5bf9-f517-4f1b-b6a4-86387ccf274b,8 am-4 pm,passenger,ready_lanes,,,,,,
 34bb3859-f8af-4aa2-b8b8-fc803f8d090b,norton,28e76e11-3b4f-498e-87b5-a1f21e2b2542,24 hrs/day,commercial,fast lanes,,,,,,
 34f905c1-40a9-4302-93e5-7a4d70e35941,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,commercial,fast lanes,,,,,,
-35249de2-f990-45a7-8d43-eb4ea5d4b597,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,commercial,standard,2,0,1,13:00:00,EST,At 1:00 pm EST
+35249de2-f990-45a7-8d43-eb4ea5d4b597,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,commercial,standard,2,0,1,23:00:00,EST,At 11:00 pm EST
 35eff6bd-8c78-480f-b4ed-2a98ae545d3a,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,pedestrian,ready_lanes,,,,,,
 35f2e46c-5e10-498d-bd6f-797d8bbae833,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,6 am-10 pm,passenger,standard,,,,,,
 362612a2-98cc-41e7-a2a1-f05e11d6a072,stanton dcl,557415d2-3cea-46dc-a527-76d5e2214aba,6 am-Midnight,commercial,standard,,,,,,
-364fe224-03e5-4c48-a053-c02bfc09c3cf,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,pedestrian,standard,5,80,3,11:00:00,CST,At 11:00 am CST
-37324b09-871f-4e5f-86ca-b31dfe139c9e,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,passenger,ready_lanes,,90,5,09:00:00,PST,At 9:00 am PST
+364fe224-03e5-4c48-a053-c02bfc09c3cf,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,pedestrian,standard,5,15,1,19:00:00,CST,At 7:00 pm CST
+37324b09-871f-4e5f-86ca-b31dfe139c9e,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,passenger,ready_lanes,,110,5,17:00:00,PST,At 5:00 pm PST
 37867ae7-be8a-42e6-8bc0-aeb22ad132f9,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,ready_lanes,,,,,,
 38b4e13c-fec2-4b9b-81b2-5cb4c47a83d8,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,pedestrian,ready_lanes,,,,,,
 38e28319-4314-461c-abbe-e842a647b761,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,passenger,ready_lanes,,,,,,
@@ -144,45 +144,45 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 3ae30b2e-1cc2-4736-9032-c99b067cdc64,ferry point,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,commercial,standard,,,,,,
 3b80ce91-e11c-451b-8413-92383a778732,progreso international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,24 hrs/day,commercial,fast lanes,,,,,,
 3bffd4c5-48e4-4b58-9bc3-e937ea2d9717,bridge of the americas port of entry,4b87de14-ef26-44fb-b21f-1e0c3a47d4be,24 hrs/day,passenger,nexus sentri lane,,,,,,
-3cb8a31c-3e7a-4926-bd5a-1f2385c1769d,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,passenger,nexus sentri lane,,40,2,11:00:00,MST,At 11:00 am MST
-3d0269de-e4e7-46b3-bd8c-ed177aa67631,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,pedestrian,standard,4,5,3,10:00:00,PST,At 10:00 am PST
+3cb8a31c-3e7a-4926-bd5a-1f2385c1769d,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,passenger,nexus sentri lane,,5,2,18:00:00,MST,At 6:00 pm MST
+3d0269de-e4e7-46b3-bd8c-ed177aa67631,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,pedestrian,standard,4,5,4,18:00:00,PST,At 6:00 pm PST
 3d5aae01-876d-49f8-a4b2-8768593e78af,lynden,4ff15869-0e87-47b9-83d8-d25ea69a3486,8 am-Midnight,passenger,nexus sentri lane,,,,,,
-3d847aad-ef7c-475d-84ae-347aac837a4f,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,commercial,standard,8,60,4,11:00:00,MST,At 11:00 am MST
+3d847aad-ef7c-475d-84ae-347aac837a4f,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,commercial,standard,8,,,,,
 3dd37b4c-aeaf-4201-bbbe-3a74bdf56e30,whirlpool bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,7 am-11 pm,passenger,ready_lanes,,,,,,
 3de571e2-f9ca-4a44-83c1-6543477fd84b,roma,bbc045c7-aa00-4b3a-90cb-eb9ee3c573a0,24 hrs/day,pedestrian,ready_lanes,,,,,,
 3fce6f34-2ee8-4adc-b96f-3bde5240cede,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,passenger,nexus sentri lane,,,,,,
 415e0b21-42e3-4326-9d15-b848fd55501d,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,pedestrian,standard,,,,,,
 41fd9fb8-53d4-4adf-a598-0de11f90c0ad,columbus,56fc59d7-56e4-4b2f-bb90-99e8058bdacd,24 hrs/day,passenger,standard,,,,,,
-42001af6-1e92-44cd-8a33-0409a1828563,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,standard,10,0,4,09:00:00,PST,At 9:00 am PST
-4219bdff-4eec-4585-95e2-81a5c13d610d,bridge i,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,pedestrian,standard,12,0,3,11:00:00,CST,At 11:00 am CST
+42001af6-1e92-44cd-8a33-0409a1828563,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,standard,10,45,4,15:00:00,PST,At 3:00 pm PST
+4219bdff-4eec-4585-95e2-81a5c13d610d,bridge i,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,pedestrian,standard,12,0,2,19:00:00,CST,At 7:00 pm CST
 42a54498-839c-4bc0-b3ce-d4aded995f40,point roberts,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,commercial,standard,1,,,,,
 43907227-e0fe-4626-8e71-ad3f1a29f906,tecate,172c3410-12fd-43e8-bc26-f9ba6083e7d5,6 am-10 pm,pedestrian,standard,,,,,,
 43dd2c68-4162-4a83-b458-74d8de492669,bota cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,passenger,ready_lanes,,,,,,
 445b75b3-e135-4892-9731-aac391077007,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,commercial,fast lanes,,,,,,
 45095d7c-0425-4833-869b-e4ae440941f8,pembina,ae52d269-aeb6-4afd-8ee0-1266ff8dd65d,24 hrs/day,passenger,standard,,,,,,
 452f600c-3533-4f7e-be4b-739a0ccdeba0,donna international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,6 am-10 pm,commercial,standard,,,,,,
-45366970-34da-4501-ab55-915c0641c44c,anzalduas international bridge,74ed69d7-569c-4192-9705-1325a4496807,6 am-10 pm,passenger,standard,6,45,2,12:00:00,CST,At 12:00 pm CST
+45366970-34da-4501-ab55-915c0641c44c,anzalduas international bridge,74ed69d7-569c-4192-9705-1325a4496807,6 am-10 pm,passenger,standard,6,50,2,17:00:00,CST,At 5:00 pm CST
 45853810-83d4-4413-bb49-db1d7308be3b,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,passenger,nexus sentri lane,,,,,,
 46e59832-e063-47a9-9881-c455c2643965,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,pedestrian,ready_lanes,,,,,,
 471f276f-47da-4684-95d7-8b33a3cbcf24,bota cargo,956e6a6b-3da1-4f40-a136-ce114e612ba4,24 hrs/day,passenger,ready_lanes,,,,,,
-482a3fbf-4dfb-4183-92e0-644e37216d4f,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,passenger,standard,15,40,7,11:00:00,CST,At 11:00 am CST
+482a3fbf-4dfb-4183-92e0-644e37216d4f,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,passenger,standard,15,50,6,19:00:00,CST,At 7:00 pm CST
 483f857b-75f5-4531-a5ca-602a0424e83b,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,commercial,standard,,,,,,
 496ae779-07ce-46a8-aaf7-115c7704b20a,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,passenger,nexus sentri lane,,,,,,
-49b6b7f2-8b88-430f-8f9c-a4fcbe2170f6,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,standard,10,5,3,13:00:00,EST,At 1:00 pm EST
+49b6b7f2-8b88-430f-8f9c-a4fcbe2170f6,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,standard,10,0,3,20:00:00,EST,At 8:00 pm EST
 4bc88570-8255-4dc4-b322-ab5e09540947,pembina,ae52d269-aeb6-4afd-8ee0-1266ff8dd65d,24 hrs/day,commercial,standard,,,,,,
-4bd22181-f846-4af4-8f32-875f27bd601d,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,nexus sentri lane,,5,1,13:00:00,EST,At 1:00 pm EST
+4bd22181-f846-4af4-8f32-875f27bd601d,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,nexus sentri lane,,,,,,
 4c4ebfc8-8cbf-468a-9445-f6cc06c55999,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,passenger,nexus sentri lane,,,,,,
 4c5e49d2-7883-4f6c-9d62-93ef72660ef3,massena,476ef7fd-f9ab-43be-8895-c8fa1dde670c,24 hrs/day,pedestrian,standard,,,,,,
 4ca64b7b-9bde-45db-b21c-a5ad3e780e6f,lukeville,685a5bfc-7e29-484c-a930-a37bb989c5e4,6 am-8 pm,passenger,ready_lanes,,,,,,
-4d11a079-9387-44f6-9284-461d691ab735,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,commercial,fast lanes,,0,2,11:00:00,CST,At 11:00 am CST
-4d1fc823-7f08-4810-a186-b7ba04d5dcf0,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,nexus sentri lane,,0,1,09:00:00,PST,At 9:00 am PST
+4d11a079-9387-44f6-9284-461d691ab735,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,commercial,fast lanes,,0,2,19:00:00,CST,At 7:00 pm CST
+4d1fc823-7f08-4810-a186-b7ba04d5dcf0,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,nexus sentri lane,,5,1,15:00:00,PST,At 3:00 pm PST
 4d611a24-6d0b-4e1a-ab14-54daf18ab208,douglas (raul hector castro),64bfd728-210a-47cd-8c50-6ccb299a50aa,24 hrs/day,passenger,standard,,,,,,
 4dee65ec-cf4b-4037-ad08-4428338540dc,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,pedestrian,standard,,,,,,
 4ef01ffc-43c8-4e00-91cb-2dd120f83094,houlton,b4a74037-d34a-4d29-9e86-daf22535f2b4,24 hrs/day,pedestrian,standard,,,,,,
 4f23c3a1-e53b-47ba-b439-65bb7097e93d,gateway,0ae0b715-dbd2-4ec2-8755-da9ad9766b90,24 hrs/day,passenger,ready_lanes,,,,,,
 4f4f209c-009c-4a91-8efa-1f7e0b043cf8,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,pedestrian,ready_lanes,,,,,,
 4f5b2bac-9a62-46dc-b1d5-70bb9062c516,anzalduas international bridge,74ed69d7-569c-4192-9705-1325a4496807,6 am-10 pm,pedestrian,standard,,,,,,
-4fbd64cb-c95a-4f03-b469-2c1efab861e3,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,passenger,standard,4,10,1,11:00:00,CST,At 11:00 am CST
+4fbd64cb-c95a-4f03-b469-2c1efab861e3,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,passenger,standard,4,0,1,19:00:00,CST,At 7:00 pm CST
 500407d6-1750-472e-9c26-5c4523208d80,ogdensburg,9306f7a9-e27f-4bf7-83d5-21c43bfffc25,24 hrs/day,commercial,standard,,,,,,
 50a16548-3803-4b5e-9a19-12b1cf5dac7c,roma texas,16321fb2-b4ed-49d5-9837-235ca962e5b2,24 hrs/day,pedestrian,ready_lanes,,,,,,
 513b9142-239c-4f6e-979a-53c82ea7bf59,columbus,56fc59d7-56e4-4b2f-bb90-99e8058bdacd,24 hrs/day,pedestrian,standard,,,,,,
@@ -191,18 +191,18 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 533dd752-92f3-43e0-97bd-e7c25566a770,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,commercial,fast lanes,,,,,,
 53acba00-0391-4666-b650-43b91bf680b5,progreso - progreso international bridge,922d8ad5-f50e-4a06-9a41-41587097d357,24 hrs/day,passenger,ready_lanes,,,,,,
 5434de68-ca57-46f8-b0bd-66834e40e6be,del rio,fd24d198-e536-4706-b9c4-2047446460bb,24 hrs/day,commercial,fast lanes,,,,,,
-544399db-09fb-47ac-a5a8-bd2245f04885,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,ready_lanes,,,,,,
+544399db-09fb-47ac-a5a8-bd2245f04885,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,ready_lanes,,75,1,19:00:00,CST,At 7:00 pm CST
 545053d2-9d54-4a1c-af68-280dfa9d2501,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,passenger,standard,,,,,,
 54907b91-7b6d-41bf-807e-5877cdc57533,bridge of the americas port of entry,4b87de14-ef26-44fb-b21f-1e0c3a47d4be,24 hrs/day,commercial,standard,,,,,,
 549b603a-e29f-45ed-b95f-fa481d7f6f9e,point roberts,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,commercial,fast lanes,,,,,,
 54dfd934-25a4-4344-a08f-cc16d1c2c802,milltown,baee5bf9-f517-4f1b-b6a4-86387ccf274b,8 am-4 pm,passenger,nexus sentri lane,,,,,,
 5549f559-a261-41d1-b504-a6d31794d0f5,progreso - progreso international bridge,922d8ad5-f50e-4a06-9a41-41587097d357,24 hrs/day,commercial,fast lanes,,,,,,
-56066ace-2d4d-469d-a3f7-6f93a04402fe,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,standard,14,90,3,11:00:00,MST,At 11:00 am MST
+56066ace-2d4d-469d-a3f7-6f93a04402fe,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,standard,14,30,3,18:00:00,MST,At 6:00 pm MST
 56b9aa97-525a-4882-b391-ff86f427a0e6,morley gate,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,10 am-6 pm,pedestrian,ready_lanes,,,,,,
 5723d0bf-fcc0-4a42-a827-e35ed92ef0fe,jackman,e4f627eb-7938-4d14-b817-9f1e93e44987,24 hrs/day,commercial,fast lanes,,,,,,
-579549fc-d3d5-4afc-b3f4-1fc4a10dbe46,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,ready_lanes,,15,2,11:00:00,CST,At 11:00 am CST
+579549fc-d3d5-4afc-b3f4-1fc4a10dbe46,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,ready_lanes,,90,2,19:00:00,CST,At 7:00 pm CST
 57d019eb-5831-4ca6-b363-34f2afe0d012,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,commercial,fast lanes,,,,,,
-58d607d6-5693-4223-a29a-9dd2bb6033f3,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,passenger,standard,16,80,2,10:00:00,PST,At 10:00 am PST
+58d607d6-5693-4223-a29a-9dd2bb6033f3,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,passenger,standard,16,120,2,18:00:00,PST,At 6:00 pm PST
 58f06d5f-dc1c-4567-8055-5b681ef8371f,douglas (raul hector castro),64bfd728-210a-47cd-8c50-6ccb299a50aa,24 hrs/day,pedestrian,standard,,,,,,
 591ea9a7-8112-47f9-9f2a-2da492ed1ad3,madawaska,59c6d37a-2afd-45b7-baa5-a95754bdb439,24 hrs/day,commercial,standard,,,,,,
 59328a9e-a04e-46fe-a5a1-1eee83fef24d,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,passenger,ready_lanes,,,,,,
@@ -217,16 +217,16 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 5b8d3f4a-f165-41df-ad24-8cc0fa5b8914,sumas,1a4bbf74-cedb-44ef-8198-aa2bb5848979,24 hrs/day,commercial,fast lanes,,,,,,
 5beed3e0-b412-4544-8b6c-d6dbe707fc46,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,pedestrian,standard,,,,,,
 5c08f826-2a43-4a6e-9141-b8f0e20f3a71,andrade,877f58b3-ad3c-49d6-88e3-a900b8203bc6,6 am-10 pm,pedestrian,ready_lanes,,,,,,
-5c40b3cc-cae9-416f-92db-37de79f58ce7,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,passenger,standard,7,40,1,10:00:00,MST,At 10:00 am MST
+5c40b3cc-cae9-416f-92db-37de79f58ce7,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,passenger,standard,7,100,2,18:00:00,MST,At 6:00 pm MST
 5cd4f0f1-0d93-446f-94f7-8bd31cd7c9ef,columbus,56fc59d7-56e4-4b2f-bb90-99e8058bdacd,24 hrs/day,pedestrian,ready_lanes,,,,,,
-5d12caf8-4051-432f-b3e6-48cea186caa9,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,passenger,ready_lanes,,,,,,
+5d12caf8-4051-432f-b3e6-48cea186caa9,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,passenger,ready_lanes,,60,1,19:00:00,CST,At 7:00 pm CST
 5df5784a-9cdf-41d1-8504-9a6933a5f2af,ferry point,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,pedestrian,standard,,,,,,
 5e10ac70-bce6-476f-8845-9400bd5f4d80,champlain,f6ae4f32-aa38-420a-af0e-2e15ceec4cb0,24 hrs/day,passenger,standard,,,,,,
-5e849fc8-d6f3-49ce-9e95-a5d0a62e97ec,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,nexus sentri lane,,5,1,09:00:00,PST,At 9:00 am PST
-5f4b0b80-a8a7-435f-9dc1-99c030ccbbc6,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,passenger,nexus sentri lane,,0,1,11:00:00,CST,At 11:00 am CST
-5f9f3d0c-3784-4003-ba15-2b38c0e11a9b,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,passenger,standard,13,60,6,11:00:00,MST,At 11:00 am MST
+5e849fc8-d6f3-49ce-9e95-a5d0a62e97ec,peace arch,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,nexus sentri lane,,30,1,15:00:00,PST,At 3:00 pm PST
+5f4b0b80-a8a7-435f-9dc1-99c030ccbbc6,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,passenger,nexus sentri lane,,0,1,19:00:00,CST,At 7:00 pm CST
+5f9f3d0c-3784-4003-ba15-2b38c0e11a9b,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,passenger,standard,13,60,7,18:00:00,MST,At 6:00 pm MST
 5fcf67e1-033f-4f5e-a342-cf8724cc414f,bota cargo,956e6a6b-3da1-4f40-a136-ce114e612ba4,24 hrs/day,commercial,standard,,,,,,
-5ffc2632-5b44-4e74-b25d-1c3c0ca21a41,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,commercial,standard,4,80,2,11:00:00,CST,At 11:00 am CST
+5ffc2632-5b44-4e74-b25d-1c3c0ca21a41,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,commercial,standard,4,,,,,
 60e164cc-b31d-4393-9667-08f2ce4f3451,international falls,fc1f0aa7-b765-43b4-96ba-d95b01b8e4ca,24 hrs/day,passenger,standard,,,,,,
 61303be1-bdee-4b1c-abcd-e9a0f14fcb27,progreso - progreso international bridge,922d8ad5-f50e-4a06-9a41-41587097d357,24 hrs/day,pedestrian,ready_lanes,,,,,,
 62243000-790b-45a4-bad3-d4890c1e8e0a,san ysidro,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,pedestrian,ready_lanes,,,,,,
@@ -239,12 +239,12 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 65a90626-f219-46a5-8da7-4982886f78f6,bridge i,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,7 am-11 pm,pedestrian,standard,,,,,,
 65c34779-d9ad-4b4b-8793-79496cda7533,whirlpool bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,7 am-11 pm,commercial,standard,,,,,,
 65c8a697-e712-4834-ae54-85970574973e,bota cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,passenger,standard,,,,,,
-65c93195-a719-4469-94d6-f3b852e62f1a,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,passenger,standard,2,5,1,11:00:00,MST,At 11:00 am MST
-65d391fd-9a34-4342-b2dd-d5ffccda1379,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,commercial,standard,19,30,11,11:00:00,CST,At 11:00 am CST
+65c93195-a719-4469-94d6-f3b852e62f1a,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,passenger,standard,2,5,1,17:00:00,MST,At 5:00 pm MST
+65d391fd-9a34-4342-b2dd-d5ffccda1379,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,commercial,standard,19,,,,,
 65e9c195-eb05-4bc9-a295-bfea8e6f2963,andrade,877f58b3-ad3c-49d6-88e3-a900b8203bc6,6 am-10 pm,commercial,fast lanes,,,,,,
 66235839-8bdf-4627-8aa4-9d94e69e52a5,columbus,56fc59d7-56e4-4b2f-bb90-99e8058bdacd,24 hrs/day,commercial,standard,,,,,,
-662968c2-a6ec-4147-85d7-78d11c600ea5,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,passenger,nexus sentri lane,,0,2,12:00:00,CST,At 12:00 pm CST
-6674efec-147c-4080-8870-703484eef313,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,commercial,standard,1,5,1,13:00:00,EST,At 1:00 pm EST
+662968c2-a6ec-4147-85d7-78d11c600ea5,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,passenger,nexus sentri lane,,1,2,17:00:00,CST,At 5:00 pm CST
+6674efec-147c-4080-8870-703484eef313,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,commercial,standard,1,0,1,20:00:00,EST,At 8:00 pm EST
 667fe368-64fd-4be2-b6a9-e548fe757553,lukeville,685a5bfc-7e29-484c-a930-a37bb989c5e4,6 am-8 pm,pedestrian,ready_lanes,,,,,,
 66e70ab4-d0ae-48de-9fcc-a3ddad025f06,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,pedestrian,standard,,,,,,
 67048203-4115-4236-a7f9-44db8179c1c4,anzalduas international bridge,74ed69d7-569c-4192-9705-1325a4496807,6 am-10 pm,passenger,nexus sentri lane,,,,,,
@@ -258,23 +258,23 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 69b1fd13-4b88-4ff3-9376-cbd97b2578fe,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,pedestrian,ready_lanes,,,,,,
 6a3ab81d-5844-4332-93c8-e9f5e1f41fe1,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,passenger,nexus sentri lane,,,,,,
 6ab5163a-124a-465e-ab52-f60c57c73014,houlton,b4a74037-d34a-4d29-9e86-daf22535f2b4,24 hrs/day,commercial,fast lanes,,,,,,
-6adb97f4-b3aa-4d24-b177-9f9f388fea73,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,passenger,standard,8,60,1,10:00:00,PST,At 10:00 am PST
+6adb97f4-b3aa-4d24-b177-9f9f388fea73,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,passenger,standard,8,170,2,18:00:00,PST,At 6:00 pm PST
 6aef722c-7b79-4ecc-8165-3d88579fe33e,norton,28e76e11-3b4f-498e-87b5-a1f21e2b2542,24 hrs/day,passenger,ready_lanes,,,,,,
 6b3b4255-6f68-4e1f-889b-b05816471049,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,passenger,nexus sentri lane,,,,,,
 6b537c8a-39e0-4b82-9868-5fcb14fb9cf7,ogdensburg,9306f7a9-e27f-4bf7-83d5-21c43bfffc25,24 hrs/day,passenger,standard,,,,,,
-6bc66559-ef7f-4af4-975e-74433ebfc809,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,standard,13,50,1,10:00:00,MST,At 10:00 am MST
-6ca5aaaf-d8e5-4348-9661-879bd3f0a8ff,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,ready_lanes,,,,,,
+6bc66559-ef7f-4af4-975e-74433ebfc809,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,standard,13,35,2,19:00:00,MST,At 7:00 pm MST
+6ca5aaaf-d8e5-4348-9661-879bd3f0a8ff,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,ready_lanes,,1,1,18:00:00,MST,At 6:00 pm MST
 6ca5b8e6-b0c1-4ede-a566-174889050b2b,donna international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,6 am-10 pm,pedestrian,standard,4,,,,,
-6ea51b07-6578-4b64-a60a-ecde6409e1a2,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,passenger,standard,12,45,1,12:00:00,CST,At 12:00 pm CST
+6ea51b07-6578-4b64-a60a-ecde6409e1a2,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,passenger,standard,12,55,1,17:00:00,CST,At 5:00 pm CST
 6f3cba46-c1d5-405e-9b35-991e7a413c76,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,ready_lanes,,,,,,
 6f4a001c-b0f0-493d-934d-498dc99d19ff,highgate springs,8a36cf52-e3ae-4439-b490-99bb8aa90641,24 hrs/day,pedestrian,ready_lanes,,,,,,
 6fab2be2-a504-4313-86c9-528df3f38615,houlton,b4a74037-d34a-4d29-9e86-daf22535f2b4,24 hrs/day,commercial,standard,,,,,,
 6fea54cb-e856-4ea9-8154-e135b9d6d0cc,roma texas,16321fb2-b4ed-49d5-9837-235ca962e5b2,24 hrs/day,passenger,standard,4,,,,,
 70741968-3671-4df4-b6bf-7ba746e6b580,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,pedestrian,ready_lanes,,,,,,
-708679fe-9bd1-44de-a113-a20b08f7950d,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,nexus sentri lane,,1,1,12:55:00,EST,At 12:55 pm EST
-709213bf-6930-43f1-918e-da02dc6ac07c,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,passenger,ready_lanes,,5,2,11:00:00,CST,At 11:00 am CST
+708679fe-9bd1-44de-a113-a20b08f7950d,peace bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,nexus sentri lane,,1,1,20:57:00,EST,At 8:57 pm EST
+709213bf-6930-43f1-918e-da02dc6ac07c,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,passenger,ready_lanes,,20,1,19:00:00,CST,At 7:00 pm CST
 7099cf9c-8b1f-41af-b509-a189a9ad500e,lynden,4ff15869-0e87-47b9-83d8-d25ea69a3486,8 am-Midnight,pedestrian,ready_lanes,,,,,,
-71432090-8906-4cd4-9aff-7d03dc20b531,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,passenger,nexus sentri lane,,35,3,09:00:00,PST,At 9:00 am PST
+71432090-8906-4cd4-9aff-7d03dc20b531,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,passenger,nexus sentri lane,,25,3,17:00:00,PST,At 5:00 pm PST
 72001b2a-4350-49c9-a924-cf2ff365b93a,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,standard,,,,,,
 720a8a7b-df6b-48af-9ac0-a5136733208a,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,nexus sentri lane,,,,,,
 7264138f-a4bf-428c-9443-f41c001fd8a7,hidalgo,74ed69d7-569c-4192-9705-1325a4496807,24 hrs/day,commercial,fast lanes,,,,,,
@@ -283,26 +283,26 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 7365b6b7-7f97-4940-a91c-72104baf78e0,ogdensburg,9306f7a9-e27f-4bf7-83d5-21c43bfffc25,24 hrs/day,pedestrian,standard,,,,,,
 73b7082e-d3df-44ba-8c9b-7f570c1cfa59,rio grande city,b8780f6b-8054-4e5b-a063-089d1d9a0c2e,7 am-Midnight,commercial,standard,,,,,,
 749b14fa-5764-4b34-b32e-0965420cba89,sumas,1a4bbf74-cedb-44ef-8198-aa2bb5848979,24 hrs/day,commercial,standard,,,,,,
-75b6c489-0d10-4c57-8b74-f1223923c341,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,pedestrian,standard,8,0,7,10:00:00,PST,At 10:00 am PST
+75b6c489-0d10-4c57-8b74-f1223923c341,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,pedestrian,standard,8,0,7,21:00:00,PST,At 9:00 pm PST
 75d492d4-7689-479e-a7eb-ea062f4dd53e,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,commercial,standard,,,,,,
-7605ceca-8ff5-4e3c-ba23-bd5210307f13,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,passenger,standard,4,0,2,13:00:00,EST,At 1:00 pm EST
-766aedbe-6f7c-4390-b426-03fed1a19c5a,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,passenger,nexus sentri lane,,15,2,10:00:00,MST,At 10:00 am MST
+7605ceca-8ff5-4e3c-ba23-bd5210307f13,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,passenger,standard,4,0,1,23:00:00,EST,At 11:00 pm EST
+766aedbe-6f7c-4390-b426-03fed1a19c5a,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,passenger,nexus sentri lane,,30,2,18:00:00,MST,At 6:00 pm MST
 76ef7b30-2d95-41c4-950b-c436894480f9,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,pedestrian,standard,,,,,,
 770670d8-cc5a-4527-a748-a64dc2b6309d,massena,476ef7fd-f9ab-43be-8895-c8fa1dde670c,24 hrs/day,passenger,ready_lanes,,,,,,
 77754a83-7b47-4632-8d9e-bbbee08353ce,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,passenger,ready_lanes,,,,,,
 77e1ab0a-3b4a-48a5-95d5-a5bcd9a7140f,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,passenger,nexus sentri lane,,,,,,
-7857c5a6-26d7-4ff6-b615-c758ad576999,international avenue,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,passenger,standard,6,0,1,12:00:00,EST,At 12:00 pm EST
+7857c5a6-26d7-4ff6-b615-c758ad576999,international avenue,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,passenger,standard,6,0,1,20:00:00,EST,At 8:00 pm EST
 78f388b4-fdb8-403f-b420-b75b15c86dde,pembina,ae52d269-aeb6-4afd-8ee0-1266ff8dd65d,24 hrs/day,pedestrian,standard,,,,,,
 79b58826-5539-4f8a-865b-2e851d7fb5d4,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,nexus sentri lane,,,,,,
 79b9679e-a2f6-4008-8197-f70662db5c33,bota cargo,956e6a6b-3da1-4f40-a136-ce114e612ba4,24 hrs/day,passenger,standard,,,,,,
 7a3f2327-b4df-46cb-a83d-af09b7593d5a,bota cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,passenger,nexus sentri lane,,,,,,
 7a8d594b-30f2-4c62-a5d4-8c62bbe54cc4,paso del norte,6eb4dcd3-acc2-4379-897c-52d891e6d464,24 hrs/day,commercial,fast lanes,,,,,,
 7a972cbf-95ee-470d-8cfd-ebe2796dedec,presidio,17766ea3-8e51-451c-a4ee-0406d2205164,24 hrs/day,passenger,nexus sentri lane,,,,,,
-7be45999-532a-4fb4-8573-772bee791838,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,pedestrian,standard,6,10,3,11:00:00,MST,At 11:00 am MST
-7bf8a961-3e58-48eb-96f9-f80d098318a6,donna international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,6 am-10 pm,passenger,standard,4,35,3,11:00:00,CST,At 11:00 am CST
+7be45999-532a-4fb4-8573-772bee791838,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,pedestrian,standard,6,0,3,18:00:00,MST,At 6:00 pm MST
+7bf8a961-3e58-48eb-96f9-f80d098318a6,donna international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,6 am-10 pm,passenger,standard,4,60,3,19:00:00,CST,At 7:00 pm CST
 7c69af17-5139-4d22-ba2f-331181a7e73e,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,24 hrs/day,passenger,standard,,,,,,
 7d58f518-8b4f-4879-9d76-6543fdc25191,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,24 hrs/day,passenger,nexus sentri lane,,,,,,
-7e155fab-2240-4f11-b458-b0f7b5f129d1,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,passenger,standard,4,2,2,11:00:00,CST,At 11:00 am CST
+7e155fab-2240-4f11-b458-b0f7b5f129d1,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,passenger,standard,4,60,1,19:00:00,CST,At 7:00 pm CST
 7e43229e-eea9-493f-b7de-be2ac985ef58,international falls,fc1f0aa7-b765-43b4-96ba-d95b01b8e4ca,24 hrs/day,pedestrian,standard,,,,,,
 7e9a9721-f8b5-4fca-a9e4-10f2ac5a35c9,houlton,b4a74037-d34a-4d29-9e86-daf22535f2b4,24 hrs/day,passenger,ready_lanes,,,,,,
 7ea1af82-d0f6-49c2-be45-a521c7dedf64,san ysidro,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,commercial,fast lanes,,,,,,
@@ -320,21 +320,21 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 8337488e-377c-4854-ba6d-5465f48ae965,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,commercial,standard,,,,,,
 84b26b58-3ce3-4085-b918-5ca958ef3562,point roberts,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,nexus sentri lane,,,,,,
 864722b7-6c7c-4cd4-ad37-28f82d41b4af,lynden,4ff15869-0e87-47b9-83d8-d25ea69a3486,8 am-Midnight,passenger,standard,,,,,,
-8674738a-7dd0-495c-8b8d-e4399ae77f11,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,pedestrian,standard,6,60,3,10:00:00,PST,At 10:00 am PST
+8674738a-7dd0-495c-8b8d-e4399ae77f11,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,pedestrian,standard,6,40,3,18:00:00,PST,At 6:00 pm PST
 86b9b14a-edc4-4e92-b2ae-d80b95196782,presidio,17766ea3-8e51-451c-a4ee-0406d2205164,24 hrs/day,pedestrian,standard,,,,,,
 86e98f4f-9ca6-4fe6-98b4-4f3be94980ea,bridge i,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,7 am-11 pm,passenger,standard,5,,,,,
-86ef83fa-2841-48c4-a2ab-f034e7c4d02a,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,pedestrian,ready_lanes,,,,,,
+86ef83fa-2841-48c4-a2ab-f034e7c4d02a,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,pedestrian,ready_lanes,,15,1,19:00:00,CST,At 7:00 pm CST
 873ce80b-311d-462a-b552-872241277747,morley gate,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,10 am-6 pm,passenger,ready_lanes,,,,,,
 8896d873-751b-4749-9095-c550c573d166,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,pedestrian,standard,,,,,,
 88ad1ba9-9c7b-43be-b423-4c1697d30d89,whirlpool bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,7 am-11 pm,passenger,nexus sentri lane,,,,,,
-88dcd676-bb94-45da-8b54-c509f30c7121,bridge i,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,passenger,nexus sentri lane,,0,4,11:00:00,CST,At 11:00 am CST
+88dcd676-bb94-45da-8b54-c509f30c7121,bridge i,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,passenger,nexus sentri lane,,0,4,19:00:00,CST,At 7:00 pm CST
 895ff4b0-0804-407e-99d0-ffa78e87161e,international falls,fc1f0aa7-b765-43b4-96ba-d95b01b8e4ca,24 hrs/day,passenger,ready_lanes,,,,,,
 896e63cc-475e-4a74-8efc-8d2aa7c1e0bb,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,6 am-10 pm,commercial,fast lanes,,,,,,
 89b7dc35-2380-4de7-bf47-c95ff5ef51e5,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,pedestrian,standard,,,,,,
 8a2b9de0-1621-43f3-99cc-a87ffcfd78c5,point roberts,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,pedestrian,standard,,,,,,
-8af291f0-8b6b-40ea-82e6-01092c77dbaa,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,commercial,fast lanes,,15,4,08:00:00,PST,At 8:00 am PST
+8af291f0-8b6b-40ea-82e6-01092c77dbaa,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,commercial,fast lanes,,5,1,13:00:00,PST,At 1:00 pm PST
 8ba90fe2-888c-453b-b9d1-185a69b1bf50,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,commercial,fast lanes,,,,,,
-8bca3cfd-7434-47a6-af80-c8e10224177d,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,passenger,nexus sentri lane,,0,1,11:00:00,CST,At 11:00 am CST
+8bca3cfd-7434-47a6-af80-c8e10224177d,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,passenger,nexus sentri lane,,5,1,19:00:00,CST,At 7:00 pm CST
 8c09b38a-ea67-444d-87f4-16c92f8cda2c,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,6 am-10 pm,commercial,standard,,,,,,
 8d1ae968-3fdb-496f-86fe-1ff9f91a4b4b,rainbow bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,ready_lanes,,,,,,
 8d3b5ae7-1030-4d76-8f31-bd1aae231104,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,pedestrian,standard,,,,,,
@@ -347,14 +347,14 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 9087beda-42ec-4ca3-9808-818f1a12fb3c,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,passenger,nexus sentri lane,,,,,,
 91a8d18a-6f0a-4176-9d66-012536bf7ca5,bridge i,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,7 am-11 pm,passenger,nexus sentri lane,,,,,,
 91ca4168-782d-41a1-8f20-f414cffdc89f,madawaska,59c6d37a-2afd-45b7-baa5-a95754bdb439,24 hrs/day,passenger,ready_lanes,,,,,,
-91e2acea-8da1-4918-90df-15570ba06dbc,anzalduas international bridge,74ed69d7-569c-4192-9705-1325a4496807,6 am-10 pm,passenger,ready_lanes,,40,3,12:00:00,CST,At 12:00 pm CST
+91e2acea-8da1-4918-90df-15570ba06dbc,anzalduas international bridge,74ed69d7-569c-4192-9705-1325a4496807,6 am-10 pm,passenger,ready_lanes,,45,3,17:00:00,CST,At 5:00 pm CST
 92e09c5d-d731-4710-992c-4c185dd32017,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,pedestrian,ready_lanes,,,,,,
 9334709d-4e72-4b1f-a41d-467944cdf8aa,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,ready_lanes,,,,,,
-934c022c-28e0-4fd4-a197-d49b1f2f62c7,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,commercial,standard,2,0,1,20:00:00,EST,At 8:00 pm EST
-93a4085f-a98b-4ef9-976d-74000742904a,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,standard,8,30,5,10:00:00,MST,At 10:00 am MST
-9549061c-50ad-4235-9201-2fc0a13cc475,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,standard,12,60,3,10:00:00,MST,At 10:00 am MST
+934c022c-28e0-4fd4-a197-d49b1f2f62c7,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,commercial,standard,2,0,1,23:00:00,EST,At 11:00 pm EST
+93a4085f-a98b-4ef9-976d-74000742904a,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,standard,8,,,,,
+9549061c-50ad-4235-9201-2fc0a13cc475,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,standard,12,65,2,19:00:00,MST,At 7:00 pm MST
 956dad90-cc7d-4aea-b309-2417331f8284,roma,bbc045c7-aa00-4b3a-90cb-eb9ee3c573a0,24 hrs/day,pedestrian,standard,,,,,,
-9577e2b2-a62e-49d4-9f3f-3205140cf840,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,passenger,nexus sentri lane,,5,4,10:00:00,PST,At 10:00 am PST
+9577e2b2-a62e-49d4-9f3f-3205140cf840,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,passenger,nexus sentri lane,,5,4,18:00:00,PST,At 6:00 pm PST
 95da5e79-3d84-4c55-b03a-4c829f7f07ec,gateway,0ae0b715-dbd2-4ec2-8755-da9ad9766b90,24 hrs/day,passenger,standard,,,,,,
 969a4fb1-63ca-4699-8fd8-ff17e2f1c381,presidio,17766ea3-8e51-451c-a4ee-0406d2205164,24 hrs/day,commercial,standard,,,,,,
 96aa3984-a0e7-4198-8f3a-4d2a60b73c0a,jackman,e4f627eb-7938-4d14-b817-9f1e93e44987,24 hrs/day,pedestrian,standard,,,,,,
@@ -367,16 +367,16 @@ id,crossing_name,port_id,hours,lane_type,lane_subtype,max_lanes,delay_minutes,la
 9904ec74-b49f-44a0-8b67-7744b6d55d75,norton,28e76e11-3b4f-498e-87b5-a1f21e2b2542,24 hrs/day,passenger,nexus sentri lane,,,,,,
 99cc3809-34c3-4223-b8d2-5b1fea095b4b,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,pedestrian,ready_lanes,,,,,,
 9a051cb1-18b0-4a2e-9368-20153dc06a10,roma texas,16321fb2-b4ed-49d5-9837-235ca962e5b2,24 hrs/day,pedestrian,standard,,,,,,
-9a128120-a4ce-429a-a756-e46ad426daa8,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,ready_lanes,,54,3,10:00:00,MST,At 10:00 am MST
+9a128120-a4ce-429a-a756-e46ad426daa8,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,ready_lanes,,59,5,19:00:00,MST,At 7:00 pm MST
 9abdc6da-d79f-45c9-a376-6bf22a7c6294,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,pedestrian,ready_lanes,,,,,,
-9b8ace06-053a-4b77-bd8d-86890643c5f8,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,standard,5,60,2,11:00:00,CST,At 11:00 am CST
+9b8ace06-053a-4b77-bd8d-86890643c5f8,gateway,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,standard,5,75,1,19:00:00,CST,At 7:00 pm CST
 9d01c640-f0e6-41c1-9f01-cbb054f162c8,ferry point,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,commercial,fast lanes,,,,,,
 9d124d8c-633c-46eb-92d0-7743ea716660,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,6 am-10 pm,pedestrian,ready_lanes,,,,,,
 9d43cd61-90df-4c36-974c-875fdaabad25,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,passenger,nexus sentri lane,,,,,,
-9d91edee-1f7c-445a-aae1-a275fd737afc,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,commercial,standard,4,30,1,11:00:00,CST,At 11:00 am CST
+9d91edee-1f7c-445a-aae1-a275fd737afc,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,commercial,standard,4,,,,,
 9e35453d-325e-474e-8222-1284996d39f6,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,commercial,standard,,,,,,
 9e881397-1a84-46b8-ba9f-9fc66167168e,milltown,baee5bf9-f517-4f1b-b6a4-86387ccf274b,8 am-4 pm,commercial,standard,,,,,,
-9f20ad25-38b6-401c-9f1c-89f8ed2ec478,bridge i,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,7 am-11 pm,passenger,ready_lanes,,45,2,10:00:00,CST,At 10:00 am CST
+9f20ad25-38b6-401c-9f1c-89f8ed2ec478,bridge i,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,7 am-11 pm,passenger,ready_lanes,,180,2,18:00:00,CST,At 6:00 pm CST
 a00c6830-57b1-43df-b812-2f08c68f1f33,tecate,172c3410-12fd-43e8-bc26-f9ba6083e7d5,6 am-10 pm,commercial,fast lanes,,,,,,
 a054ed7e-a36f-469a-9d55-8de3a126fd76,roma texas,16321fb2-b4ed-49d5-9837-235ca962e5b2,24 hrs/day,passenger,ready_lanes,,,,,,
 a0e29bf1-3b21-467d-bd1a-5abb286ecd86,highgate springs,8a36cf52-e3ae-4439-b490-99bb8aa90641,24 hrs/day,passenger,standard,,,,,,
@@ -384,7 +384,7 @@ a21a4e9b-3816-4794-b1b5-713211cf9fdd,madawaska,59c6d37a-2afd-45b7-baa5-a95754bdb
 a4ca846c-c113-4108-bd35-15667af5019e,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,pedestrian,ready_lanes,,,,,,
 a4f74fae-7bd5-4f91-92e5-c26cc0dbad2f,ferry point,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,passenger,nexus sentri lane,,,,,,
 a52c9a71-47e6-4c4f-bc9b-1bbb292ff835,norton,28e76e11-3b4f-498e-87b5-a1f21e2b2542,24 hrs/day,passenger,standard,,,,,,
-a54f3380-4a29-4224-a6b4-7ac3a7d05620,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,passenger,standard,13,90,2,09:00:00,PST,At 9:00 am PST
+a54f3380-4a29-4224-a6b4-7ac3a7d05620,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,passenger,standard,13,90,2,17:00:00,PST,At 5:00 pm PST
 a63f6ac3-cc82-4d28-a3cf-01466f377d93,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,6 am-10 pm,pedestrian,standard,,,,,,
 a67be46e-13aa-4fac-9ad2-644cfee4c0de,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,pedestrian,ready_lanes,,,,,,
 a6e0d200-f554-4822-8f44-3f827dd5b31d,tecate,172c3410-12fd-43e8-bc26-f9ba6083e7d5,6 am-10 pm,passenger,standard,,,,,,
@@ -393,7 +393,7 @@ a78ac036-cee2-487e-9242-fc890ffac969,cross border express,1400e4e8-3f05-4f5d-b57
 a8605e18-7fa1-4501-8c56-6fa1eb7f4b79,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,pedestrian,ready_lanes,,,,,,
 a8639615-ed20-4ff4-99d8-9ed112497c43,pedwest,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,6 am-2 pm,passenger,nexus sentri lane,,,,,,
 a9bd08a4-31b6-4a65-b2ee-2f6e45075c55,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,commercial,fast lanes,,,,,,
-a9c0fd01-a153-4b7e-af1c-80308653528b,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,commercial,fast lanes,,15,4,11:00:00,CST,At 11:00 am CST
+a9c0fd01-a153-4b7e-af1c-80308653528b,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,commercial,fast lanes,,,,,,
 aaf1f5ec-aa4f-442f-9845-631d58ff0091,highgate springs,8a36cf52-e3ae-4439-b490-99bb8aa90641,24 hrs/day,passenger,nexus sentri lane,,,,,,
 ab64a6fd-e080-46ea-86c8-0d96cd44cc98,rio grande city,b8780f6b-8054-4e5b-a063-089d1d9a0c2e,7 am-Midnight,passenger,nexus sentri lane,,,,,,
 abcff98c-ed97-461a-bbb0-95187f303d20,roma,bbc045c7-aa00-4b3a-90cb-eb9ee3c573a0,24 hrs/day,commercial,fast lanes,,,,,,
@@ -403,31 +403,31 @@ adf37428-bbaf-4ab8-9a00-f7c6fd7b1e86,windsor tunnel,26a3888c-e570-460d-9d6a-bca9
 ae730f77-2a86-49f8-95ec-92e3f5f77f0a,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,pedestrian,ready_lanes,,,,,,
 af066360-c22c-4e58-b94f-d1af81cc9067,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,24 hrs/day,commercial,standard,,,,,,
 af28e4dc-99bc-4a52-bc08-d6a2a59476ee,paso del norte,6eb4dcd3-acc2-4379-897c-52d891e6d464,24 hrs/day,passenger,standard,,,,,,
-af8cc512-3373-4e3f-951e-3932e1bce2f5,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,standard,3,25,2,11:00:00,MST,At 11:00 am MST
+af8cc512-3373-4e3f-951e-3932e1bce2f5,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,standard,3,,,,,
 b02da846-4822-46fb-ae36-cf6b5ae39840,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,passenger,ready_lanes,,,,,,
 b03aa004-03cf-4244-b251-a94aa5bfabbb,bota cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,commercial,standard,,,,,,
 b0fa30f5-cf56-4594-895a-946be79c734c,international falls,fc1f0aa7-b765-43b4-96ba-d95b01b8e4ca,24 hrs/day,pedestrian,ready_lanes,,,,,,
 b13c4fd2-ed46-4b28-8196-a8c9b6741048,whirlpool bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,7 am-11 pm,pedestrian,ready_lanes,,,,,,
 b14d283c-f03a-45ad-b346-44a1edcae309,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,commercial,fast lanes,,,,,,
 b1d8df6f-0773-490e-ac80-aead4b536b19,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-8 pm,passenger,standard,,,,,,
-b22cea90-eb2b-4047-9278-cd0114f8bf8c,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,pedestrian,standard,6,90,6,09:00:00,PST,At 9:00 am PST
-b2312b51-4af7-493b-b433-8a8e709a05a6,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,passenger,ready_lanes,,25,4,10:00:00,MST,At 10:00 am MST
-b35223a1-f21e-42d3-8cab-e21ac04f0a96,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,passenger,standard,8,5,3,12:00:00,EST,At 12:00 pm EST
-b3eda4da-6de6-402f-99b8-bffc2fdd87ec,milltown,baee5bf9-f517-4f1b-b6a4-86387ccf274b,8 am-4 pm,passenger,standard,1,0,1,12:00:00,EST,At 12:00 pm EST
+b22cea90-eb2b-4047-9278-cd0114f8bf8c,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,pedestrian,standard,6,45,6,17:00:00,PST,At 5:00 pm PST
+b2312b51-4af7-493b-b433-8a8e709a05a6,san luis i,e0bc4181-0684-4f0e-be53-af16998e355b,24 hrs/day,passenger,ready_lanes,,90,3,18:00:00,MST,At 6:00 pm MST
+b35223a1-f21e-42d3-8cab-e21ac04f0a96,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,passenger,standard,8,0,1,20:00:00,EST,At 8:00 pm EST
+b3eda4da-6de6-402f-99b8-bffc2fdd87ec,milltown,baee5bf9-f517-4f1b-b6a4-86387ccf274b,8 am-4 pm,passenger,standard,1,,,,,
 b45b8df2-d583-4a21-8f83-e695cfa20c11,rainbow bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,pedestrian,standard,1,,,,,
 b47757d2-6aa0-4442-b080-4d315f5d6911,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,pedestrian,standard,,,,,,
-b51bd327-3a43-48c0-823f-df38c78d9ead,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,passenger,nexus sentri lane,,0,1,12:00:00,EST,At 12:00 pm EST
+b51bd327-3a43-48c0-823f-df38c78d9ead,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,passenger,nexus sentri lane,,,,,,
 b567f40e-8501-4893-a89f-e9e95828eea5,del rio,fd24d198-e536-4706-b9c4-2047446460bb,24 hrs/day,pedestrian,ready_lanes,,,,,,
 b5bed942-758b-4bb7-b934-c3ebb6a73225,progreso - progreso international bridge,922d8ad5-f50e-4a06-9a41-41587097d357,24 hrs/day,pedestrian,standard,,,,,,
-b5cdf731-7511-47e0-af71-83dfed5419d2,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,passenger,standard,8,5,1,11:00:00,CST,At 11:00 am CST
-b60200bc-4161-45ab-9ee4-291b2f3587a6,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,commercial,standard,10,20,4,08:00:00,PST,At 8:00 am PST
+b5cdf731-7511-47e0-af71-83dfed5419d2,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,passenger,standard,8,20,1,19:00:00,CST,At 7:00 pm CST
+b60200bc-4161-45ab-9ee4-291b2f3587a6,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,commercial,standard,10,15,4,13:00:00,PST,At 1:00 pm PST
 b64c34f5-c2d3-4186-90d6-65ccce6b8c5e,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,pedestrian,ready_lanes,,,,,,
-b6964e8f-44aa-468f-928e-8b3ccaa337c1,stanton dcl,557415d2-3cea-46dc-a527-76d5e2214aba,6 am-Midnight,passenger,nexus sentri lane,,3,2,10:00:00,MST,At 10:00 am MST
+b6964e8f-44aa-468f-928e-8b3ccaa337c1,stanton dcl,557415d2-3cea-46dc-a527-76d5e2214aba,6 am-Midnight,passenger,nexus sentri lane,,2,2,19:00:00,MST,At 7:00 pm MST
 b700d91e-acc2-4845-a695-72754eff4877,douglas (raul hector castro),64bfd728-210a-47cd-8c50-6ccb299a50aa,24 hrs/day,passenger,nexus sentri lane,,,,,,
 b7402004-404a-47f1-ab07-4539c0d01f5e,del rio,fd24d198-e536-4706-b9c4-2047446460bb,24 hrs/day,commercial,standard,,,,,,
 b7a93845-6a78-46af-b23a-45feaa086a97,madawaska,59c6d37a-2afd-45b7-baa5-a95754bdb439,24 hrs/day,pedestrian,ready_lanes,,,,,,
 b8682ed3-48e8-408d-9cbd-49c3546fd9bf,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,passenger,standard,,,,,,
-b89bbd97-e01a-465d-a226-a8f4745437c6,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,commercial,standard,8,0,4,11:00:00,CST,At 11:00 am CST
+b89bbd97-e01a-465d-a226-a8f4745437c6,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,commercial,standard,8,0,5,19:00:00,CST,At 7:00 pm CST
 b8d7edc2-631d-446f-ad0e-b79b91f4212f,tecate,172c3410-12fd-43e8-bc26-f9ba6083e7d5,6 am-10 pm,commercial,standard,,,,,,
 b9915a30-d051-4695-9407-2418ff161eee,pembina,ae52d269-aeb6-4afd-8ee0-1266ff8dd65d,24 hrs/day,passenger,ready_lanes,,,,,,
 ba1dd39f-cb41-457f-8c00-e525858a91fb,del rio,fd24d198-e536-4706-b9c4-2047446460bb,24 hrs/day,pedestrian,standard,,,,,,
@@ -436,131 +436,131 @@ ba4274cc-5a54-4252-8d94-6e21307f562c,bridge of the americas port of entry,4b87de
 baa4b914-9158-436a-bcf3-7955aafde2ca,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,pedestrian,ready_lanes,,,,,,
 baad58ec-cdfe-4a82-b0b7-d45a323f5d10,sumas,1a4bbf74-cedb-44ef-8198-aa2bb5848979,24 hrs/day,passenger,standard,,,,,,
 bb0af731-788d-434a-a34b-72dc8b85bf61,jackman,e4f627eb-7938-4d14-b817-9f1e93e44987,24 hrs/day,commercial,standard,,,,,,
-bc67bc48-6217-4f12-85e7-09ff866b2d2e,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,pedestrian,standard,2,0,2,11:00:00,MST,At 11:00 am MST
+bc67bc48-6217-4f12-85e7-09ff866b2d2e,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,pedestrian,standard,2,1,2,19:00:00,MST,At 7:00 pm MST
 bc6df3ae-eb81-4a50-8aae-2d14550d0051,champlain,f6ae4f32-aa38-420a-af0e-2e15ceec4cb0,24 hrs/day,pedestrian,ready_lanes,,,,,,
-bd42b412-750d-4dad-920f-b733a0206788,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,commercial,standard,7,15,6,12:00:00,CST,At 12:00 pm CST
+bd42b412-750d-4dad-920f-b733a0206788,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,commercial,standard,7,,,,,
 bda8d24c-1aab-4304-afc4-d487389618cc,sumas,1a4bbf74-cedb-44ef-8198-aa2bb5848979,24 hrs/day,passenger,ready_lanes,,,,,,
 bde7a1e5-ad4b-4912-9c63-3743043ee4fe,highgate springs,8a36cf52-e3ae-4439-b490-99bb8aa90641,24 hrs/day,pedestrian,standard,,,,,,
-be9bc2c7-4ab0-4dd1-8250-9ccc7e0f31d7,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,ready_lanes,,45,2,10:00:00,MST,At 10:00 am MST
+be9bc2c7-4ab0-4dd1-8250-9ccc7e0f31d7,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,ready_lanes,,30,2,19:00:00,MST,At 7:00 pm MST
 bf6253fe-45aa-4a32-9c04-cb7f526bcb30,ogdensburg,9306f7a9-e27f-4bf7-83d5-21c43bfffc25,24 hrs/day,commercial,fast lanes,,,,,,
 c1403e9d-f350-42c8-9540-11fe7d434876,gateway,0ae0b715-dbd2-4ec2-8755-da9ad9766b90,24 hrs/day,commercial,fast lanes,,,,,,
 c155ad7f-3a81-4402-a6b3-b238f18b11f9,ogdensburg,9306f7a9-e27f-4bf7-83d5-21c43bfffc25,24 hrs/day,pedestrian,ready_lanes,,,,,,
 c1d40cea-5683-4ac8-8bd0-91030be2c3f1,sweetgrass,3be54429-7665-424a-bdc6-1e9bcc31ac00,24 hrs/day,pedestrian,standard,,,,,,
 c1f8c4f0-8df9-4f18-b2f1-48d947087a8a,norton,28e76e11-3b4f-498e-87b5-a1f21e2b2542,24 hrs/day,commercial,standard,,,,,,
-c22d598c-1ec5-4a62-aeaf-1b78173359da,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,passenger,nexus sentri lane,,0,1,12:00:00,EST,At 12:00 pm EST
-c34b1fa0-4044-4bf8-87b7-fd60ef5ec6c9,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,standard,7,5,2,09:00:00,PST,At 9:00 am PST
+c22d598c-1ec5-4a62-aeaf-1b78173359da,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,passenger,nexus sentri lane,,0,1,20:00:00,EST,At 8:00 pm EST
+c34b1fa0-4044-4bf8-87b7-fd60ef5ec6c9,pacific highway,13b159ec-eaa5-43d1-b576-2d522c806c9d,24 hrs/day,passenger,standard,7,25,3,15:00:00,PST,At 3:00 pm PST
 c390cc16-19a3-40f3-90ae-48adafd763da,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,pedestrian,ready_lanes,,,,,,
-c42bdc4e-78b8-4b90-ac72-a2ca03b8507b,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,commercial,standard,3,40,1,10:00:00,MST,At 10:00 am MST
-c5952ad6-5e6e-41c9-8f12-80cb8bd0094e,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,pedestrian,standard,1,0,1,11:00:00,CST,At 11:00 am CST
+c42bdc4e-78b8-4b90-ac72-a2ca03b8507b,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,commercial,standard,3,,,,,
+c5952ad6-5e6e-41c9-8f12-80cb8bd0094e,veterans international,20d58f69-f238-4575-90db-8ed82c612b66,6 am-Midnight,pedestrian,standard,1,0,1,19:00:00,CST,At 7:00 pm CST
 c60c0f65-c209-4f42-891d-6a865962c08f,tecate,172c3410-12fd-43e8-bc26-f9ba6083e7d5,6 am-10 pm,passenger,ready_lanes,,,,,,
-c612c222-ebc5-42e0-adb3-8aed28c910b7,morley gate,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,10 am-6 pm,pedestrian,standard,4,10,2,11:00:00,MST,At 11:00 am MST
+c612c222-ebc5-42e0-adb3-8aed28c910b7,morley gate,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,10 am-6 pm,pedestrian,standard,4,20,2,15:00:00,MST,At 3:00 pm MST
 c7271d16-cfd2-403d-af88-18954153577c,progreso - progreso international bridge,922d8ad5-f50e-4a06-9a41-41587097d357,24 hrs/day,passenger,nexus sentri lane,,,,,,
-c742391b-b3f5-4606-8130-71eaa138f04c,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,passenger,standard,4,50,2,10:00:00,MST,At 10:00 am MST
+c742391b-b3f5-4606-8130-71eaa138f04c,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,passenger,standard,4,50,1,17:00:00,MST,At 5:00 pm MST
 c772469a-bd37-4de3-ba57-d4ee22025be5,roma texas,16321fb2-b4ed-49d5-9837-235ca962e5b2,24 hrs/day,commercial,fast lanes,,,,,,
 c8192672-4481-46ef-88b4-abe7b52d36cc,roma,bbc045c7-aa00-4b3a-90cb-eb9ee3c573a0,24 hrs/day,passenger,nexus sentri lane,,,,,,
 c8d195d2-19ac-4e78-9083-d1ae118bdf22,bridge of the americas port of entry,4b87de14-ef26-44fb-b21f-1e0c3a47d4be,24 hrs/day,commercial,fast lanes,,,,,,
 c9190661-da02-4a3e-b212-1a15c2029ba6,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,commercial,fast lanes,,,,,,
 c9c14bec-a094-4d2e-9391-a0e90a75e15e,international avenue,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,pedestrian,ready_lanes,,,,,,
 ca5d4f28-8400-4911-8c89-d3403624a284,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,passenger,nexus sentri lane,,,,,,
-caaa74ab-3c35-42fc-bd49-f607e127d241,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,passenger,ready_lanes,,60,4,10:00:00,PST,At 10:00 am PST
-cc1f574e-f5c1-4f49-9488-591a346cc6da,international avenue,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,commercial,standard,3,0,1,12:00:00,EST,At 12:00 pm EST
+caaa74ab-3c35-42fc-bd49-f607e127d241,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,passenger,ready_lanes,,60,6,18:00:00,PST,At 6:00 pm PST
+cc1f574e-f5c1-4f49-9488-591a346cc6da,international avenue,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,commercial,standard,3,0,1,20:00:00,EST,At 8:00 pm EST
 cc44a069-6683-4196-99e9-c9c92c827860,lynden,4ff15869-0e87-47b9-83d8-d25ea69a3486,8 am-Midnight,commercial,fast lanes,,,,,,
 cc61dece-8786-48fd-8c5f-54d2d3495fb7,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-8 pm,pedestrian,ready_lanes,,,,,,
 cd3386c0-ccec-4a99-9ef6-954ad903ad7c,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,commercial,standard,,,,,,
 cd5e4a1c-682e-47a8-8aa9-c4819ea5d4ab,thousand islands bridge,ba6e583f-293f-41fb-abd1-c43de12ef7f7,24 hrs/day,pedestrian,ready_lanes,,,,,,
-ce7092cd-8fdd-4f9a-91b3-7c4d5141183f,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,passenger,standard,9,1,1,12:00:00,EST,At 12:00 pm EST
+ce7092cd-8fdd-4f9a-91b3-7c4d5141183f,bluewater bridge,751bec2a-8afb-48aa-baa3-053c8a0bb8d4,24 hrs/day,passenger,standard,9,12,2,20:00:00,EST,At 8:00 pm EST
 ce77a0bb-16b1-471c-8f9e-ba40b79622d0,lukeville,685a5bfc-7e29-484c-a930-a37bb989c5e4,6 am-8 pm,commercial,standard,,,,,,
 ce9f9bee-179e-472d-a9f3-b16c7f15881f,gateway,0ae0b715-dbd2-4ec2-8755-da9ad9766b90,24 hrs/day,pedestrian,standard,,,,,,
 cebf8544-48c6-473f-a7b1-7d033f7ec2e1,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,passenger,nexus sentri lane,,,,,,
 ced991d5-e3e5-4098-a6c1-a91e4314947a,douglas (raul hector castro),64bfd728-210a-47cd-8c50-6ccb299a50aa,24 hrs/day,commercial,fast lanes,,,,,,
-d05352cb-1b97-4c20-aeec-23a2df73d6e0,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,commercial,fast lanes,,5,3,13:00:00,EST,At 1:00 pm EST
+d05352cb-1b97-4c20-aeec-23a2df73d6e0,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,commercial,fast lanes,,,,,,
 d0b5858d-acd8-4588-814f-4714a44c2c2f,madawaska,59c6d37a-2afd-45b7-baa5-a95754bdb439,24 hrs/day,commercial,fast lanes,,,,,,
 d0e87358-07a2-4cb8-9320-432745428d46,rio grande city,b8780f6b-8054-4e5b-a063-089d1d9a0c2e,7 am-Midnight,commercial,fast lanes,,,,,,
-d11b3eb2-0b18-4b2c-8b5b-d5f84f792802,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,fast lanes,,20,3,10:00:00,MST,At 10:00 am MST
-d149e815-e598-48ce-9df8-59fe4aae9266,ferry point,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,passenger,standard,2,0,1,12:00:00,EST,At 12:00 pm EST
+d11b3eb2-0b18-4b2c-8b5b-d5f84f792802,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,commercial,fast lanes,,,,,,
+d149e815-e598-48ce-9df8-59fe4aae9266,ferry point,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,passenger,standard,2,0,1,20:00:00,EST,At 8:00 pm EST
 d211254a-3225-4555-933e-f0f3561ac26a,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,commercial,standard,,,,,,
-d211d4d4-6e8c-4441-b1b1-43c5e740e76f,bridge of americas cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,commercial,fast lanes,,25,2,11:00:00,MST,At 11:00 am MST
+d211d4d4-6e8c-4441-b1b1-43c5e740e76f,bridge of americas cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,commercial,fast lanes,,,,,,
 d286d8cc-2d94-41f3-b945-54671ce286ca,norton,28e76e11-3b4f-498e-87b5-a1f21e2b2542,24 hrs/day,pedestrian,ready_lanes,,,,,,
 d2f06669-0569-4cde-8183-11769859dd1d,lukeville,685a5bfc-7e29-484c-a930-a37bb989c5e4,6 am-8 pm,commercial,fast lanes,,,,,,
-d401effc-5288-45eb-bc88-b5ec6b37adc2,pedwest,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,6 am-2 pm,pedestrian,standard,14,30,3,08:00:00,PST,At 8:00 am PST
-d47c8167-2061-41ba-a678-50c35295d300,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-8 pm,commercial,standard,2,5,2,10:00:00,MST,At 10:00 am MST
+d401effc-5288-45eb-bc88-b5ec6b37adc2,pedwest,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,6 am-2 pm,pedestrian,standard,14,15,4,12:00:00,PST,At 12:00 pm PST
+d47c8167-2061-41ba-a678-50c35295d300,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-8 pm,commercial,standard,2,,,,,
 d48872a0-5517-45c6-b68c-28558f136414,champlain,f6ae4f32-aa38-420a-af0e-2e15ceec4cb0,24 hrs/day,pedestrian,standard,,,,,,
 d4ee985a-f8dd-47c4-a998-983363305237,paso del norte,6eb4dcd3-acc2-4379-897c-52d891e6d464,24 hrs/day,pedestrian,standard,,,,,,
 d522bdb3-f3d5-4aed-82ab-b20a27e08cb0,sweetgrass,3be54429-7665-424a-bdc6-1e9bcc31ac00,24 hrs/day,pedestrian,ready_lanes,,,,,,
 d564cc81-a0bd-4905-ae69-e6f1217c0f95,progreso - progreso international bridge,922d8ad5-f50e-4a06-9a41-41587097d357,24 hrs/day,passenger,standard,,,,,,
 d58fb85f-0a2d-4176-9aa6-bab87df059fd,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,commercial,fast lanes,,,,,,
 d69a4452-54d0-496f-b758-25e331c492e8,san ysidro,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,pedestrian,standard,,,,,,
-d6fbfa8d-048b-4d36-a798-e7da12c9eb1a,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,standard,4,15,1,11:00:00,CST,At 11:00 am CST
+d6fbfa8d-048b-4d36-a798-e7da12c9eb1a,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,passenger,standard,4,90,1,19:00:00,CST,At 7:00 pm CST
 d7742738-c0e8-40f0-8be4-05f39d59862a,lukeville,685a5bfc-7e29-484c-a930-a37bb989c5e4,6 am-8 pm,passenger,nexus sentri lane,,,,,,
 d7daff96-cbf2-45fe-8703-0b56ffca2363,international falls,fc1f0aa7-b765-43b4-96ba-d95b01b8e4ca,24 hrs/day,passenger,nexus sentri lane,,,,,,
-d8eabe11-3a9f-499f-9799-0be2170db6f8,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,nexus sentri lane,,5,3,10:00:00,MST,At 10:00 am MST
-d9062ba2-08f2-41d6-b91d-a23bf3fd1702,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,standard,19,5,4,13:00:00,EST,At 1:00 pm EST
-da471c2d-d148-43f8-b4b1-88849a7d7274,pedwest,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,6 am-2 pm,pedestrian,ready_lanes,,0,1,08:00:00,PST,At 8:00 am PST
+d8eabe11-3a9f-499f-9799-0be2170db6f8,ysleta,557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,nexus sentri lane,,5,2,19:00:00,MST,At 7:00 pm MST
+d9062ba2-08f2-41d6-b91d-a23bf3fd1702,ambassador bridge,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,standard,19,0,5,20:00:00,EST,At 8:00 pm EST
+da471c2d-d148-43f8-b4b1-88849a7d7274,pedwest,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,6 am-2 pm,pedestrian,ready_lanes,,5,1,12:00:00,PST,At 12:00 pm PST
 da51bdcb-22c6-4629-850e-df3b9b421ed5,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-8 pm,passenger,nexus sentri lane,,,,,,
 dadeaaab-24e2-4b02-a40b-0973b2e02e67,morley gate,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,10 am-6 pm,passenger,nexus sentri lane,,,,,,
-dbee5fd8-edee-4227-837a-e6fc4970e0a2,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,commercial,standard,2,5,2,10:00:00,MST,At 10:00 am MST
-dc20f36a-9559-4d5d-952a-50e8fd606a41,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,passenger,nexus sentri lane,,15,2,10:00:00,PST,At 10:00 am PST
+dbee5fd8-edee-4227-837a-e6fc4970e0a2,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,commercial,standard,2,,,,,
+dc20f36a-9559-4d5d-952a-50e8fd606a41,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,passenger,nexus sentri lane,,25,3,18:00:00,PST,At 6:00 pm PST
 dc678e09-9330-430a-9615-52e847c9f9d9,passenger,fd769372-c331-44c6-a332-6e2a668a40cc,24 hrs/day,commercial,fast lanes,,,,,,
 dd454772-153f-4b7a-8cb5-042cd3258b9d,gateway,0ae0b715-dbd2-4ec2-8755-da9ad9766b90,24 hrs/day,commercial,standard,,,,,,
-dd93cd33-970d-439d-a959-965403386b57,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,pedestrian,standard,2,0,1,10:00:00,MST,At 10:00 am MST
+dd93cd33-970d-439d-a959-965403386b57,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,pedestrian,standard,2,1,1,17:00:00,MST,At 5:00 pm MST
 de01f503-9156-46d9-b986-2544cde649c2,bota cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,commercial,fast lanes,,,,,,
 de27aea0-f53a-4a33-9c94-e55fc631cd35,champlain,f6ae4f32-aa38-420a-af0e-2e15ceec4cb0,24 hrs/day,commercial,fast lanes,,,,,,
 defb53c0-5be1-4352-b250-43cbfc8b350a,bota cargo,956e6a6b-3da1-4f40-a136-ce114e612ba4,24 hrs/day,passenger,nexus sentri lane,,,,,,
-df102724-4025-43d2-9d6b-10ee1ba9b4a1,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,passenger,ready_lanes,,45,2,10:00:00,MST,At 10:00 am MST
+df102724-4025-43d2-9d6b-10ee1ba9b4a1,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,passenger,ready_lanes,,50,1,17:00:00,MST,At 5:00 pm MST
 e012cb1a-2403-47ce-a47d-1804960dd063,international avenue,baee5bf9-f517-4f1b-b6a4-86387ccf274b,24 hrs/day,passenger,nexus sentri lane,,,,,,
 e08cdd5b-52da-4d6b-8b9a-0dc43c0c77b4,derby line i 91,ca2c58b7-02cd-4def-b3cf-e35828196c2c,24 hrs/day,pedestrian,standard,,,,,,
 e0f54c48-6d5c-441f-b0ef-cf180a4038b0,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,commercial,fast lanes,,,,,,
 e19ab2da-8699-4f6e-b1d3-d9adb6e94a58,paso del norte,6eb4dcd3-acc2-4379-897c-52d891e6d464,24 hrs/day,pedestrian,ready_lanes,,,,,,
 e24c81bb-52a8-469d-91d6-4d6b8582446a,houlton,b4a74037-d34a-4d29-9e86-daf22535f2b4,24 hrs/day,passenger,standard,,,,,,
-e2867bfa-77a1-40f6-97c7-adde3bf2c774,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,nexus sentri lane,,5,1,13:00:00,EST,At 1:00 pm EST
+e2867bfa-77a1-40f6-97c7-adde3bf2c774,windsor tunnel,26a3888c-e570-460d-9d6a-bca9572d8221,24 hrs/day,passenger,nexus sentri lane,,,,,,
 e296559a-ee0a-4dbe-b784-53154396d2d3,madawaska,59c6d37a-2afd-45b7-baa5-a95754bdb439,24 hrs/day,passenger,standard,,,,,,
 e2dcb659-366c-471d-92b8-f5c5513916b6,tecate,172c3410-12fd-43e8-bc26-f9ba6083e7d5,6 am-10 pm,passenger,nexus sentri lane,,,,,,
 e3101a73-0857-4859-8a5e-3db1bd1b156b,roma texas,16321fb2-b4ed-49d5-9837-235ca962e5b2,24 hrs/day,passenger,nexus sentri lane,,,,,,
 e3414675-c7b3-4564-b1cb-d48aedff329f,del rio,fd24d198-e536-4706-b9c4-2047446460bb,24 hrs/day,passenger,ready_lanes,,,,,,
 e379b250-ebe3-40a5-bd6c-0cd2a827e127,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,nexus sentri lane,,,,,,
 e410cf4f-9aa0-4427-bde6-dd443585c2ac,douglas (raul hector castro),64bfd728-210a-47cd-8c50-6ccb299a50aa,24 hrs/day,pedestrian,ready_lanes,,,,,,
-e492fcf9-2584-4765-8cc7-b4eb3d6a36c9,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,passenger,ready_lanes,,70,3,10:00:00,PST,At 10:00 am PST
+e492fcf9-2584-4765-8cc7-b4eb3d6a36c9,east,dfba5ed7-3883-49b5-8713-953f556d1a45,6 am-10 pm,passenger,ready_lanes,,110,3,18:00:00,PST,At 6:00 pm PST
 e4e0aaee-0e46-47bf-8fb2-ceccf4c66b5c,massena,476ef7fd-f9ab-43be-8895-c8fa1dde670c,24 hrs/day,passenger,standard,,,,,,
 e4ff12ef-cf1a-42b5-a01c-ef47836f7f35,pembina,ae52d269-aeb6-4afd-8ee0-1266ff8dd65d,24 hrs/day,commercial,fast lanes,,,,,,
-e51b7558-5c10-422a-9a0c-15b89c464df6,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,passenger,standard,8,60,4,11:00:00,MST,At 11:00 am MST
+e51b7558-5c10-422a-9a0c-15b89c464df6,deconcini,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,24 hrs/day,passenger,standard,8,50,5,18:00:00,MST,At 6:00 pm MST
 e5e7675c-f745-421e-982c-6daad49330a0,fort hancock,edb96bbe-b944-45f5-b22c-0d8375396655,6 am-6 pm,commercial,standard,,,,,,
 e67a2600-865f-4b63-96b8-a8d514300069,bridge of americas cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,passenger,ready_lanes,,,,,,
 e6d27a03-90d2-48ca-ac7d-a6dc688e6868,san ysidro,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,commercial,standard,,,,,,
 e7248e40-3247-4637-96be-51fcf700fa37,rio grande city,b8780f6b-8054-4e5b-a063-089d1d9a0c2e,7 am-Midnight,passenger,ready_lanes,,,,,,
-e7ff21d8-2f0e-41f5-b61a-ad92d3e03f2f,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,commercial,standard,2,5,1,11:00:00,MST,At 11:00 am MST
-e81c07bc-58e2-4279-bc99-83dcad87fdd9,rainbow bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,standard,16,1,3,12:55:00,EST,At 12:55 pm EST
-e831749d-4717-41f2-9670-42d64a33a003,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,pedestrian,standard,2,5,1,11:00:00,CST,At 11:00 am CST
+e7ff21d8-2f0e-41f5-b61a-ad92d3e03f2f,tornillo,3e7b89fe-0de3-4902-a69b-698a29a45e9f,6 am-10 pm,commercial,standard,2,,,,,
+e81c07bc-58e2-4279-bc99-83dcad87fdd9,rainbow bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,passenger,standard,16,1,1,20:57:00,EST,At 8:57 pm EST
+e831749d-4717-41f2-9670-42d64a33a003,b&m,20d58f69-f238-4575-90db-8ed82c612b66,24 hrs/day,pedestrian,standard,2,5,1,19:00:00,CST,At 7:00 pm CST
 e88106d6-617d-4705-9692-5a0db8bf934c,lewiston bridge,ce648581-ba41-44de-9f41-ba68ee8151d4,24 hrs/day,pedestrian,standard,,,,,,
 e8e24035-f58c-42e6-9dbb-4ce1834068c8,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,24 hrs/day,pedestrian,ready_lanes,,,,,,
-e93bdf11-d940-47b9-91c9-40f49fa816b7,bridge ii,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,24 hrs/day,commercial,standard,1,5,1,10:00:00,CST,At 10:00 am CST
-ebff3f85-c015-4333-bbcd-85f313a996e2,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,standard,14,15,6,10:00:00,MST,At 10:00 am MST
+e93bdf11-d940-47b9-91c9-40f49fa816b7,bridge ii,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,24 hrs/day,commercial,standard,1,,,,,
+ebff3f85-c015-4333-bbcd-85f313a996e2,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,pedestrian,standard,14,15,5,19:00:00,MST,At 7:00 pm MST
 ec1b5ee6-9ef6-4c76-8f0c-b0fed886c9b9,pedwest,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,6 am-2 pm,commercial,fast lanes,,,,,,
 ec602f25-f1fb-40c0-8426-15af7868e06d,massena,476ef7fd-f9ab-43be-8895-c8fa1dde670c,24 hrs/day,commercial,fast lanes,,,,,,
-ed5fa2c8-67a1-4751-9f53-1881d4cdf7c8,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,pedestrian,ready_lanes,,60,3,10:00:00,PST,At 10:00 am PST
+ed5fa2c8-67a1-4751-9f53-1881d4cdf7c8,west,dfba5ed7-3883-49b5-8713-953f556d1a45,24 hrs/day,pedestrian,ready_lanes,,40,3,18:00:00,PST,At 6:00 pm PST
 edc646df-68ae-4440-9243-3db088f33059,bridge ii,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,24 hrs/day,passenger,ready_lanes,,,,,,
 ee9590bc-e097-42e5-8522-fb2dedaad377,san luis ii,e0bc4181-0684-4f0e-be53-af16998e355b,9 am-5 pm,pedestrian,standard,,,,,,
 ef5b33e4-4489-427f-8b7d-deefa260ecd7,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,pedestrian,ready_lanes,,,,,,
 ef9f29ab-7152-454e-b2a8-42f33f2dcac1,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,pedestrian,ready_lanes,,,,,,
-f0004554-2c46-4c14-943a-4adf02ad61a9,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,nexus sentri lane,,8,1,10:00:00,MST,At 10:00 am MST
-f11f5ab7-cde6-4137-960d-f0c111d1ea8c,bridge of americas cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,commercial,standard,6,30,2,11:00:00,MST,At 11:00 am MST
-f14e85b5-642f-4005-a206-7633ba086e09,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,pedestrian,ready_lanes,,0,1,10:00:00,PST,At 10:00 am PST
+f0004554-2c46-4c14-943a-4adf02ad61a9,paso del norte (pdn),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,nexus sentri lane,,1,1,19:00:00,MST,At 7:00 pm MST
+f11f5ab7-cde6-4137-960d-f0c111d1ea8c,bridge of americas cargo facility,214e07a6-b43e-4776-9498-9293354dff00,6 am-2 pm,commercial,standard,6,,,,,
+f14e85b5-642f-4005-a206-7633ba086e09,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,pedestrian,ready_lanes,,0,1,21:00:00,PST,At 9:00 pm PST
 f1f5dc6e-ac88-491a-a3ca-1871cd0a3961,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,24 hrs/day,commercial,fast lanes,,,,,,
 f22a2129-9514-42d5-8c67-74bb9f16e67e,highgate springs,8a36cf52-e3ae-4439-b490-99bb8aa90641,24 hrs/day,passenger,ready_lanes,,,,,,
 f2829267-a5e1-4af5-973e-e0aaab07eaed,naco,c2595019-f51f-492d-8057-ff2cbeff46b4,24 hrs/day,pedestrian,standard,,,,,,
-f2836759-70bb-4d7d-ac98-890d29916ebd,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,ready_lanes,,90,7,11:00:00,MST,At 11:00 am MST
+f2836759-70bb-4d7d-ac98-890d29916ebd,bridge of the americas (bota),557415d2-3cea-46dc-a527-76d5e2214aba,24 hrs/day,passenger,ready_lanes,,28,6,18:00:00,MST,At 6:00 pm MST
 f303729a-08e9-4508-a5ff-cc39404a521a,pembina,ae52d269-aeb6-4afd-8ee0-1266ff8dd65d,24 hrs/day,passenger,nexus sentri lane,,,,,,
 f4b249a6-3d51-40d5-98c9-088bae8efc83,stanton dcl,557415d2-3cea-46dc-a527-76d5e2214aba,6 am-Midnight,commercial,fast lanes,,,,,,
 f59017f1-c34b-4472-892f-5afa2b6297e1,cross border express,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,passenger,ready_lanes,,,,,,
 f5a0d828-d182-4e6d-90be-b43ea66509d4,roma,bbc045c7-aa00-4b3a-90cb-eb9ee3c573a0,24 hrs/day,passenger,ready_lanes,,,,,,
 f61d92cb-08c3-4851-8f97-954d8a77bdf7,madawaska,59c6d37a-2afd-45b7-baa5-a95754bdb439,24 hrs/day,passenger,nexus sentri lane,,,,,,
-f639e75e-6712-4101-a9a5-e3b42c4c2eda,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,passenger,ready_lanes,,,,,,
-f6698077-7b14-4e9e-ad79-51d20bfcbc54,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,commercial,fast lanes,,35,1,10:00:00,MST,At 10:00 am MST
+f639e75e-6712-4101-a9a5-e3b42c4c2eda,pharr,74ed69d7-569c-4192-9705-1325a4496807,6 am-Midnight,passenger,ready_lanes,,40,3,17:00:00,CST,At 5:00 pm CST
+f6698077-7b14-4e9e-ad79-51d20bfcbc54,santa teresa port of entry,533669ee-df10-436d-b466-c68526d5c036,6 am-10 pm,commercial,fast lanes,,,,,,
 f69b4313-ce8e-4fe4-95fc-fab6b98da32f,bridge i,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,7 am-11 pm,commercial,standard,,,,,,
-f6eeaa4b-f912-47f5-93ba-d0e8f509eda5,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,passenger,ready_lanes,,5,1,11:00:00,CST,At 11:00 am CST
+f6eeaa4b-f912-47f5-93ba-d0e8f509eda5,colombia solidarity,8f5079f4-b459-4740-a47d-10d43fc668c1,8 am-Midnight,passenger,ready_lanes,,0,1,19:00:00,CST,At 7:00 pm CST
 f743ff3e-2b17-4abd-bfb7-f8a0df4ca743,bridge ii,8f5079f4-b459-4740-a47d-10d43fc668c1,24 hrs/day,passenger,nexus sentri lane,,,,,,
 f76fa857-a1d4-429a-9ec4-bf3794649b77,columbus,56fc59d7-56e4-4b2f-bb90-99e8058bdacd,24 hrs/day,commercial,fast lanes,,,,,,
 f7ac977c-00db-4358-b358-879bf0a62873,sweetgrass,3be54429-7665-424a-bdc6-1e9bcc31ac00,24 hrs/day,passenger,nexus sentri lane,,,,,,
-f7b09587-15e3-4df3-883b-3ad6f1be0238,bridge ii,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,24 hrs/day,passenger,standard,7,30,4,10:00:00,CST,At 10:00 am CST
+f7b09587-15e3-4df3-883b-3ad6f1be0238,bridge ii,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,24 hrs/day,passenger,standard,7,360,2,18:00:00,CST,At 6:00 pm CST
 f7b8bee6-4906-497e-bca9-e5cb1b42cb16,stanton dcl,557415d2-3cea-46dc-a527-76d5e2214aba,6 am-Midnight,pedestrian,ready_lanes,,,,,,
 f83e278c-b616-47a0-aa95-3e6842008433,international bridge   ssm,02e6d5a5-725e-4a20-a0fb-bf7711b975c9,24 hrs/day,commercial,fast lanes,,,,,,
 f8cf2bf0-6723-4f7b-8149-4f5b71e5b5b5,commercial,fd769372-c331-44c6-a332-6e2a668a40cc,6 am-10 pm,passenger,ready_lanes,,,,,,
@@ -571,8 +571,8 @@ fa2bc3c4-c6ec-4068-b8b7-387dab99de94,roma,bbc045c7-aa00-4b3a-90cb-eb9ee3c573a0,2
 fa7c21a8-2836-40d4-b8ac-a045a8486308,san ysidro,1400e4e8-3f05-4f5d-b57f-5666fdc393c6,24 hrs/day,passenger,standard,,,,,,
 faaa970b-912c-434a-b350-e27c7394953c,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,pedestrian,ready_lanes,,,,,,
 faabb25e-4319-4eb9-987c-45812af3b271,donna international bridge,1c876962-cf18-4aa8-b5f8-eda3c269f7e5,6 am-10 pm,pedestrian,ready_lanes,,,,,,
-fb90035d-9954-4780-b4be-458d8f643769,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,commercial,fast lanes,,25,2,11:00:00,MST,At 11:00 am MST
-fba15196-bf75-4840-9c77-c882cd3b4f55,bridge ii,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,24 hrs/day,passenger,nexus sentri lane,,5,1,10:00:00,CST,At 10:00 am CST
+fb90035d-9954-4780-b4be-458d8f643769,mariposa,c20ad7ce-e466-4137-a357-80c0ca9a2a3d,6 am-10 pm,commercial,fast lanes,,,,,,
+fba15196-bf75-4840-9c77-c882cd3b4f55,bridge ii,0b3691f9-31e2-4fd0-832c-876cd97fe0f8,24 hrs/day,passenger,nexus sentri lane,,5,2,18:00:00,CST,At 6:00 pm CST
 fccc3aab-34fb-4c53-8a9d-55401f5a610b,world trade bridge,8f5079f4-b459-4740-a47d-10d43fc668c1,7 am-Midnight,passenger,standard,,,,,,
 fce611b4-81b8-4ba5-b023-af018d99dc73,rio grande city,b8780f6b-8054-4e5b-a063-089d1d9a0c2e,7 am-Midnight,pedestrian,standard,,,,,,
 fd5029d0-c410-452f-b5c2-735d35d496c5,los indios,20d58f69-f238-4575-90db-8ed82c612b66,6 am-10 pm,pedestrian,standard,,,,,,

@@ -319,29 +319,19 @@ try:
         final_df['merge_key'] = final_df['crossing_name'] + '|' + final_df['port_id'] + '|' + final_df['lane_type'] + '|' + final_df['lane_subtype']
         cruces_df.set_index('merge_key', inplace=True)
         final_df.set_index('merge_key', inplace=True)
-        update_cols_map = {
-            'lanes_open': 'lanes_open',
-            'delay_minutes': 'delay_minutes',
-            'time': 'time',
-            'time_zone': 'time_zone',
-            'max_lanes': 'max_lanes',
-            'update_time': 'update_time',
-            'operational_status': 'operational_status',
-            'construction_notice': 'construction_notice'
-        }
+        update_cols = ['lanes_open', 'delay_minutes', 'time', 'time_zone', 'max_lanes', 'update_time']
         common_keys = cruces_df.index.intersection(final_df.index)
         # Ensure update columns are object dtype to avoid dtype warnings
-        for col in update_cols_map:
+        for col in update_cols:
             if col in cruces_df.columns:
                 cruces_df[col] = cruces_df[col].astype('object')
         # Merge logic: for each cell, use value from final_df if not null/empty, else keep cruces_df value
         for key in common_keys:
-            for target_col, source_col in update_cols_map.items():
-                if target_col not in cruces_df.columns or source_col not in final_df.columns:
-                    continue
-                val = final_df.at[key, source_col]
-                if val is not None and (not (isinstance(val, float) and pd.isnull(val))) and str(val).strip() != '':
-                    cruces_df.at[key, target_col] = val
+            for col in update_cols:
+                if col in final_df.columns:
+                    val = final_df.at[key, col]
+                    if val is not None and (not (isinstance(val, float) and pd.isnull(val))) and str(val).strip() != '':
+                        cruces_df.at[key, col] = val
         # Convert columns that should be integers to Int64 (nullable integer)
         int_columns = ['lanes_open', 'delay_minutes', 'max_lanes']
         for col in int_columns:
