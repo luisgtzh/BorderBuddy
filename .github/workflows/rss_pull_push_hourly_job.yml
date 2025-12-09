@@ -35,5 +35,6 @@ jobs:
           SUPABASE_HOST: ${{ secrets.SUPABASE_HOST }}
           SUPABASE_PORT: ${{ secrets.SUPABASE_PORT }}
           SUPABASE_DBNAME: ${{ secrets.SUPABASE_DBNAME }}
+          ENV: ${{ secrets.ENV }}
         run: |
           python extraer_datos_cbp.py
