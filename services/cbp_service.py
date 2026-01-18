@@ -227,6 +227,176 @@ def normalize_dataframe(final_df: pd.DataFrame) -> pd.DataFrame:
     return final_df
 
 
+def _first_non_empty(series: pd.Series):
+    for value in series:
+        if value is None or pd.isnull(value):
+            continue
+        value_str = str(value).strip()
+        if value_str:
+            return value
+    return None
+
+
+def _normalized_series(series: pd.Series) -> pd.Series:
+    return series.fillna("").astype(str).str.strip().str.lower()
+
+
+def attach_port_ids(df: pd.DataFrame, connection) -> pd.DataFrame:
+    puertos_df = pd.read_sql("SELECT id, port_name, border FROM puertos", connection)
+    puertos_df["port_name"] = puertos_df["port_name"].astype(str).str.strip()
+    puertos_df["border"] = puertos_df["border"].astype(str).str.strip()
+
+    df = df.copy()
+    if "port_name" in df.columns and "border" in df.columns:
+        df["port_name"] = df["port_name"].astype(str).str.strip()
+        df["border"] = df["border"].astype(str).str.strip()
+        df = pd.merge(df, puertos_df[["id", "port_name", "border"]], on=["port_name", "border"], how="left")
+        df.rename(columns={"id": "port_id"}, inplace=True)
+    else:
+        df["port_id"] = None
+    return df
+
+
+def build_crossing_groups_dataframe(final_df: pd.DataFrame) -> pd.DataFrame:
+    required_columns = {"port_id", "crossing_name"}
+    if not required_columns.issubset(final_df.columns):
+        return pd.DataFrame(columns=["port_id", "crossing_name", "hours", "construction_notice", "operational_status"])
+
+    group_columns = [c for c in ["port_id", "crossing_name", "hours", "construction_notice", "port_status"] if c in final_df.columns]
+    group_df = final_df[group_columns].copy()
+    group_df = group_df[group_df["port_id"].notnull()]
+    group_df["crossing_name_norm"] = _normalized_series(group_df["crossing_name"])
+    group_df = group_df[group_df["crossing_name_norm"] != ""]
+
+    agg_map = {"crossing_name": _first_non_empty}
+    if "hours" in group_df.columns:
+        agg_map["hours"] = _first_non_empty
+    if "construction_notice" in group_df.columns:
+        agg_map["construction_notice"] = _first_non_empty
+    if "port_status" in group_df.columns:
+        agg_map["port_status"] = _first_non_empty
+
+    group_df = group_df.groupby(["port_id", "crossing_name_norm"], as_index=False).agg(agg_map)
+    group_df.rename(columns={"port_status": "operational_status"}, inplace=True)
+    for col in ["hours", "construction_notice", "operational_status"]:
+        if col not in group_df.columns:
+            group_df[col] = None
+    group_df = group_df.where(pd.notnull(group_df), None)
+    return group_df
+
+
+def upsert_crossing_groups_table(connection, cursor, group_df: pd.DataFrame):
+    if group_df.empty:
+        print("No crossing group data to update.")
+        return
+
+    existing_df = pd.read_sql("SELECT id, port_id, crossing_name FROM crossing_groups", connection)
+    if existing_df.empty:
+        existing_df = pd.DataFrame(columns=["id", "port_id", "crossing_name", "crossing_name_norm"])
+    else:
+        existing_df["crossing_name_norm"] = _normalized_series(existing_df["crossing_name"])
+
+    group_df = group_df.copy()
+    group_df["crossing_name_norm"] = _normalized_series(group_df["crossing_name"])
+
+    merged = group_df.merge(
+        existing_df[["id", "port_id", "crossing_name_norm"]],
+        on=["port_id", "crossing_name_norm"],
+        how="left",
+    )
+    merged = merged.where(pd.notnull(merged), None)
+    update_rows = merged[merged["id"].notnull()]
+    insert_rows = merged[merged["id"].isnull()]
+
+    if not update_rows.empty:
+        update_sql = """
+            UPDATE crossing_groups
+            SET crossing_name = %s,
+                hours = COALESCE(%s, hours),
+                construction_notice = COALESCE(%s, construction_notice),
+                operational_status = COALESCE(%s, operational_status)
+            WHERE id = %s
+        """
+        update_values = [
+            (
+                row["crossing_name"],
+                row.get("hours"),
+                row.get("construction_notice"),
+                row.get("operational_status"),
+                row["id"],
+            )
+            for _, row in update_rows.iterrows()
+        ]
+        cursor.executemany(update_sql, update_values)
+
+    if not insert_rows.empty:
+        insert_sql = """
+            INSERT INTO crossing_groups (
+                port_id, crossing_name, hours, construction_notice, operational_status
+            )
+            VALUES (%s, %s, %s, %s, %s)
+        """
+        insert_values = [
+            (
+                row["port_id"],
+                row["crossing_name"],
+                row.get("hours"),
+                row.get("construction_notice"),
+                row.get("operational_status"),
+            )
+            for _, row in insert_rows.iterrows()
+        ]
+        cursor.executemany(insert_sql, insert_values)
+
+    connection.commit()
+    print("crossing_groups table updated successfully.")
+
+
+def clear_lane_construction_notices(connection, cursor):
+    try:
+        cursor.execute(
+            """
+            UPDATE lanes AS l
+            SET construction_notice = NULL
+            FROM crossing_groups AS cg
+            WHERE l.crossing_group_id = cg.id
+              AND l.construction_notice IS NOT NULL
+              AND cg.construction_notice IS NOT NULL
+              AND trim(lower(l.construction_notice)) = trim(lower(cg.construction_notice))
+            """
+        )
+        connection.commit()
+        print("Lane construction notices cleared where redundant.")
+    except Exception as e:
+        connection.rollback()
+        print(f"Error clearing lane construction notices: {e}")
+
+
+def attach_crossing_group_ids(final_df: pd.DataFrame, connection) -> pd.DataFrame:
+    if "port_id" not in final_df.columns or "crossing_name" not in final_df.columns:
+        final_df = final_df.copy()
+        final_df["crossing_group_id"] = None
+        return final_df
+
+    groups_df = pd.read_sql("SELECT id, port_id, crossing_name FROM crossing_groups", connection)
+    if groups_df.empty:
+        final_df = final_df.copy()
+        final_df["crossing_group_id"] = None
+        return final_df
+
+    groups_df["crossing_name_norm"] = _normalized_series(groups_df["crossing_name"])
+    final_df = final_df.copy()
+    final_df["crossing_name_norm"] = _normalized_series(final_df["crossing_name"])
+    final_df = final_df.merge(
+        groups_df[["id", "port_id", "crossing_name_norm"]],
+        on=["port_id", "crossing_name_norm"],
+        how="left",
+    )
+    final_df.rename(columns={"id": "crossing_group_id"}, inplace=True)
+    final_df.drop(columns=["crossing_name_norm"], inplace=True)
+    return final_df
+
+
 def insert_cruces_fronterizos(connection, cursor, final_df: pd.DataFrame):
     """Insert rows into cruces_fronterizos when running in prod."""
     if ENV != "prod":
@@ -249,83 +419,88 @@ def insert_cruces_fronterizos(connection, cursor, final_df: pd.DataFrame):
         print(f"Error al insertar datos en cruces_fronterizos: {e}")
 
 
-def update_cruces_table(connection, cursor, final_df: pd.DataFrame):
-    """Update cruces table using non-null values from the latest feed."""
+def update_lanes_table(connection, cursor, final_df: pd.DataFrame):
+    """Update lanes table using non-null values from the latest feed."""
     try:
         cursor.execute(
             """
             SELECT column_name
             FROM information_schema.columns
-            WHERE table_schema = 'public' AND table_name = 'cruces'
+            WHERE table_schema = 'public' AND table_name = 'lanes'
             ORDER BY ordinal_position
             """
         )
-        cruces_columns = [row[0] for row in cursor.fetchall()]
+        lanes_columns = [row[0] for row in cursor.fetchall()]
 
-        puertos_df = pd.read_sql("SELECT id, port_name, border FROM puertos", connection)
-        puertos_df["port_name"] = puertos_df["port_name"].astype(str).str.strip()
-        puertos_df["border"] = puertos_df["border"].astype(str).str.strip()
-        if "port_name" in final_df.columns and "border" in final_df.columns:
-            final_df["port_name"] = final_df["port_name"].astype(str).str.strip()
-            final_df["border"] = final_df["border"].astype(str).str.strip()
-            final_df = pd.merge(final_df, puertos_df[["id", "port_name", "border"]], on=["port_name", "border"], how="left")
-            final_df.rename(columns={"id": "port_id"}, inplace=True)
-        else:
-            final_df["port_id"] = None
+        if "port_id" not in final_df.columns:
+            final_df = attach_port_ids(final_df, connection)
+        if "crossing_group_id" not in final_df.columns:
+            final_df = final_df.copy()
+            final_df["crossing_group_id"] = None
 
-        cruces_df = pd.read_sql("SELECT * FROM cruces", connection)
-        for col in cruces_columns:
-            if col not in cruces_df.columns:
-                cruces_df[col] = None
-        cruces_df = cruces_df[[c for c in cruces_columns if c in cruces_df.columns]]
+        lanes_df = pd.read_sql("SELECT * FROM lanes", connection)
+        for col in lanes_columns:
+            if col not in lanes_df.columns:
+                lanes_df[col] = None
+        lanes_df = lanes_df[[c for c in lanes_columns if c in lanes_df.columns]]
         for col in ["crossing_name", "port_id", "lane_type", "lane_subtype"]:
-            cruces_df[col] = cruces_df[col].astype(str).str.strip().str.lower()
+            lanes_df[col] = lanes_df[col].astype(str).str.strip().str.lower()
             if col in final_df.columns:
                 final_df[col] = final_df[col].astype(str).str.strip().str.lower()
             else:
                 final_df[col] = None
         final_df = final_df[final_df["port_id"].notnull() & (final_df["port_id"].astype(str).str.lower() != "none")]
-        cruces_df["merge_key"] = cruces_df["crossing_name"] + "|" + cruces_df["port_id"] + "|" + cruces_df["lane_type"] + "|" + cruces_df["lane_subtype"]
+        lanes_df["merge_key"] = lanes_df["crossing_name"] + "|" + lanes_df["port_id"] + "|" + lanes_df["lane_type"] + "|" + lanes_df["lane_subtype"]
         final_df["merge_key"] = final_df["crossing_name"] + "|" + final_df["port_id"] + "|" + final_df["lane_type"] + "|" + final_df["lane_subtype"]
-        cruces_df.set_index("merge_key", inplace=True)
+        lanes_df.set_index("merge_key", inplace=True)
         final_df.set_index("merge_key", inplace=True)
-        update_cols = ["lanes_open", "delay_minutes", "time", "time_zone", "max_lanes", "update_time", "construction_notice", "operational_status"]
-        update_cols = [col for col in update_cols if col in cruces_columns]
-        common_keys = cruces_df.index.intersection(final_df.index)
+        update_cols = [
+            "lanes_open",
+            "delay_minutes",
+            "time",
+            "time_zone",
+            "max_lanes",
+            "update_time",
+            "operational_status",
+            "hours",
+            "crossing_group_id",
+        ]
+        update_cols = [col for col in update_cols if col in lanes_columns]
+        common_keys = lanes_df.index.intersection(final_df.index)
         for col in update_cols:
-            cruces_df[col] = cruces_df[col].astype("object")
+            lanes_df[col] = lanes_df[col].astype("object")
         for key in common_keys:
             for col in update_cols:
                 if col in final_df.columns:
                     val = final_df.at[key, col]
                     if val is not None and (not (isinstance(val, float) and pd.isnull(val))) and str(val).strip() != "":
-                        cruces_df.at[key, col] = val
+                        lanes_df.at[key, col] = val
         int_columns = ["lanes_open", "delay_minutes", "max_lanes"]
         for col in int_columns:
-            if col in cruces_df.columns:
-                cruces_df[col] = pd.to_numeric(cruces_df[col], errors="coerce").astype("Int64")
-        cruces_df.reset_index(drop=True, inplace=True)
-        cruces_df = cruces_df.reindex(columns=cruces_columns)
-        cruces_df = cruces_df.where(pd.notnull(cruces_df), None)
-        temp_table = "cruces_temp_update"
+            if col in lanes_df.columns:
+                lanes_df[col] = pd.to_numeric(lanes_df[col], errors="coerce").astype("Int64")
+        lanes_df.reset_index(drop=True, inplace=True)
+        lanes_df = lanes_df.reindex(columns=lanes_columns)
+        lanes_df = lanes_df.where(pd.notnull(lanes_df), None)
+        temp_table = "lanes_temp_update"
         cursor.execute(f"DROP TABLE IF EXISTS {temp_table};")
-        cursor.execute(f"CREATE TABLE {temp_table} (LIKE cruces INCLUDING ALL);")
+        cursor.execute(f"CREATE TABLE {temp_table} (LIKE lanes INCLUDING ALL);")
         from io import StringIO
 
         sio = StringIO()
-        cruces_df.to_csv(sio, header=False, index=False, na_rep="\\N")
+        lanes_df.to_csv(sio, header=False, index=False, na_rep="\\N")
         sio.seek(0)
-        copy_sql = f"COPY {temp_table} ({', '.join(cruces_columns)}) FROM STDIN WITH (FORMAT CSV, NULL '\\N')"
+        copy_sql = f"COPY {temp_table} ({', '.join(lanes_columns)}) FROM STDIN WITH (FORMAT CSV, NULL '\\N')"
         cursor.copy_expert(copy_sql, sio)
         cursor.execute("BEGIN;")
-        cursor.execute("DELETE FROM cruces;")
-        cursor.execute(f"INSERT INTO cruces SELECT * FROM {temp_table};")
+        cursor.execute("DELETE FROM lanes;")
+        cursor.execute(f"INSERT INTO lanes SELECT * FROM {temp_table};")
         cursor.execute(f"DROP TABLE {temp_table};")
         cursor.execute("COMMIT;")
-        print("cruces table updated successfully (merged with non-null values from final_df).")
+        print("lanes table updated successfully (merged with non-null values from final_df).")
     except Exception as e:
         connection.rollback()
-        print(f"Error al actualizar cruces (overwrite non-null values): {e}")
+        print(f"Error al actualizar lanes (overwrite non-null values): {e}")
 
 
 def run():
@@ -337,10 +512,10 @@ def run():
     standard_df = build_standard_lane_dataframe(df)
     special_dfs = build_special_lane_dataframes(df)
     final_df = pd.concat([standard_df] + special_dfs, ignore_index=True)
-    final_df = normalize_dataframe(final_df)
+    normalized_df = normalize_dataframe(final_df)
 
     if ENV != "prod":
-        print(final_df.head())
+        print(normalized_df.head())
 
     try:
         connection = psycopg2.connect(
@@ -353,8 +528,13 @@ def run():
         print("Conexión exitosa a la base de datos.")
         cursor = connection.cursor()
 
-        insert_cruces_fronterizos(connection, cursor, final_df)
-        update_cruces_table(connection, cursor, final_df)
+        insert_cruces_fronterizos(connection, cursor, normalized_df)
+        final_df = attach_port_ids(normalized_df, connection)
+        group_df = build_crossing_groups_dataframe(final_df)
+        upsert_crossing_groups_table(connection, cursor, group_df)
+        final_df = attach_crossing_group_ids(final_df, connection)
+        update_lanes_table(connection, cursor, final_df)
+        clear_lane_construction_notices(connection, cursor)
 
         cursor.close()
         connection.close()
